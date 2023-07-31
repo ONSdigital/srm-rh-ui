@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 flask = "*"
+flake8 = "*"
+vulture = "*"
 
 [dev-packages]
 
