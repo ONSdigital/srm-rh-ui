@@ -1,10 +1,5 @@
-from rh_ui import app
-
-
-def test_cookies_success():
-    test_client = app.test_client()
-
-    response = test_client.get('/')
+def test_cookies_success(test_client):
+    response = test_client.get('/hello')
 
     assert response.status_code == 200
     assert "<title>Title: Hello World!</title>".encode() in response.data

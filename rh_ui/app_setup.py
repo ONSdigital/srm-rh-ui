@@ -17,4 +17,8 @@ def create_app():
     logger = wrap_logger(logging.getLogger(__name__))
     logger.debug("App configuration set", config=app_config)
 
+    # Register blueprints
+    from rh_ui.views.hello import hello_bp
+    app.register_blueprint(hello_bp)
+
     return app
