@@ -32,13 +32,8 @@ To do: investigate how that was done in the old RH-UI
 
 # Things to do
 ## Logging config
-## Do we need a static folder? 
-## Deployment in Docker
 ## Copy over templates and i8n stuff 
 including the Babel config
-## Dev K8s deployment? 
-## Docker push
-To the GCR - is this of any use to us rn?
 ## Tests!
 ## GitHub Actions
 https://github.com/ONSdigital/ssdc-rm-documentation/blob/main/guidelines/github-actions.md
