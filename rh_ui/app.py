@@ -6,10 +6,10 @@ from structlog import wrap_logger
 from rh_ui.logger_config import logger_initial_config
 
 
-def create_app(config="DevelopmentCofig"):
+def create_app():
     app = Flask("RH-UI app")
 
-    app_config = "config.{}".format(os.environ.get("APP_SETTINGS", "BaseConfig"))
+    app_config = "config.{}".format(os.environ.get("APP_CONFIG", "DevelopmentConfig"))
     app.config.from_object(app_config)
 
     # Configure logger
@@ -18,4 +18,3 @@ def create_app(config="DevelopmentCofig"):
     logger.debug("App configuration set", config=app_config)
 
     return app
-

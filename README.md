@@ -23,8 +23,6 @@ This would allow us to specify multiple paths and methods for a view function
 
 
 # Questions
-## Do we need the `static` folder? 
-
 ## How will we go about defining app configs? 
 It seems that RASRM has some automatic way of picking up the correct config.
 Also, in each config they add a boolean variable that describes what the config is supposed to be (TESTING, DEVELOPMENT etc.)
@@ -32,15 +30,18 @@ To do: investigate how that was done in the old RH-UI
 
 # Things to do
 ## Logging config
-## Copy over templates and i8n stuff 
-including the Babel config
 ## Tests!
-## GitHub Actions
-https://github.com/ONSdigital/ssdc-rm-documentation/blob/main/guidelines/github-actions.md
-orr just copy from the old rh
+
+## Add packages in the dependabot config
+## Uncoment bits in GH actions
 
 RAS frontstage link:
 https://github.com/ONSdigital/ras-frontstage
+
+## Comments
+It seems that RASRM create the app in the __init__ file making it avaiable in the whole package
+I didn't see any use of that in our case, so I decided to leave the app creation in the run.py script 
+leaving all the configuration in the create_app function
 
 
 

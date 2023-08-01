@@ -5,11 +5,13 @@ name = "pypi"
 
 [packages]
 flask = "*"
-flake8 = "*"
-vulture = "*"
 structlog = "*"
+requests-mock = "*"
 
 [dev-packages]
+flake8 = "*"
+vulture = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.10"
