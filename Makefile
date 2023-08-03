@@ -22,7 +22,7 @@ vulture:
 	pipenv run vulture .
 
 update_vulture_whitelist:
-	pipenv run vulture . --make-whitelist > whitelist.py
+	pipenv run vulture . --make-whitelist > whitelist.py || true
 
 linting: flake8 vulture
 
