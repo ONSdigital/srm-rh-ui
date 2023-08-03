@@ -7,7 +7,7 @@ install:
 load_templates:
 	./scripts/load_templates.sh	
 
-docker_build:
+docker-build:
 	docker build -t srm-rh-ui .
 
 docker_run:
