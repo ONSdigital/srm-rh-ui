@@ -1,4 +1,4 @@
-def test_cookies_success(test_client):
+def test_hello_endpoint_success(test_client):
     response = test_client.get('/hello')
 
     assert response.status_code == 200
