@@ -4,8 +4,7 @@ run:
 install:
 	pipenv install --dev
 
-load_templates:
-	./scripts/load_templates.sh	
+build: unit_tests docker-build
 
 docker-build:
 	docker build -t srm-rh-ui .
