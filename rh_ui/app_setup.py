@@ -9,7 +9,7 @@ from rh_ui.logger_config import logger_initial_config
 def create_app():
     app = Flask("RH-UI app")
 
-    app_config = "config.{}".format(os.environ.get("APP_CONFIG", "DevelopmentConfig"))
+    app_config = f'config.{os.environ.get("APP_CONFIG", "DevelopmentConfig")}'
     app.config.from_object(app_config)
 
     # Configure logger
