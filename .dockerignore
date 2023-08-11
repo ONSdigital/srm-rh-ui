@@ -1,12 +1,9 @@
 .gitignore
 Dockerfile
 .github
-.pytest_cache
 /tests
-.coverage
 .flake8
 .gitignore
-coverage.xml
 LICENSE
 Makefile
 Pipfile
