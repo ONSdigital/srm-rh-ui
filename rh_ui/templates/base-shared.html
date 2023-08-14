@@ -1,0 +1,113 @@
+{%- extends 'layout/_template.njk' -%}
+
+
+{%- block preHeader -%}
+    {% set cookiesPageURL = url_for('info_pages_bp.cookies', lang_code=lang_code) %}
+
+    {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
+    {{ onsCookiesBanner({
+        'lang': 'en',
+        'statementTitle': 'Cookies',
+        'serviceName': '',
+        'settingsLinkURL': cookiesPageURL,
+        'statementText': _('To collect information about how you use this website, we use <a href="' + cookiesPageURL + '">cookies.</a></br>
+                        This information helps us improve our services and make sure that the website works as well as possible.'),
+        'preferencesText':  _('You can <a href="' + cookiesPageURL + '">change your cookie preferences</a> at any time.')
+        }) }}
+{%- endblock -%}
+
+{%- set language = { 'languages':
+    [
+        {
+            "url":  url_for(request.endpoint, lang_code='en'),
+            "ISOCode": "en",
+            "text": "English",
+            "current":  lang_code == 'en' 
+        },
+        {
+            "url": url_for(request.endpoint, lang_code='cy'),
+            "ISOCode": "cy",
+            "text": "Cymraeg",
+            "current": lang_code == 'cy' 
+            }
+    ]
+}-%}
+
+{%- set footer_content = {
+    'newTabWarning': _('The following links open in a new tab'),
+    'crest': true,
+    'rows': [
+        {
+            'itemsList': [
+                {
+                    'text': 'About ONS studies',
+                    'url': _('https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals'),
+                    'target': '_blank'
+                },
+                {
+                    'text': 'Accessibility statement',
+                    'url': _('https://www.ons.gov.uk/help/accessibility'),
+                    'target': '_blank'
+                },
+                {
+                    'text': 'Contact us',
+                    'url': _('https://www.ons.gov.uk/aboutus/contactus/surveyenquiries'),
+                    'target': '_blank'
+                }
+            ]
+        }
+    ],
+    'legal': [
+        {
+            'itemsList': [
+                {
+                    'text': 'Cookies',
+                    'url': url_for('info_pages_bp.cookies', lang_code=lang_code),
+                },
+                {
+                    'text': 'Privacy and data protection',
+                    'url': url_for('info_pages_bp.privacy_and_data_protection', lang_code=lang_code),
+                }
+            ]
+        }
+    ],
+    'copyrightDeclaration': {
+        'copyright': _('Crown copyright and database rights 2020 OS 100019153.')
+    }
+}-%}
+
+{%- set pageConfig = {
+    'title': page_title_value,
+    'header': {
+        'mastheadLogoUrl': _('https://www.ons.gov.uk/'),
+        'title': _('ONS Surveys'),
+        'language': language,
+        'mastheadLogo' : {},
+        'titleLogo' : {}
+    },
+    'footer': footer_content,
+    'cspNonce': cspNonce,
+    'meta' : {}
+} -%}
+
+
+
+{%- block head -%}
+
+    {%- if gtm_cont_id -%}
+        {%- include 'partials/gtm.html' with context -%}
+    {%- endif -%}
+
+    {%- if gtm_tag_id -%}
+        {%- include 'partials/ga.html' with context -%}
+    {%- endif -%}
+
+{%- endblock -%}
+
+{%- block bodyStart -%}
+
+    {%- if gtm_cont_id -%}
+        {%- include 'partials/gtm-no-script.html' with context -%}
+    {%- endif -%}
+
+{%- endblock -%}

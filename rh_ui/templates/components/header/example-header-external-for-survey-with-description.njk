@@ -1,0 +1,20 @@
+---
+"fullWidth": true
+---
+{% from "components/header/_macro.njk" import onsHeader %}
+
+{{
+    onsHeader({
+        "variants": 'description',
+        "title": 'Service title',
+        "titleUrl": '#0',
+        "mastheadLogoUrl": '#0',
+        "description": 'This is the description or tagline',
+        "button": {
+            "text": 'Save and sign out',
+            "url": '#0',
+            "iconType": 'exit',
+            "iconPosition": 'after'
+        }
+    })
+}}

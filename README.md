@@ -35,3 +35,8 @@ def not_found_error(error):
 ## Logging config
 I've implemented simple logging, but we'll definetely have to review it and make sure that it suits our needs and matches the Stackdriver layout.
 It'd also be good to add some tests for the log config.
+
+
+## NOTES
+
+Improve the cookies banner (link in 2 places??)

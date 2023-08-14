@@ -28,3 +28,15 @@ linting: flake8 vulture
 
 unit_tests: linting
 	APP_CONFIG=TestingConfig pipenv run pytest --cov rh_ui --cov-report term-missing --cov-report xml
+
+load_templates:
+	./load_templates.sh
+
+extraxt_translation:
+	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
+
+update_welsh_translation_file:
+	pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
+
+compile_translations:
+	pipenv run pybabel compile -d rh_ui/translations

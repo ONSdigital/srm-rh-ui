@@ -1,0 +1,91 @@
+{%- extends 'base-shared.html' -%}
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+{% from "components/list/_macro.njk" import onsList %}
+
+{% set page_title = _("Privacy and data protection") %}
+
+{%- block preMain -%}
+    {{
+        onsBreadcrumbs({
+            "ariaLabel": _('Back'),
+            "itemsList": [
+                {
+                    "url": url_for('start_bp.start_get'),
+                    "id": "back",
+                    "text": _('Back'),
+                }
+            ]
+        })
+    }}
+{%- endblock -%}
+
+{% block main %}
+    <h1 class="ons-u-fs-xl">{{ _('Privacy and data protection') }}</h1>
+
+    <p>{{ _('We will keep your information secure and confidential. This means that we will:') }}</p>
+    {%- autoescape false -%}
+    {{
+        onsList({
+            "itemsList": [
+                {
+                    "text": _('recognise that you are sharing personal information with us and treat it as confidential, as directed
+                        by the%(open_code_of_practice_link)s Code of Practice for Statistics%(close_link)s',
+                            open_code_of_practice_link = '<a href="%s", target="_blank">' % code_of_practice_link,
+                            close_link='</a>')
+                },
+                {
+                    "text": _('only use your information for statistical purposes, or to help us run our surveys')
+                },
+                {
+                    "text": _('not publish anything that identifies an individual, household or business')
+                },
+                {
+                    "text": _('only hold your information for as long as it is being used for producing statistics')
+                },
+                {
+                    "text": _('provide survey information to%(open_access_to_research_link)s
+                        other government departments, approved organisations%(close_link)s and%(open_approved_researchers_link)s
+                        approved researchers%(close_link)s for statistical purposes only, subject to the same standards of
+                        protection we apply (and according to the provisions of the Data Protection Legislation,
+                        the Statistics and Registration Service Act 2007 and the Code of Practice for Statistics)',
+                        open_access_to_research_link='<a href="%s", target="_blank">' % access_to_research_link,
+                        open_approved_researchers_link='<a href="%s", target="_blank">' % approved_researchers_link,
+                        close_link='</a>')
+                },
+                {
+                    "text": _('ensure our staff are aware of their obligations to protect your confidential information')
+                },
+                {
+                    "text": _('maintain the security of our systems and our buildings')
+                }
+            ]
+        })
+    }}
+    {%- endautoescape -%}
+
+    <h2>{{ _('Access to information') }}</h2>
+    <p>{{ _('We employ third-party providers to assist us in survey data collection. These third parties work under our instruction,
+        and are strictly used as technical service providers in a capacity as a data processor.
+        We retain your data and control how this is used. The third parties we work with are:') }}</p>
+    {{
+        onsList({
+            "itemsList": [
+                {
+                    "text": 'Google Cloud Platform service'
+                },
+                {
+                    "text": 'GOV.UK Notify'
+                }
+            ]
+        })
+    }}
+
+    {%- autoescape false -%}
+    <h2 class="ons-u-fs-xl ons-u-mt-l">{{ _('Further information') }}</h2>
+    <p>{{ _('If you have a question about how we process your data or want to find out more about your rights
+        under data protection legislation, see our %(open_ons_data_protection_link)sprotection page%(close_link)s.',
+        open_ons_data_protection_link='<a href="%s">' % ons_data_protection_link, close_link='</a>') }}
+    </p>
+    {%- endautoescape -%}
+
+{% endblock main %}

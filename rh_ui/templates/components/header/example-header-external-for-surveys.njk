@@ -1,0 +1,33 @@
+---
+"fullWidth": true
+---
+{% from "components/header/_macro.njk" import onsHeader %}
+
+{{
+    onsHeader({
+        "title": 'Survey title',
+        "mastheadLogoUrl": '#0',
+        "button": {
+            "text": 'Save and sign out',
+            "url": '#0',
+            "iconType": 'exit',
+            "iconPosition": 'after'
+        },
+        "language": {
+            "languages": [
+                {
+                    "url": '#0',
+                    "ISOCode": 'en',
+                    "text": 'English',
+                    "current": true
+                },
+                {
+                    "url": '#0',
+                    "ISOCode": 'cy',
+                    "text": 'Cymraeg',
+                    "current": false
+                }
+            ]
+        }
+    })
+}}

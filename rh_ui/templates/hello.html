@@ -3,7 +3,17 @@
     <head>
         <title>Title: Hello World!</title>
     </head>
-    <body>
-        <h1>Hello, World!</h1>
+    <body>  
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class=flashes>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+        {% endwith %}
+
+        <h1>{{ _('Hello, World!') }}</h1>
     </body>
 </html>

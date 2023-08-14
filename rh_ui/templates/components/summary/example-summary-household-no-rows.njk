@@ -1,0 +1,20 @@
+{% from "components/summary/_macro.njk" import onsSummary %}
+
+{{ onsSummary({
+    "summaries": [
+        {
+            "groups": [
+                {
+                    "placeholderText": "There are no householders",
+                    "summaryLink": {
+                        "text": "Add someone to this household",
+                        "url": "#0",
+                        "attributes": {
+                            "data-qa": "add-item-link"
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}) }}

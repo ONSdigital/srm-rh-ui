@@ -1,0 +1,62 @@
+---
+"fullWidth": true
+---
+{% from "components/footer/_macro.njk" import onsFooter %}
+{{
+    onsFooter({
+        "newTabWarning": 'The following links open in a new tab',
+        "rows": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Help',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Languages',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'BSL and audio videos',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Contact us',
+                        "url": '#0',
+                        "target": '_blank'
+                    }
+                ]
+            }
+        ],
+        "legal": [
+            {
+                "itemsList": [
+                    {
+                        "text": 'Cookies',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Accessibility statement',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Privacy and data protection',
+                        "url": '#0',
+                        "target": '_blank'
+                    },
+                    {
+                        "text": 'Terms and conditions',
+                        "url": '#0',
+                        "target": '_blank'
+                    }
+                ]
+            }
+        ],
+        "OGLLink": true
+    })
+}}

@@ -1,0 +1,16 @@
+{% from "components/button/_macro.njk" import onsButton %}
+
+<div class="ons-btn-group">
+    {{
+        onsButton({
+            "text": 'Continue'
+        })
+    }}
+    {{
+        onsButton({
+            "type": 'button',
+            "text": 'Cancel',
+            "variants": 'secondary'
+        })
+    }}
+</div>
