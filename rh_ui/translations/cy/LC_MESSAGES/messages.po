@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-14 13:25+0100\n"
-"PO-Revision-Date: 2023-08-14 13:26+0100\n"
+"POT-Creation-Date: 2023-08-14 15:09+0100\n"
+"PO-Revision-Date: 2023-08-14 14:42+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
 "Language-Team: cy <LL@li.org>\n"
@@ -412,7 +412,7 @@ msgstr ""
 
 #: rh_ui/templates/start.html:16
 msgid "Enter a 16-character access code"
-msgstr ""
+msgstr "PLACEHOLDER WELSH Enter a 16-character access code"
 
 #: rh_ui/templates/start.html:18
 msgid "Access code not recognised. Enter the code again."
@@ -421,6 +421,10 @@ msgstr ""
 #: rh_ui/templates/start.html:41 rh_ui/templates/start.html:63
 msgid "Where to find your access code"
 msgstr ""
+
+#: rh_ui/templates/start.html:45
+msgid "Enter your 16-character access code"
+msgstr "PLACEHOLDER WELSH Enter your 16-character access code"
 
 #: rh_ui/templates/start.html:46
 msgid ""
@@ -464,7 +468,6 @@ msgstr ""
 msgid "Who can I contact for further information?"
 msgstr ""
 
-#: rh_ui/views/start.py:23
-msgid "title welsh"
-msgstr ""
+#~ msgid "PLACEHOLDER WELSH Enter a 16-character access code"
+#~ msgstr ""
 

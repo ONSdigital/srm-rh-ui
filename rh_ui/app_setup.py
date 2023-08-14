@@ -16,10 +16,10 @@ def create_app():
         if not g.get('lang_code', None):
             g.lang_code = request.accept_languages.best_match(app.config["LANGUAGES"])
         return g.lang_code
-    
+
+    app.config['BABEL_TRANSLATION_DIRECTORIES'] = 'rh_ui/translations'
+
     babel = Babel(app, locale_selector=get_locale)
-
-
 
     app_config = f'config.{os.environ.get("APP_CONFIG", "DevelopmentConfig")}'
     app.config.from_object(app_config)

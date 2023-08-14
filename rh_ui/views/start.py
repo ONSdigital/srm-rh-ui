@@ -20,10 +20,10 @@ def start_get():
                 method=request.method,
                 path=request.path)
     
-    return render_template("start.html", page_title=_("title welsh"), lang_code=g.lang_code, domain_url="localhost:9092")
+    return render_template("start.html", lang_code=g.lang_code)
 
 # cleaner way compared to putting it in the same function
-@start_bp.route("/asda/", methods=["POST"])
+@start_bp.route("/start/", methods=["POST"])
 def start_post():
     flash("POST received, lang code: " + g.lang_code)
     uac = request.form['uac']
