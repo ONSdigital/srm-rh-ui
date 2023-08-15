@@ -40,9 +40,7 @@ def create_app():
     # Register error handlers
     from rh_ui.views.error_handlers import handle_404
     app.register_error_handler(404, handle_404)
-    from rh_ui.views.error_handlers import handle_404
-    app.register_error_handler(404, handle_404)
-    # from rh_ui.views.error_handlers import handle_error
-    # app.register_error_handler(HTTPException.code, handle_error)
+    from rh_ui.views.error_handlers import handle_500
+    app.register_error_handler(500, handle_500)
 
     return app
