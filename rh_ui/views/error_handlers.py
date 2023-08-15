@@ -1,12 +1,9 @@
 from flask import render_template, g, request
 from config import BaseConfig
 
-# how to import it from the config.py ???
-LANGUAGES = ['en', 'cy']
-
 def handle_404(e):
     potential_lang_code = request.path.split('/')[1] 
-    g.lang_code = potential_lang_code if potential_lang_code in LANGUAGES else 'en'
+    g.lang_code = potential_lang_code if potential_lang_code in BaseConfig.LANGUAGES else 'en'
 
     return render_template("404.html", lang_code=g.lang_code), 404
 
