@@ -1,5 +1,5 @@
 import logging
-from flask import Blueprint, render_template, request, flash, g, url_for, redirect
+from flask import Blueprint, render_template, request, flash, g, url_for, redirect, abort
 from structlog import wrap_logger
 from rh_ui.controllers import uac_validation
 from rh_ui.views.lang_code_processing import setup_lang_code_processing
@@ -20,9 +20,8 @@ def start_get():
                 method=request.method,
                 path=request.path)
     error = request.data
-    if error:
-        return render_template("start.html", lang_code=g.lang_code, field_messages_dict=error)
-
+    # if error:
+    #    return render_template("start.html", lang_code=g.lang_code, field_messages_dict=error)
     return render_template("start.html", lang_code=g.lang_code)
 
 
