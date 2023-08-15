@@ -1,12 +1,10 @@
 import os
 import logging
 
-from flask import Flask, g
+from flask import Flask, g, request
 from flask_babel import Babel
 from structlog import wrap_logger
 from rh_ui.logger_config import logger_initial_config
-from requests import request
-from werkzeug.exceptions import HTTPException
 
 
 def create_app():
@@ -24,7 +22,7 @@ def create_app():
     app_config = f'config.{os.environ.get("APP_CONFIG", "DevelopmentConfig")}'
     app.config.from_object(app_config)
 
-    app.secret_key = b'_5#y2L"F4Q8z\n\xec]/' # required to enable the flash function
+    app.secret_key = b'_5#y2L"F4Q8z\n\xec]/' # required to enable the flash function
 
     # Configure logger
     logger_initial_config(log_level=app.config["LOGGING_LEVEL"])

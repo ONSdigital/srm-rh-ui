@@ -19,13 +19,13 @@
 {%- set language = { 'languages':
     [
         {
-            "url":  url_for(request.endpoint, lang_code='en'),
+            "url":  request.url.replace('cy','en'),
             "ISOCode": "en",
             "text": "English",
             "current":  lang_code == 'en' 
         },
         {
-            "url": url_for(request.endpoint, lang_code='cy'),
+            "url": request.url.replace('en','cy'),
             "ISOCode": "cy",
             "text": "Cymraeg",
             "current": lang_code == 'cy' 

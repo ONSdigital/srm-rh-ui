@@ -1,12 +1,14 @@
-from flask import render_template, g
-from werkzeug.exceptions import HTTPException
+from flask import render_template, g, request
+from werkzeug.exceptions import HTTPException, abort
 
 
 def handle_404(e):
-    return render_template("404.html"), 404
+    return render_template("404.html", lang_code=request.path.split('/')[1]), 404
+
 
 def handle_500(HTTPException):
-    return render_template("error.html", lang_code=g.lang_code), 500
+    return render_template("error.html", lang_code=request.path.split('/')[1]), 500
+
 
 '''
 need to define a class in order for it to handle generic http exception
