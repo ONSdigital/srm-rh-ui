@@ -5,4 +5,3 @@ def validate_uac(uac):
     if len(uac) != 16:
         error = 'uac_invalid_length'
         return error
-

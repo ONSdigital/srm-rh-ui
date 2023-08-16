@@ -1,13 +1,12 @@
 import logging
-from flask import Blueprint, render_template, request, g, flash
+from flask import Blueprint, render_template, request, g
 from structlog import wrap_logger
-from rh_ui.views.lang_code_processing import setup_lang_code_processing
-from flask_babel import refresh
-
+from rh_ui.controllers.lang_code_processing import setup_lang_code_processing
 
 logger = wrap_logger(logging.getLogger(__name__))
 
-info_pages_bp = Blueprint("info_pages_bp", __name__, template_folder="../templates/info_pages", url_prefix='/<lang_code>')
+info_pages_bp = Blueprint("info_pages_bp", __name__, template_folder="../templates/info_pages", url_prefix='/<lang_code>') # noqa
+
 setup_lang_code_processing(info_pages_bp)
 
 
@@ -17,6 +16,7 @@ def cookies():
                 method=request.method,
                 path=request.path)
     return render_template("cookies.html", lang_code=g.lang_code)
+
 
 @info_pages_bp.route("/privacy-and-data-protection", methods=["GET"])
 def privacy_and_data_protection():

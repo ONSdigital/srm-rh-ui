@@ -1,9 +1,9 @@
 import logging
 from flask import Blueprint, render_template, request, flash, g, url_for, redirect, current_app
 from structlog import wrap_logger
-from rh_ui.common import uac_validation
+from rh_ui.controllers import uac_validation
 from rh_ui.controllers.rh_controller import get_eq_token
-from rh_ui.views.lang_code_processing import setup_lang_code_processing
+from rh_ui.controllers.lang_code_processing import setup_lang_code_processing
 
 logger = wrap_logger(logging.getLogger(__name__))
 

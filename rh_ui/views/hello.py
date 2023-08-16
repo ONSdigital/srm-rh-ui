@@ -1,8 +1,6 @@
 import logging
 from flask import Blueprint, render_template, request, g, flash
 from structlog import wrap_logger
-from rh_ui.views.lang_code_processing import setup_lang_code_processing
-from flask_babel import refresh
 
 
 logger = wrap_logger(logging.getLogger(__name__))

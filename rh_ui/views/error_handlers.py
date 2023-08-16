@@ -7,9 +7,7 @@ def handle_404(e):
 
     return render_template("error_pages/404.html", lang_code=g.lang_code), 404
 
+
 # this will also capture all unexpected errors
 def handle_500(HTTPException):
     return render_template("error_pages/error.html", lang_code=request.path.split('/')[1]), 500
-
-
-

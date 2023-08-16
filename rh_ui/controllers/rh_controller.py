@@ -28,11 +28,11 @@ def get_eq_token_from_rh_svc(uac_hash: str, region_code: str) -> Response:
                 return render_template('error_pages/uac-already-used.html', lang_code=g.lang_code)
             if ex.message == 'UAC_INACTIVE':
                 return render_template('error_pages/uac-inactive.html', lang_code=g.lang_code)
-            
+
         elif ex.status == 404:
             flash('uac_invalid')
             return redirect(url_for('start_bp.start_get', lang_code=g.lang_code))
-        
+
     return response
 
 

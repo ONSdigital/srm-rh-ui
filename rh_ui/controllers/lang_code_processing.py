@@ -1,5 +1,6 @@
 from flask import g
 
+
 def setup_lang_code_processing(blueprint):
     @blueprint.url_defaults
     def add_language_code(endpoint, values):
