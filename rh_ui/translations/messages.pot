@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-16 15:18+0100\n"
+"POT-Creation-Date: 2023-08-16 15:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,10 +44,6 @@ msgstr ""
 #: rh_ui/templates/base-shared.html:83 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
-msgstr ""
-
-#: rh_ui/templates/hello.html:17
-msgid "Hello, World!"
 msgstr ""
 
 #: rh_ui/templates/start.html:7 rh_ui/templates/start.html:42

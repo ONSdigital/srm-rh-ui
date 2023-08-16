@@ -1,12 +1,19 @@
-# This file stores symbols (variables, functions..)
-# that would otherwise be picked up by Vulture and makes it ignore them
-
-# Run `make update_vulture_whitelist` to update this file
-# with the symbols that are currently picked up by Vulture as false positives
-
 PORT  # unused variable (config.py:5)
 LOGGING_LEVEL  # unused variable (config.py:6)
-DEBUG  # unused variable (config.py:10)
-LOGGING_LEVEL  # unused variable (config.py:11)
-TestingConfig  # unused class (config.py:14)
-hello  # unused function (rh_ui/views/hello.py:10)
+RH_SVC_URL  # unused variable (config.py:7)
+ACCOUNT_SERVICE_URL  # unused variable (config.py:8)
+LANGUAGES  # unused variable (config.py:9)
+EQ_URL  # unused variable (config.py:10)
+DEBUG  # unused variable (config.py:14)
+LOGGING_LEVEL  # unused variable (config.py:15)
+EQ_URL  # unused variable (config.py:16)
+_.secret_key  # unused attribute (rh_ui/app_setup.py:25)
+e  # unused variable (rh_ui/views/error_handlers.py:4)
+HTTPException  # unused variable (rh_ui/views/error_handlers.py:12)
+TestingConfig  # unused class (config.py:19)
+add_language_code  # unused function (rh_ui/controllers/lang_code_processing.py:5)
+pull_lang_code  # unused function (rh_ui/controllers/lang_code_processing.py:9)
+cookies  # unused function (rh_ui/views/info_pages.py:13)
+privacy_and_data_protection  # unused function (rh_ui/views/info_pages.py:21)
+start_get  # unused function (rh_ui/views/start.py:14)
+start_post  # unused function (rh_ui/views/start.py:27)

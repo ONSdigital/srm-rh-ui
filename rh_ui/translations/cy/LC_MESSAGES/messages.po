@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-16 15:18+0100\n"
-"PO-Revision-Date: 2023-08-16 15:16+0100\n"
+"POT-Creation-Date: 2023-08-16 15:44+0100\n"
+"PO-Revision-Date: 2023-08-16 15:42+0100\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
 "Language-Team: cy <LL@li.org>\n"
@@ -48,13 +48,9 @@ msgstr ""
 msgid "ONS Surveys"
 msgstr ""
 
-#: rh_ui/templates/hello.html:17
-msgid "Hello, World!"
-msgstr ""
-
 #: rh_ui/templates/start.html:7 rh_ui/templates/start.html:42
 msgid "Start study"
-msgstr "WELSH PLACEHOLDER START STUDY"
+msgstr ""
 
 #: rh_ui/templates/start.html:22
 msgid "Enter an access code"
@@ -74,7 +70,7 @@ msgstr ""
 
 #: rh_ui/templates/start.html:53
 msgid "Enter your 16-character access code"
-msgstr ""
+msgstr "PLACEHOLDER WELSH Enter your 16-character access code"
 
 #: rh_ui/templates/start.html:54
 msgid ""

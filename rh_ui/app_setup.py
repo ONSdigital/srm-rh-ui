@@ -30,8 +30,6 @@ def create_app():
     logger.debug("App configuration set", config=app_config)
 
     # Register blueprints
-    from rh_ui.views.hello import hello_bp
-    app.register_blueprint(hello_bp)
     from rh_ui.views.start import start_bp
     app.register_blueprint(start_bp)
     from rh_ui.views.info_pages import info_pages_bp

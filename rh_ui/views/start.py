@@ -7,7 +7,7 @@ from rh_ui.controllers.lang_code_processing import setup_lang_code_processing
 
 logger = wrap_logger(logging.getLogger(__name__))
 
-start_bp = Blueprint("start_bp", __name__, template_folder="templates", url_prefix='/<lang_code>')
+start_bp = Blueprint("start_bp", __name__, template_folder="../templates", url_prefix='/<lang_code>')
 setup_lang_code_processing(start_bp)
 
 
