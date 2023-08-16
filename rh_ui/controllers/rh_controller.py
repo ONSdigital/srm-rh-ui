@@ -2,7 +2,7 @@ import hashlib
 import re
 
 import requests
-from flask import current_app, flash, redirect, url_for, g, render_template
+from flask import current_app, flash, redirect, url_for, g
 from requests import Response, HTTPError
 
 UAC_LENGTH = 16
@@ -23,13 +23,10 @@ def get_eq_token_from_rh_svc(uac_hash: str, region_code: str) -> Response:
     except HTTPError as ex:
 
         # TODO: look into implementing that as a flashed message rather than a separate page
-        if ex.status == 400:
-            if ex.message == 'UAC_RECEIPTED':
-                return render_template('error_pages/uac-already-used.html', lang_code=g.lang_code)
-            if ex.message == 'UAC_INACTIVE':
-                return render_template('error_pages/uac-inactive.html', lang_code=g.lang_code)
+        if ex.response.status_code == 400:
+            return ex.response
 
-        elif ex.status == 404:
+        elif ex.response.status_code == 404:
             flash('uac_invalid')
             return redirect(url_for('start_bp.start_get', lang_code=g.lang_code))
 
