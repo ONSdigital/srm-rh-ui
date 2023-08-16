@@ -8,7 +8,7 @@ from requests import Response, HTTPError
 UAC_LENGTH = 16
 
 
-def get_eq_token(uac: str, region: str) -> str:
+def get_eq_token(uac: str, region: str) -> Response:
     uac_hash = get_uac_hash(uac)
     response = get_eq_token_from_rh_svc(uac_hash, region)
     return response

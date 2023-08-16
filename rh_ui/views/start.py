@@ -1,5 +1,5 @@
 import logging
-from flask import Blueprint, render_template, request, flash, g, url_for, redirect
+from flask import Blueprint, render_template, request, flash, g, url_for, redirect, current_app
 from structlog import wrap_logger
 from rh_ui.common import uac_validation
 from rh_ui.controllers.rh_controller import get_eq_token
@@ -35,4 +35,4 @@ def start_post():
         return redirect(url_for('start_bp.start_get', lang_code=g.lang_code))
     response = get_eq_token(uac, region)
 
-    return redirect(url_for('start_bp.start_get', lang_code=g.lang_code, values=None))
+    return redirect(f'{current_app.config["EQ_URL"]}/session?token={response.text}')
