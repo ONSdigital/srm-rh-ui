@@ -7,7 +7,7 @@ from flask_babel import refresh
 
 logger = wrap_logger(logging.getLogger(__name__))
 
-info_pages_bp = Blueprint("info_pages_bp", __name__, template_folder="../templates", url_prefix='/<lang_code>')
+info_pages_bp = Blueprint("info_pages_bp", __name__, template_folder="../templates/info_pages", url_prefix='/<lang_code>')
 setup_lang_code_processing(info_pages_bp)
 
 

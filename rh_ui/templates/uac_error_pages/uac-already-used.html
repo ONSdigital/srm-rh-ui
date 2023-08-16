@@ -1,0 +1,25 @@
+{%- extends 'base-shared.html' -%}
+{% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
+
+{%- block preMain -%}
+    {{
+        onsBreadcrumbs({
+            "ariaLabel": _('Back'),
+            "itemsList": [
+                {
+                    "url": url_for('start_bp.start_get'),
+                    "id": "back",
+                    "text": _('Back'),
+                }
+            ]
+        })
+    }}
+{%- endblock -%}
+
+{%- block main -%}
+
+    <h1>{{ _('This access code has already been used') }}</h1>
+
+    <p>{{ _('Someone has already submitted a response using this access code.') }}</p>
+
+{%- endblock main -%}
