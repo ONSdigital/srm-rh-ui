@@ -29,16 +29,6 @@
 {%- endif -%}
 
 {% block main %}
-    {% with messages = get_flashed_messages() %}
-    {% if messages %}
-        <ul class=flashes>
-        {% for message in messages %}
-            <li>{{ message }}</li>
-        {% endfor %}
-        </ul>
-    {% endif %}
-    {% endwith %}
-
     <h1 class="ons-u-fs-xxl ons-u-mt-l">{{_('Start study')}}</h1>
 
 
