@@ -2,18 +2,24 @@
 
 
 {%- block preHeader -%}
+{%- autoescape false -%}
+
     {% set cookiesPageURL = url_for('info_pages_bp.cookies', lang_code=lang_code) %}
 
     {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
     {{ onsCookiesBanner({
-        'lang': 'en',
-        'statementTitle': 'Cookies',
+        'lang': 'lang_code',
+        'statementTitle': _('Cookies'),
         'serviceName': '',
         'settingsLinkURL': cookiesPageURL,
-        'statementText': _('To collect information about how you use this website, we use <a href="' + cookiesPageURL + '">cookies.</a></br>
-                        This information helps us improve our services and make sure that the website works as well as possible.'),
-        'preferencesText':  _('You can <a href="' + cookiesPageURL + '">change your cookie preferences</a> at any time.')
+        'statementText': _('To collect information about how you use this website, we use
+                            <a href="' + cookiesPageURL + '">cookies.</a></br>
+                            This information helps us improve our services and make sure that the website works as well as possible.'),
+        'preferencesText':  _('You can
+                                <a href="' + cookiesPageURL + '">change your cookie preferences</a>
+                                at any time.')
         }) }}
+{% endautoescape %}
 {%- endblock -%}
 
 {%- set language = { 'languages':

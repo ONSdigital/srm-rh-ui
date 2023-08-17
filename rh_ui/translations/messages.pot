@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-17 11:30+0100\n"
+"POT-Creation-Date: 2023-08-17 15:44+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,53 +17,53 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: rh_ui/templates/base-shared.html:37
-msgid "The following links open in a new tab"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:43
-msgid "About ONS studies"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:44
-msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:48
-msgid "Accessibility statement"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:49
-msgid "https://www.ons.gov.uk/help/accessibility"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:53
-msgid "Contact us"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:54 rh_ui/templates/error_pages/404.html:13
-msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
-msgstr ""
-
-#: rh_ui/templates/base-shared.html:64
+#: rh_ui/templates/base-shared.html:12 rh_ui/templates/base-shared.html:70
 msgid "Cookies"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:68
+#: rh_ui/templates/base-shared.html:43
+msgid "The following links open in a new tab"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:49
+msgid "About ONS studies"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:50
+msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:54
+msgid "Accessibility statement"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:55
+msgid "https://www.ons.gov.uk/help/accessibility"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:59
+msgid "Contact us"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:60 rh_ui/templates/error_pages/404.html:13
+msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:74
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:5
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:23
 msgid "Privacy and data protection"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:75
+#: rh_ui/templates/base-shared.html:81
 msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:82
+#: rh_ui/templates/base-shared.html:88
 msgid "https://www.ons.gov.uk/"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:83 rh_ui/templates/error_pages/404.html:3
+#: rh_ui/templates/base-shared.html:89 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
 msgstr ""
@@ -420,59 +420,64 @@ msgid ""
 msgstr ""
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:31
-#, python-format
 msgid ""
 "recognise that you are sharing personal information with us and treat it "
 "as confidential, as directed\n"
-"                        by the%(open_code_of_practice_link)s Code of "
-"Practice for Statistics%(close_link)s"
+"                        by the<a "
+"href=\"https://code.statisticsauthority.gov.uk/\">Code of Practice for "
+"Statistics</a>"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:37
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:35
 msgid ""
 "only use your information for statistical purposes, or to help us run our"
 " surveys"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:40
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:38
 msgid "not publish anything that identifies an individual, household or business"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:43
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:41
 msgid ""
 "only hold your information for as long as it is being used for producing "
 "statistics"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:46
-#, python-format
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:44
 msgid ""
-"provide survey information to%(open_access_to_research_link)s\n"
-"                        other government departments, approved "
-"organisations%(close_link)s and%(open_approved_researchers_link)s\n"
-"                        approved researchers%(close_link)s for "
-"statistical purposes only, subject to the same standards of\n"
+"provide survey information to\n"
+"                        <a "
+"href=\"https://www.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/accesstounpublishedonsresearchdatabygovernmentorganisationsforstatisticalresearch\">"
+"\n"
+"                            other government departments, approved "
+"organisations</a> and\n"
+"                        <a "
+"href=\"https://www.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/approvedresearcherscheme\">"
+" approved researchers</a>\n"
+"                            for statistical purposes only, subject to the"
+" same standards of\n"
 "                        protection we apply (and according to the "
 "provisions of the Data Protection Legislation,\n"
 "                        the Statistics and Registration Service Act 2007 "
-"and the Code of Practice for Statistics)"
+"and the Code of Practice for Statistics"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:56
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:53
 msgid ""
 "ensure our staff are aware of their obligations to protect your "
 "confidential information"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:59
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:56
 msgid "maintain the security of our systems and our buildings"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:66
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:63
 msgid "Access to information"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:67
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:64
 msgid ""
 "We employ third-party providers to assist us in survey data collection. "
 "These third parties work under our instruction,\n"
@@ -482,11 +487,11 @@ msgid ""
 "parties we work with are:"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:84
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:81
 msgid "Further information"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:85
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:82
 #, python-format
 msgid ""
 "If you have a question about how we process your data or want to find out"
