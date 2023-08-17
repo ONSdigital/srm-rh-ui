@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-17 15:44+0100\n"
+"POT-Creation-Date: 2023-08-17 16:11+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,53 +17,69 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: rh_ui/templates/base-shared.html:12 rh_ui/templates/base-shared.html:70
+#: rh_ui/templates/base-shared.html:12 rh_ui/templates/base-shared.html:68
 msgid "Cookies"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:43
+#: rh_ui/templates/base-shared.html:15
+#, python-format
+msgid ""
+"To collect information about how you use this website, we "
+"use%(open_cookies_link)s cookies.%(close_link)s</br>\n"
+"                        This information helps us improve our services "
+"and make sure that the website works as well as possible."
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:18
+#, python-format
+msgid ""
+"You can %(open_cookies_link)s change your cookie "
+"preferences%(close_link)s at any time."
+msgstr ""
+
+#: rh_ui/templates/base-shared.html:41
 msgid "The following links open in a new tab"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:49
+#: rh_ui/templates/base-shared.html:47
 msgid "About ONS studies"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:50
+#: rh_ui/templates/base-shared.html:48
 msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:54
+#: rh_ui/templates/base-shared.html:52
 msgid "Accessibility statement"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:55
+#: rh_ui/templates/base-shared.html:53
 msgid "https://www.ons.gov.uk/help/accessibility"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:59
+#: rh_ui/templates/base-shared.html:57
 msgid "Contact us"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:60 rh_ui/templates/error_pages/404.html:13
+#: rh_ui/templates/base-shared.html:58 rh_ui/templates/error_pages/404.html:13
 msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:74
+#: rh_ui/templates/base-shared.html:72
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:5
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:23
 msgid "Privacy and data protection"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:81
+#: rh_ui/templates/base-shared.html:79
 msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:88
+#: rh_ui/templates/base-shared.html:86
 msgid "https://www.ons.gov.uk/"
 msgstr ""
 
-#: rh_ui/templates/base-shared.html:89 rh_ui/templates/error_pages/404.html:3
+#: rh_ui/templates/base-shared.html:87 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
 msgstr ""
@@ -487,17 +503,17 @@ msgid ""
 "parties we work with are:"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:81
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:82
 msgid "Further information"
 msgstr ""
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:82
-#, python-format
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:83
 msgid ""
 "If you have a question about how we process your data or want to find out"
 " more about your rights\n"
-"        under data protection legislation, see our "
-"%(open_ons_data_protection_link)sprotection page%(close_link)s."
+"        under data protection legislation, see our <a "
+"href=\"https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\">protection"
+" page</a>."
 msgstr ""
 
 #: rh_ui/templates/uac_error_pages/uac-already-used.html:21

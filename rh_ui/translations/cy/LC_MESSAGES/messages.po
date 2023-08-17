@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-17 15:44+0100\n"
+"POT-Creation-Date: 2023-08-17 16:11+0100\n"
 "PO-Revision-Date: 2022-11-18 18:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
@@ -19,54 +19,76 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.12.1\n"
 
-#: rh_ui/templates/base-shared.html:12 rh_ui/templates/base-shared.html:70
+#: rh_ui/templates/base-shared.html:12 rh_ui/templates/base-shared.html:68
 msgid "Cookies"
 msgstr "Cwcis"
 
-#: rh_ui/templates/base-shared.html:43
+#: rh_ui/templates/base-shared.html:15
+#, python-format
+msgid ""
+"To collect information about how you use this website, we "
+"use%(open_cookies_link)s cookies.%(close_link)s</br>\n"
+"                        This information helps us improve our services "
+"and make sure that the website works as well as possible."
+msgstr ""
+"Er mwyn casglu gwybodaeth am sut rydych chi'n defnyddio'r wefan hon, "
+"rydym yn defnyddio%(open_cookies_link)s cwcis.%(close_link)s</br>Mae'r "
+"wybodaeth hon yn ein helpu i wella ein gwasanaethau a gwneud yn siŵr bod "
+"y wefan yn gweithio gystal â phosibl."
+
+#: rh_ui/templates/base-shared.html:18
+#, python-format
+msgid ""
+"You can %(open_cookies_link)s change your cookie "
+"preferences%(close_link)s at any time."
+msgstr ""
+"Gallwch chi %(open_cookies_link)s newid eich dewisiadau o ran "
+"cwcis<%(close_link)s ar unrhyw adeg."
+
+#: rh_ui/templates/base-shared.html:41
 msgid "The following links open in a new tab"
 msgstr "Mae’r dolenni canlynol yn agor mewn tab newydd"
 
-#: rh_ui/templates/base-shared.html:49
+#: rh_ui/templates/base-shared.html:47
 msgid "About ONS studies"
 msgstr "Ynglŷn ag astudiaethau SYG"
 
-#: rh_ui/templates/base-shared.html:50
+#: rh_ui/templates/base-shared.html:48
 msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 msgstr "https://cy.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 
-#: rh_ui/templates/base-shared.html:54
+#: rh_ui/templates/base-shared.html:52
 msgid "Accessibility statement"
 msgstr "Datganiad hygyrchedd"
 
-#: rh_ui/templates/base-shared.html:55
+#: rh_ui/templates/base-shared.html:53
 msgid "https://www.ons.gov.uk/help/accessibility"
 msgstr "https://cy.ons.gov.uk/help/accessibility"
 
-#: rh_ui/templates/base-shared.html:59
+#: rh_ui/templates/base-shared.html:57
 msgid "Contact us"
 msgstr "Cysylltu â ni"
 
-#: rh_ui/templates/base-shared.html:60 rh_ui/templates/error_pages/404.html:13
+#: rh_ui/templates/base-shared.html:58 rh_ui/templates/error_pages/404.html:13
 msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
 msgstr "https://cy.ons.gov.uk/aboutus/contactus/surveyenquiries"
 
-#: rh_ui/templates/base-shared.html:74
+#: rh_ui/templates/base-shared.html:72
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:5
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:23
 msgid "Privacy and data protection"
 msgstr "Preifatrwydd a diogelu data"
 
-#: rh_ui/templates/base-shared.html:81
+#: rh_ui/templates/base-shared.html:79
 msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr "Hawlfraint y Goron a hawliau cronfa ddata 2020 OS 100019153."
 
-#: rh_ui/templates/base-shared.html:88
+#: rh_ui/templates/base-shared.html:86
 #, fuzzy
 msgid "https://www.ons.gov.uk/"
 msgstr "https://cy.ons.gov.uk/"
 
-#: rh_ui/templates/base-shared.html:89 rh_ui/templates/error_pages/404.html:3
+#: rh_ui/templates/base-shared.html:87 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
 msgstr "Arolygon SYG"
@@ -492,7 +514,7 @@ msgid ""
 msgstr ""
 "cydnabod eich bod yn rhannu gwybodaeth bersonol â ni a'i thrin yn "
 "gyfrinachol, yn unol â'r <a "
-"gref=\"https://code.statisticsauthority.gov.uk/\">Cod Ymarfer ar gyfer "
+"href=\"https://code.statisticsauthority.gov.uk/\">Cod Ymarfer ar gyfer "
 "Ystadegau</a>"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:35
@@ -575,22 +597,23 @@ msgstr ""
 "fel prosesydd data. Rydyn ni'n cadw eich data ac yn rheoli sut y cânt eu "
 "defnyddio. Y trydydd partïon rydyn ni'n gweithio gyda nhw yw:"
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:81
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:82
 msgid "Further information"
 msgstr "Rhagor o wybodaeth"
 
-#: rh_ui/templates/info_pages/privacy-and-data-protection.html:82
-#, python-format
+#: rh_ui/templates/info_pages/privacy-and-data-protection.html:83
 msgid ""
 "If you have a question about how we process your data or want to find out"
 " more about your rights\n"
-"        under data protection legislation, see our "
-"%(open_ons_data_protection_link)sprotection page%(close_link)s."
+"        under data protection legislation, see our <a "
+"href=\"https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\">protection"
+" page</a>."
 msgstr ""
 "Os bydd gennych chi gwestiwn am y ffordd rydyn ni'n prosesu eich data "
 "personol, neu os byddwch chi am ddysgu mwy am eich hawliau o dan "
-"ddeddfwriaeth diogelu data, gweler ein "
-"%(open_ons_data_protection_link)studalen diogelu data%(close_link)s."
+"ddeddfwriaeth diogelu data, gweler ein <a "
+"href=\"https://cy.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\">tudalen"
+" diogelu data.</a>"
 
 #: rh_ui/templates/uac_error_pages/uac-already-used.html:21
 msgid "This access code has already been used"
