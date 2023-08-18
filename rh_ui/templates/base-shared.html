@@ -98,11 +98,11 @@
 
 {%- block head -%}
 
-    {%- if gtm_cont_id -%}
+    {%- if config.GTM_CONTAINER_ID -%}
         {%- include 'partials/gtm.html' with context -%}
     {%- endif -%}
 
-    {%- if gtm_tag_id -%}
+    {%- if config.GTM_TAG_ID  -%}
         {%- include 'partials/ga.html' with context -%}
     {%- endif -%}
 
@@ -110,8 +110,5 @@
 
 {%- block bodyStart -%}
 
-    {%- if gtm_cont_id -%}
-        {%- include 'partials/gtm-no-script.html' with context -%}
-    {%- endif -%}
 
 {%- endblock -%}
