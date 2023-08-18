@@ -20,12 +20,12 @@ def create_app():
     Babel(app, locale_selector=get_locale)
 
     # App config setup
-    app_config = f'config.{os.environ.get("APP_CONFIG", "DevelopmentConfig")}'
+    app_config = f'config.{os.environ.get("APP_CONFIG", "BaseConfig")}'
     app.config.from_object(app_config)
-    app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'  # required to enable the flash function
+    app.secret_key = app.config.get('SECRET_KEY')  # required to enable the flash function
 
     # Configure logger
-    logger_initial_config(log_level=app.config["LOGGING_LEVEL"])
+    logger_initial_config(log_level=app.config.get("LOGGING_LEVEL", "INFO"))
     logger = wrap_logger(logging.getLogger(__name__))
     logger.debug("App configuration set", config=app_config)
 
