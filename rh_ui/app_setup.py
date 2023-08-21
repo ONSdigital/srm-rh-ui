@@ -7,11 +7,11 @@ from structlog import wrap_logger
 from rh_ui.logger_config import logger_initial_config
 
 
-def create_app():
+def create_app() -> Flask:
     app = Flask("RH-UI app")
 
     # Babel setup
-    def get_locale():
+    def get_locale() -> str:
         if not g.get('lang_code', None):
             g.lang_code = request.accept_languages.best_match(app.config["LANGUAGES"])
         return g.lang_code

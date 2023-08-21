@@ -1,9 +1,12 @@
 import logging
+
 from flask import Blueprint, render_template, request, flash, g, url_for, redirect, current_app
+from flask.typing import ResponseReturnValue
 from structlog import wrap_logger
+
 from rh_ui.controllers import uac_validation
-from rh_ui.controllers.rh_controller import get_eq_token
 from rh_ui.controllers.lang_code_processing import setup_lang_code_processing
+from rh_ui.controllers.rh_controller import get_eq_token
 
 logger = wrap_logger(logging.getLogger(__name__))
 
@@ -17,7 +20,7 @@ UAC_ERROR_PAGES = {
 
 
 @start_bp.route("/start/", methods=["GET"])
-def start_get():
+def start_get() -> ResponseReturnValue:
     logger.info(f"received {request.method} on endpoint '{request.endpoint}'",
                 method=request.method,
                 path=request.path)
@@ -28,7 +31,7 @@ def start_get():
 @start_bp.route("/start/", methods=["POST"])
 def start_post():
     region = g.lang_code
-    uac = request.form.get('access-code').upper().replace(' ', '')
+    uac = request.form.get('access-code').upper().replace(' ', '')  # type: ignore
     error = uac_validation.validate_uac(uac)
     if error:
         flash(error)

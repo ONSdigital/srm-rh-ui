@@ -7,8 +7,8 @@ from structlog.stdlib import LoggerFactory, add_log_level, filter_by_level
 from structlog.threadlocal import wrap_dict
 
 
-def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_date_format="%Y-%m-%dT%H:%M%s"):
-    def add_service(logger, method_name, event_dict):
+def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_date_format="%Y-%m-%dT%H:%M%s") -> None:
+    def add_service(logger: logging.Logger, method_name: str, event_dict: dict) -> dict:
         """
         Add the service name to the event dict.
         This adds `service: 'rh-ui'` to all log lines.
@@ -18,7 +18,7 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
 
     logging.basicConfig(stream=sys.stdout, level=log_level, format=logger_format)
 
-    def add_severity_level(logger, method_name, event_dict):
+    def add_severity_level(logger: logging.Logger, method_name: str, event_dict: dict) -> dict:
         """
         Add the log level to the event dict.
         """
@@ -29,7 +29,7 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
         event_dict["severity"] = method_name
         return event_dict
 
-    def parse_exception(_, __, event_dict):
+    def parse_exception(_, __, event_dict: dict):
         exception = event_dict.get("exception")
         if exception:
             event_dict["exception"] = exception.replace('"', "'").split("\n")
@@ -50,6 +50,6 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
     configure(
         context_class=wrap_dict(dict),
         logger_factory=LoggerFactory(),
-        processors=processors,
+        processors=processors,  # type: ignore
         cache_logger_on_first_use=True,
     )

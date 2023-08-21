@@ -11,7 +11,7 @@ setup_lang_code_processing(info_pages_bp)
 
 
 @info_pages_bp.route("/cookies", methods=["GET"])
-def cookies():
+def cookies() -> str:
     logger.info(f"received {request.method} on endpoint '{request.endpoint}'",
                 method=request.method,
                 path=request.path)
@@ -19,7 +19,7 @@ def cookies():
 
 
 @info_pages_bp.route("/privacy-and-data-protection", methods=["GET"])
-def privacy_and_data_protection():
+def privacy_and_data_protection() -> str:
     logger.info(f"received {request.method} on endpoint '{request.endpoint}'",
                 method=request.method,
                 path=request.path)
