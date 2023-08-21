@@ -1,6 +1,8 @@
 {%- extends 'base-shared.html' -%}
 {% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
 
+{% set page_title_value = _('ONS Surveys') %}
+
 {%- block preMain -%}
     {{
         onsBreadcrumbs({

@@ -30,13 +30,13 @@ def start_get() -> ResponseReturnValue:
 
 @start_bp.route("/start/", methods=["POST"])
 def start_post():
-    region = g.lang_code
+
     uac = request.form.get('access-code').upper().replace(' ', '')  # type: ignore
     error = uac_validation.validate_uac(uac)
     if error:
         flash(error)
         return redirect(url_for('start_bp.start_get', lang_code=g.lang_code))
-    response = get_eq_token(uac, region)
+    response = get_eq_token(uac, g.lang_code)
     if response.status_code == 302:
         return response
     elif response.status_code == 400:
