@@ -1,4 +1,4 @@
-{% extends 'base-shared.html' %}
+{% extends 'base.html' %}
 
 {% from "components/access-code/_macro.njk" import onsAccessCode %}
 {% from "components/button/_macro.njk" import onsButton %}
@@ -9,7 +9,7 @@
 {% set form =  {
     'method': 'POST',
     'attributes': {
-        'action': url_for('start_bp.start_post', lang_code=lang_code)
+        'action': url_for('i18n.start_bp.start_post', lang_code=lang_code)
     }
 } %}
 
@@ -19,20 +19,20 @@
 {% set flashed_messages = get_flashed_messages() %}
 
 {%- if 'uac_empty' in flashed_messages -%}
-{%- set error_uac = {'id': 'uac_empty', 'text': _('Enter an access code')} -%}
+    {%- set error_uac = {'id': 'uac_empty', 'text': _('Enter an access code')} -%}
 {%- elif 'uac_invalid_length' in flashed_messages -%}
-{%- set error_uac = {'id': 'uac_invalid_length', 'text': _('Enter a 16-character access code')} -%}
+    {%- set error_uac = {'id': 'uac_invalid_length', 'text': _('Enter a 16-character access code')} -%}
 {%- elif 'uac_invalid' in flashed_messages -%}
-{%- set error_uac = {'id': 'uac_invalid', 'text': _('Access code not recognised. Enter the code again.')} -%}
+    {%- set error_uac = {'id': 'uac_invalid', 'text': _('Access code not recognised. Enter the code again.')} -%}
 {%- else -%}
-{%- set error_uac = None -%}
+    {%- set error_uac = None -%}
 {%- endif -%}
 
 {% block main %}
-    <h1 class="ons-u-fs-xxl ons-u-mt-l">{{_('Start study')}}</h1>
+<h1 class="ons-u-fs-xxl ons-u-mt-l">{{ _('Start study') }}</h1>
 
 
-    {{ onsAccessCode({
+{{ onsAccessCode({
         "id": "access-code",
         "name": "access-code",
 
@@ -50,7 +50,7 @@
 
     }) }}
 
-    {{ onsButton({
+{{ onsButton({
         'id': 'submit_uac_btn',
         'text': _('Access study'),
         'classes': 'ons-u-mb-xl',
@@ -58,17 +58,17 @@
         "variants": 'loader'
     }) }}
 
-    <h2 class="ons-u-fs-xl ons-u-mt-l">{{_('Where to find your access code')}}</h2>
-    <p>{{ _('Your access code can be found in the invitation letter or email you received.
+<h2 class="ons-u-fs-xl ons-u-mt-l">{{ _('Where to find your access code') }}</h2>
+<p>{{ _('Your access code can be found in the invitation letter or email you received.
         Your 16-character access code will be a combination of letters and numbers.') }}</p>
 
-    {%- set further_info_content -%}
-        <p>{{ _('Telephone: +44 800 085 7376<br>8am to 7pm Monday to Friday<br>8am to 1pm Saturday') }}</p>
-        <p>{{ _('Minicom (for the deaf and hearing impaired): 18001 +44 800 085 7376') }}</p>
-        <p>{{ _('Email:') }} <a href="mailto: surveyfeedback@ons.gov.uk">surveyfeedback@ons.gov.uk</a></p>
-    {%- endset -%}
+{%- set further_info_content -%}
+<p>{{ _('Telephone: +44 800 085 7376<br>8am to 7pm Monday to Friday<br>8am to 1pm Saturday') }}</p>
+<p>{{ _('Minicom (for the deaf and hearing impaired): 18001 +44 800 085 7376') }}</p>
+<p>{{ _('Email:') }} <a href="mailto: surveyfeedback@ons.gov.uk">surveyfeedback@ons.gov.uk</a></p>
+{%- endset -%}
 
-    {{ onsDetails({
+{{ onsDetails({
         "titleTag": "h3",
         "id": "details",
         "title": _('Who can I contact for further information?'),

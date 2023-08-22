@@ -1,31 +1,28 @@
-{%- extends 'base-shared.html' -%}
+{%- extends 'base.html' -%}
 {% from "components/breadcrumbs/_macro.njk" import onsBreadcrumbs %}
 {% from "components/list/_macro.njk" import onsList %}
 
 {% set page_title_value = _("Privacy and data protection") %}
 
 {%- block preMain -%}
-    {{
-        onsBreadcrumbs({
+    {{ onsBreadcrumbs({
             "ariaLabel": _('Back'),
             "itemsList": [
                 {
-                    "url": url_for('start_bp.start_get'),
+                    "url": url_for('i18n.start_bp.start_get'),
                     "id": "back",
                     "text": _('Back'),
                 }
             ]
-        })
-    }}
+        }) }}
 {%- endblock -%}
 
 {% block main %}
-    <h1 class="ons-u-fs-xl">{{ _('Privacy and data protection') }}</h1>
+<h1 class="ons-u-fs-xl">{{ _('Privacy and data protection') }}</h1>
 
-    <p>{{ _('We will keep your information secure and confidential. This means that we will:') }}</p>
-    {%- autoescape false -%}
-    {{
-        onsList({
+<p>{{ _('We will keep your information secure and confidential. This means that we will:') }}</p>
+{%- autoescape false -%}
+{{ onsList({
             "itemsList": [
                 {
                     "text": _('recognise that you are sharing personal information with us and treat it as confidential, as directed
@@ -56,16 +53,14 @@
                     "text": _('maintain the security of our systems and our buildings')
                 }
             ]
-        })
-    }}
-    {%- endautoescape -%}
+        }) }}
+{%- endautoescape -%}
 
-    <h2>{{ _('Access to information') }}</h2>
-    <p>{{ _('We employ third-party providers to assist us in survey data collection. These third parties work under our instruction,
+<h2>{{ _('Access to information') }}</h2>
+<p>{{ _('We employ third-party providers to assist us in survey data collection. These third parties work under our instruction,
         and are strictly used as technical service providers in a capacity as a data processor.
         We retain your data and control how this is used. The third parties we work with are:') }}</p>
-    {{
-        onsList({
+{{ onsList({
             "itemsList": [
                 {
                     "text": 'Google Cloud Platform service'
@@ -74,15 +69,14 @@
                     "text": 'GOV.UK Notify'
                 }
             ]
-        })
-    }}
+        }) }}
 
-    {%- autoescape false -%}
+{%- autoescape false -%}
 
-    <h2 class="ons-u-fs-xl ons-u-mt-l">{{ _('Further information') }}</h2>
-    <p>{{ _('If you have a question about how we process your data or want to find out more about your rights
-        under data protection legislation, see our <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection">protection page</a>.')}}
-    </p>
-    {%- endautoescape -%}
+<h2 class="ons-u-fs-xl ons-u-mt-l">{{ _('Further information') }}</h2>
+<p>{{ _('If you have a question about how we process your data or want to find out more about your rights
+        under data protection legislation, see our <a href="https://www.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection">protection page</a>.') }}
+</p>
+{%- endautoescape -%}
 
 {% endblock main %}

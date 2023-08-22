@@ -4,10 +4,10 @@
 {%- block preHeader -%}
 {%- autoescape false -%}
 
-    {% set cookiesPageURL = url_for('info_pages_bp.cookies', lang_code=lang_code) %}
+{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies', lang_code=lang_code) %}
 
-    {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
-    {{ onsCookiesBanner({
+{%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
+{{ onsCookiesBanner({
         'lang': lang_code,
         'statementTitle': _('Cookies'),
         'serviceName': '',
@@ -66,11 +66,11 @@
             'itemsList': [
                 {
                     'text': _('Cookies'),
-                    'url': url_for('info_pages_bp.cookies', lang_code=lang_code),
+                    'url': url_for('i18n.info_pages_bp.cookies', lang_code=lang_code),
                 },
                 {
                     'text': _('Privacy and data protection'),
-                    'url': url_for('info_pages_bp.privacy_and_data_protection', lang_code=lang_code),
+                    'url': url_for('i18n.info_pages_bp.privacy_and_data_protection', lang_code=lang_code),
                 }
             ]
         }
@@ -102,7 +102,7 @@
         {%- include 'partials/gtm.html' with context -%}
     {%- endif -%}
 
-    {%- if config.GTM_TAG_ID  -%}
+    {%- if config.GTM_TAG_ID -%}
         {%- include 'partials/ga.html' with context -%}
     {%- endif -%}
 

@@ -28,7 +28,7 @@ def get_eq_token_from_rh_svc(uac_hash: str, region_code: str):
 
         elif ex.response.status_code == 404:
             flash('uac_invalid')
-            return redirect(url_for('start_bp.start_get', lang_code=g.lang_code))
+            return redirect(url_for('i18n.start_bp.start_get', lang_code=g.lang_code))
 
     return response
 

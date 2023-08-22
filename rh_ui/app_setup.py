@@ -1,9 +1,10 @@
-import os
 import logging
+import os
 
 from flask import Flask, g, request
 from flask_babel import Babel
 from structlog import wrap_logger
+
 from rh_ui.logger_config import logger_initial_config
 
 
@@ -29,11 +30,12 @@ def create_app() -> Flask:
     logger = wrap_logger(logging.getLogger(__name__))
     logger.debug("App configuration set", config=app_config)
 
-    # Register blueprints
-    from rh_ui.views.start import start_bp
-    app.register_blueprint(start_bp)
-    from rh_ui.views.info_pages import info_pages_bp
-    app.register_blueprint(info_pages_bp)
+    # Register the translated url_for function so that it can be called from the jinja templates
+    # app.add_template_global(url_for_translated)
+
+    # Register the i18n blueprint, which all internationalised routes are registered below
+    from rh_ui.views.i18n import i18n
+    app.register_blueprint(i18n)
 
     # Register error handlers
     from rh_ui.views.error_handlers import handle_404

@@ -19,6 +19,13 @@ def test_cy_start_endpoint_success(test_client):
     assert "Rhowch eich cod mynediad sy'n cynnwys 16 o nodau".encode() in response.data
 
 
+def test_cy_start_endpoint_success(test_client):
+    response = test_client.get('/cy/cookies', follow_redirects=True)
+
+    assert response.status_code == 200
+    assert "Cwcis".encode() in response.data
+
+
 def test_en_enter_uac_success(test_client):
     with patch('rh_ui.controllers.rh_controller.requests.get') as mock_get:
         mock_get.return_value.text = 'MOCKEQTOKEN'
