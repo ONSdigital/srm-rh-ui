@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-22 08:53+0100\n"
+"POT-Creation-Date: 2023-08-22 10:38+0100\n"
 "PO-Revision-Date: 2022-11-18 18:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
@@ -31,6 +31,10 @@ msgid ""
 "                        This information helps us improve our services "
 "and make sure that the website works as well as possible."
 msgstr ""
+"Er mwyn casglu gwybodaeth am sut rydych chi'n defnyddio'r wefan hon, "
+"rydym yn defnyddio%(open_cookies_link)s cwcis.%(close_link)s</br>Mae'r "
+"wybodaeth hon yn ein helpu i wella ein gwasanaethau a gwneud yn siŵr bod "
+"y wefan yn gweithio gystal â phosibl."
 
 #: rh_ui/templates/base.html:18
 #, python-format
@@ -38,6 +42,8 @@ msgid ""
 "You can %(open_cookies_link)s change your cookie "
 "preferences%(close_link)s at any time."
 msgstr ""
+"Gallwch chi %(open_cookies_link)s newid eich dewisiadau o ran "
+"cwcis<%(close_link)s ar unrhyw adeg."
 
 #: rh_ui/templates/base.html:41
 msgid "The following links open in a new tab"
@@ -78,7 +84,6 @@ msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr "Hawlfraint y Goron a hawliau cronfa ddata 2020 OS 100019153."
 
 #: rh_ui/templates/base.html:86
-#, fuzzy
 msgid "https://www.ons.gov.uk/"
 msgstr "https://cy.ons.gov.uk/"
 
@@ -501,16 +506,17 @@ msgstr ""
 " golygu y byddwn ni'n:"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:28
-#, fuzzy
 msgid ""
 "recognise that you are sharing personal information with us and treat it "
 "as confidential, as directed\n"
 "                        by the<a "
-"href=\"https://code.statisticsauthority.gov.uk/\">Code of Practice for "
+"href=\"https://code.statisticsauthority.gov.uk/\"> Code of Practice for "
 "Statistics</a>"
 msgstr ""
 "cydnabod eich bod yn rhannu gwybodaeth bersonol â ni a'i thrin yn "
-"gyfrinachol"
+"gyfrinachol, yn unol â'r <a "
+"href=\"https://code.statisticsauthority.gov.uk/\">Cod Ymarfer ar gyfer "
+"Ystadegau</a>"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:32
 msgid ""
@@ -535,7 +541,6 @@ msgstr ""
 "gynhyrchu ystadegau"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:41
-#, fuzzy
 msgid ""
 "provide survey information to\n"
 "                        <a "
@@ -553,13 +558,14 @@ msgid ""
 "                        the Statistics and Registration Service Act 2007 "
 "and the Code of Practice for Statistics"
 msgstr ""
-"darparu gwybodaeth arolwg i%(open_approved_researchers_link)s adrannau "
-"eraill y Llywodraeth, sefydliadau cymeradwy%(close_link)s "
-"ac%(open_approved_researchers_link)s ymchwilwyr cymeradwy%(close_link)s "
-"at ddibenion ystadegol yn unig, gan gydymffurfio â'r un safonau diogelwch"
-" rydym yn eu dilyn (ac yn unol â darpariaethau Deddfwriaeth Diogelu Data,"
-" y Ddeddf Ystadegau a'r Gwasanaeth Cofrestru 2007 a'r Cod Ymarfer ar "
-"gyfer Ystadegau)"
+"darparu gwybodaeth arolwg i <a "
+"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/approvedresearcherscheme\">adrannau"
+" eraill y Llywodraeth, sefydliadau cymeradwy</a> ac <a "
+"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/approvedresearcherscheme\">ymchwilwyr"
+" cymeradwys</a> at ddibenion ystadegol yn unig, gan gydymffurfio â'r un "
+"safonau diogelwch rydym yn eu dilyn (ac yn unol â darpariaethau "
+"Deddfwriaeth Diogelu Data, y Ddeddf Ystadegau a'r Gwasanaeth Cofrestru "
+"2007 a'r Cod Ymarfer ar gyfer Ystadegau)"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:50
 msgid ""
@@ -597,7 +603,6 @@ msgid "Further information"
 msgstr "Rhagor o wybodaeth"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:77
-#, fuzzy
 msgid ""
 "If you have a question about how we process your data or want to find out"
 " more about your rights\n"
@@ -607,8 +612,9 @@ msgid ""
 msgstr ""
 "Os bydd gennych chi gwestiwn am y ffordd rydyn ni'n prosesu eich data "
 "personol, neu os byddwch chi am ddysgu mwy am eich hawliau o dan "
-"ddeddfwriaeth diogelu data, gweler ein "
-"%(open_ons_data_protection_link)studalen diogelu data%(close_link)s."
+"ddeddfwriaeth diogelu data, gweler ein <a "
+"href=\"https://cy.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\">tudalen"
+" diogelu data.</a>"
 
 #: rh_ui/templates/uac_error_pages/uac-already-used.html:21
 msgid "This access code has already been used"
@@ -621,30 +627,4 @@ msgstr "Mae rhywun eisoes wedi cyflwyno ymateb gan ddefnyddio’r cod mynediad h
 #: rh_ui/templates/uac_error_pages/uac-inactive.html:21
 msgid "This questionnaire has now closed"
 msgstr "Mae'r holiadur hwn wedi cau erbyn hyn"
-
-#~ msgid "Cookies"
-#~ msgstr "Cwcis"
-
-#~ msgid ""
-#~ "To collect information about how you "
-#~ "use this website, we use%(open_cookies_link)s"
-#~ " cookies.%(close_link)s</br>\n"
-#~ "                        This information helps "
-#~ "us improve our services and make "
-#~ "sure that the website works as "
-#~ "well as possible."
-#~ msgstr ""
-#~ "Er mwyn casglu gwybodaeth am sut "
-#~ "rydych chi'n defnyddio'r wefan hon, "
-#~ "rydym yn defnyddio%(open_cookies_link)s "
-#~ "cwcis.%(close_link)s</br>Mae'r wybodaeth hon yn "
-#~ "ein helpu i wella ein gwasanaethau "
-#~ "a gwneud yn siŵr bod y wefan "
-#~ "yn gweithio gystal â phosibl."
-
-#~ msgid "There is a problem with this page"
-#~ msgstr "Mae problem gyda'r dudalen hon"
-
-#~ msgid "There are %(errorcount)s problems with this page"
-#~ msgstr ""
 
