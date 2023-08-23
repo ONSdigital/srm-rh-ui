@@ -1,12 +1,11 @@
 import logging
 
-from flask import Blueprint, request, flash, g, redirect, current_app
+from flask import Blueprint, request, flash, g, redirect, current_app, render_template, url_for
 from flask.typing import ResponseReturnValue
 from requests import Response, HTTPError
 from structlog import wrap_logger
 
 from rh_ui.controllers.rh_service import get_eq_token
-from rh_ui.i18n_helpers import url_for_i18n, render_template_i18n
 
 logger = wrap_logger(logging.getLogger(__name__))
 
@@ -24,7 +23,7 @@ def start_get() -> ResponseReturnValue:
                 method=request.method,
                 path=request.path)
 
-    return render_template_i18n("start.html")
+    return render_template("start.html")
 
 
 @start_bp.route("/start/", methods=["POST"])
@@ -32,7 +31,7 @@ def start_post():
     uac = request.form.get('access-code').upper().replace(' ', '')
     if error := pre_check_uac(uac):
         flash(error)
-        return redirect(url_for_i18n('start_bp.start_get'))
+        return redirect(url_for('i18n.start_bp.start_get'))
     token_response = get_eq_token(uac, g.lang_code)
 
     if error_response := handle_token_error_response(token_response):
@@ -58,10 +57,10 @@ def handle_token_error_response(response: Response):
 
         # TODO: look into implementing that as a flashed message rather than a separate page
         if ex.response.status_code == 400:
-            return render_template_i18n(UAC_ERROR_PAGES[response.text])
+            return render_template(UAC_ERROR_PAGES[response.text])
         elif response.status_code == 302:
             return response
         elif ex.response.status_code == 404:
             flash('uac_invalid')
-            return redirect(url_for_i18n('start_bp.start_get'))
+            return redirect(url_for('i18n.start_bp.start_get'))
         raise ex

@@ -1,13 +1,11 @@
 from unittest.mock import patch, Mock
 
-import flask_babel
-import pytest
 from requests import HTTPError
 
 RH_SERVICE_GET_PATH = 'rh_ui.controllers.rh_service.requests.get'
 
-EN_START_ROUTE = '/en/start'
-CY_START_ROUTE = '/cy/start'
+EN_START_ROUTE = '/en/start/'
+CY_START_ROUTE = '/cy/start/'
 
 
 def test_en_start_endpoint_success(test_client):

@@ -8,7 +8,7 @@ from structlog.threadlocal import wrap_dict
 
 
 def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_date_format="%Y-%m-%dT%H:%M%s") -> None:
-    def add_service(logger: logging.Logger, method_name: str, event_dict: dict) -> dict:
+    def add_service(_logger: logging.Logger, _method_name: str, event_dict: dict) -> dict:
         """
         Add the service name to the event dict.
         This adds `service: 'rh-ui'` to all log lines.
@@ -18,12 +18,12 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
 
     logging.basicConfig(stream=sys.stdout, level=log_level, format=logger_format)
 
-    def add_severity_level(logger: logging.Logger, method_name: str, event_dict: dict) -> dict:
+    def add_severity_level(_logger: logging.Logger, method_name: str, event_dict: dict) -> dict:
         """
         Add the log level to the event dict.
         """
         if method_name == "warn":
-            # The stdlib has an alias
+            # The stdlib has an alias, we always want "warning" in full
             method_name = "warning"
 
         event_dict["severity"] = method_name

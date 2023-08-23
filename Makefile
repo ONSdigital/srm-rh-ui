@@ -6,6 +6,8 @@ install:
 
 build: unit_tests docker-build
 
+test: install unit_tests
+
 docker-build:
 	docker build -t srm-rh-ui .
 
@@ -32,7 +34,7 @@ unit_tests: linting
 load_templates:
 	./load_templates.sh
 
-extraxt_translation:
+extract_translation:
 	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 
 update_welsh_translation_file:

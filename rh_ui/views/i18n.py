@@ -10,6 +10,8 @@ logger = wrap_logger(logging.getLogger(__name__))
 
 i18n = Blueprint("i18n", __name__, url_prefix='/<lang_code>')
 
+# The internationalisation (i18n) blueprint handles the language code in the route, all translated routes should be
+# registered underneath this blueprint, so their routes inherit the language code url prefix.
 i18n.register_blueprint(start_bp)
 i18n.register_blueprint(info_pages_bp)
 

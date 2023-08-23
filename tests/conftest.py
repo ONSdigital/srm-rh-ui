@@ -11,4 +11,5 @@ def app():
 @pytest.fixture
 def test_client(app):
     test_client = app.test_client()
-    return test_client
+    with app.app_context():
+        yield test_client

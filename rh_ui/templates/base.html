@@ -4,11 +4,11 @@
 {%- block preHeader -%}
 {%- autoescape false -%}
 
-{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies', lang_code=lang_code) %}
+{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
 
 {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
 {{ onsCookiesBanner({
-        'lang': lang_code,
+        'lang': g.lang_code,
         'statementTitle': _('Cookies'),
         'serviceName': '',
         'settingsLinkURL': cookiesPageURL,
@@ -26,13 +26,13 @@
             "url": '/en/' + '/'.join(request.path.split('/')[2:]),
             "ISOCode": "en",
             "text": "English",
-            "current":  lang_code == 'en' 
+            "current":  g.lang_code == 'en'
         },
         {
             "url": '/cy/' + '/'.join(request.path.split('/')[2:]),
             "ISOCode": "cy",
             "text": "Cymraeg",
-            "current": lang_code == 'cy' 
+            "current": g.lang_code == 'cy'
             }
     ]
 }-%}
@@ -66,11 +66,11 @@
             'itemsList': [
                 {
                     'text': _('Cookies'),
-                    'url': url_for('i18n.info_pages_bp.cookies', lang_code=lang_code),
+                    'url': url_for('i18n.info_pages_bp.cookies'),
                 },
                 {
                     'text': _('Privacy and data protection'),
-                    'url': url_for('i18n.info_pages_bp.privacy_and_data_protection', lang_code=lang_code),
+                    'url': url_for('i18n.info_pages_bp.privacy_and_data_protection'),
                 }
             ]
         }
