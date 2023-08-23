@@ -2,10 +2,10 @@ import logging
 
 from flask import Blueprint, request, flash, g, redirect, current_app
 from flask.typing import ResponseReturnValue
+from requests import Response, HTTPError
 from structlog import wrap_logger
 
-from rh_ui.controllers import uac_validation
-from rh_ui.controllers.rh_controller import get_eq_token
+from rh_ui.controllers.rh_service import get_eq_token
 from rh_ui.i18n_helpers import url_for_i18n, render_template_i18n
 
 logger = wrap_logger(logging.getLogger(__name__))
@@ -29,16 +29,39 @@ def start_get() -> ResponseReturnValue:
 
 @start_bp.route("/start/", methods=["POST"])
 def start_post():
-
-    uac = request.form.get('access-code').upper().replace(' ', '')  # type: ignore
-    error = uac_validation.validate_uac(uac)
-    if error:
+    uac = request.form.get('access-code').upper().replace(' ', '')
+    if error := pre_check_uac(uac):
         flash(error)
         return redirect(url_for_i18n('start_bp.start_get'))
-    response = get_eq_token(uac, g.lang_code)
-    if response.status_code == 302:
-        return response
-    elif response.status_code == 400:
-        return render_template_i18n(UAC_ERROR_PAGES[response.text])
+    token_response = get_eq_token(uac, g.lang_code)
 
-    return redirect(f'{current_app.config["EQ_URL"]}/session?token={response.text}')
+    if error_response := handle_token_error_response(token_response):
+        return error_response
+
+    return redirect(f'{current_app.config["EQ_URL"]}/session?token={token_response.text}')
+
+
+def pre_check_uac(uac: str) -> str | None:
+    if not uac:
+        error = 'uac_empty'
+        return error
+    if len(uac) != 16:
+        error = 'uac_invalid_length'
+        return error
+    return None
+
+
+def handle_token_error_response(response: Response):
+    try:
+        response.raise_for_status()
+    except HTTPError as ex:
+
+        # TODO: look into implementing that as a flashed message rather than a separate page
+        if ex.response.status_code == 400:
+            return render_template_i18n(UAC_ERROR_PAGES[response.text])
+        elif response.status_code == 302:
+            return response
+        elif ex.response.status_code == 404:
+            flash('uac_invalid')
+            return redirect(url_for_i18n('start_bp.start_get'))
+        raise ex

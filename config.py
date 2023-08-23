@@ -27,4 +27,4 @@ class DevelopmentConfig(BaseConfig):
 
 
 class TestingConfig(DevelopmentConfig):
-    pass
+    DEBUG = False
