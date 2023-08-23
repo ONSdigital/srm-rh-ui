@@ -11,6 +11,7 @@
 <p>{{ _('We are experiencing some technical problems.') }}</p>
 
 {%- autoescape false -%}
+{% set contact_us_link = _('https://www.ons.gov.uk/aboutus/contactus/surveyenquiries') %}
 <p>{{ _('Please try again later, or %(open)scontact us%(close)s if the problem continues.', open='<a href="%s">' % contact_us_link, close='</a>')|safe }}</p>
 {%- endautoescape -%}
 
