@@ -1,42 +1,57 @@
-# srm-rh-ui
+# SRM-RH-UI
 User Interface for respondents to access ONS Survey Data Collection questionnaires and services
 
-
-# A bit of explanation
-
-## View functions
-
-In the views folder we define our view functions as Flask Blueprints (following the pattern from ras-frontstage)
-
-Then (and this is a change from the global app object pattern in ras-frontastage pattern explained below) we register the blueprints against our Flask app in the `create_app` function.
-
-# Questions
-## How will we go about defining app configs? 
-It seems that RAS UI picks up the app config through env variables, but at the same time in each config they add a boolean variable that describes what the config is supposed to be (TESTING, DEVELOPMENT etc.)
-
-To do: investigate how that was done in the old RH-UI, decide what works for us better
-
-# Comments
-
-## Global `app` object
-It seems that RASRM create the app in the `__init__.py` file of the root package, making it avaiable in the whole project.
-I didn't see any benefit in that for us, and it has some awkward consequences (for example in tests), so I decided to leave the app creation in the `run.py` script 
-All the app configuration happens in the `create_app` function instead.
-
-## Error blueprints 
-For HTML error handling we could consider registering error blueprints, something like:
+## Installation/build
+To install all dependencies run:
+```commandline
+make install
 ```
-@blueprint.app_errorhandler(404)
-def not_found_error(error):
-    return render_template('errors/404.html')
+
+To build the docker image and run the tests:
+```commandline
+make build
 ```
-(I got the inspiration from the microblog tutorial)
 
-## Logging config
-I've implemented simple logging, but we'll definetely have to review it and make sure that it suits our needs and matches the Stackdriver layout.
-It'd also be good to add some tests for the log config.
+## Running
 
+To run the app locally, you first need to load the templates to be used.
+```commandline
+make load_templates
+```
+Once that's done, you can run the make command to run it in your terminal:
+```commandline
+make run
+```
 
-## NOTES
+or to run it in Pycharm, use the run template that's specified and it should work as expected.
 
-Improve the cookies banner (link in 2 places??)
+## Translations
+The site uses babel for translations.
+
+Text to translate is marked up in html and py templates and files, then a messages.pot is build via pybabel, which collates all the text to translate into a single file.
+
+To build/re-build the translation messages.pot use:
+
+```
+pipenv run pybabel extract -F babel.cfg -o app/translations/messages.pot .
+```
+    
+To create a new language messages file, run the following, changing the 2 character language code at the end to the required language code. Only generate a individual language file once.
+
+Note that this implementation includes an English translation. This is needed due to an issue with implementing pybabel with aiohttp.
+
+```
+pipenv run pybabel init -i app/translations/messages.pot -d app/translations -l cy
+```
+
+Once created, you can update the existing language messages.po files to include changes in the messages.pot by running the following. This will update ALL language files.
+
+```
+pipenv run pybabel update -i app/translations/messages.pot -d app/translations
+```
+    
+To compile updates to the messages.po files into messages.mo (the file actually used by the site) use:
+
+```
+pipenv run pybabel compile -d app/translations
+```

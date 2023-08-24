@@ -1,5 +1,5 @@
 run:
-	pipenv run python run.py
+	APP_CONFIG=DevelopmentConfig pipenv run python run.py
 
 install:
 	pipenv install --dev
