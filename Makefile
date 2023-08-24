@@ -1,7 +1,7 @@
 run:
 	APP_CONFIG=DevelopmentConfig pipenv run python run.py
 
-install:
+install: load_templates
 	pipenv install --dev
 
 build: unit_tests docker-build
