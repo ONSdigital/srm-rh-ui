@@ -33,7 +33,8 @@ def create_app() -> Flask:
     # Register the i18n blueprint, which all internationalised routes are registered below
     from rh_ui.views.i18n import i18n
     app.register_blueprint(i18n)
-
+    from rh_ui.views.healthcheck import healthcheck_bp
+    app.register_blueprint(healthcheck_bp)
     # Register error handlers
     from rh_ui.views.error_handlers import handle_404
     app.register_error_handler(404, handle_404)
