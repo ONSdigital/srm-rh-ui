@@ -28,7 +28,7 @@ def start_get() -> ResponseReturnValue:
 
 @start_bp.route("/start/", methods=["POST"])
 def start_post():
-    uac = request.form.get('access-code').upper().replace(' ', '')
+    uac = request.form.get('uac').upper().replace(' ', '')
     if error := pre_check_uac(uac):
         flash(error)
         return redirect(url_for('i18n.start_bp.start_get'))
@@ -58,9 +58,9 @@ def handle_token_error_response(response: Response):
         # TODO: look into implementing that as a flashed message rather than a separate page
         if ex.response.status_code == 400:
             return render_template(UAC_ERROR_PAGES[response.text])
-        elif response.status_code == 302:
+        elif ex.response.status_code == 302:
             return response
         elif ex.response.status_code == 404:
             flash('uac_invalid')
-            return redirect(url_for('i18n.start_bp.start_get'))
+            return render_template("start.html"), 401
         raise ex

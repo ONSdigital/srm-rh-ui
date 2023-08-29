@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-22 15:08+0100\n"
+"POT-Creation-Date: 2023-08-29 12:13+0100\n"
 "PO-Revision-Date: 2022-11-18 18:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
@@ -70,6 +70,7 @@ msgid "Contact us"
 msgstr "Cysylltu â ni"
 
 #: rh_ui/templates/base.html:58 rh_ui/templates/error_pages/404.html:13
+#: rh_ui/templates/error_pages/error.html:14
 msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
 msgstr "https://cy.ons.gov.uk/aboutus/contactus/surveyenquiries"
 
@@ -89,20 +90,19 @@ msgstr "https://cy.ons.gov.uk/"
 
 #: rh_ui/templates/base.html:87 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
-#: rh_ui/templates/uac_error_pages/uac-already-used.html:4
-#: rh_ui/templates/uac_error_pages/uac-inactive.html:4
 msgid "ONS Surveys"
 msgstr "Arolygon SYG"
 
-#: rh_ui/templates/start.html:7 rh_ui/templates/start.html:36
-msgid "Start study"
-msgstr "Dechrau'r astudiaeth"
-
-#: rh_ui/templates/start.html:22
+#: rh_ui/templates/start.html:20
 msgid "Enter an access code"
 msgstr "Rhowch god mynediad"
 
-#: rh_ui/templates/start.html:24
+#: rh_ui/templates/start.html:21 rh_ui/templates/start.html:24
+#: rh_ui/templates/start.html:27
+msgid "Error: Start study - ONS Surveys"
+msgstr "Gwall: Dechrau'r astudiaeth - Arolygon SYG"
+
+#: rh_ui/templates/start.html:23
 msgid "Enter a 16-character access code"
 msgstr "Rhowch god mynediad 16 nod"
 
@@ -110,15 +110,23 @@ msgstr "Rhowch god mynediad 16 nod"
 msgid "Access code not recognised. Enter the code again."
 msgstr "Nid yw'r cod mynediad yn cael ei gydnabod. Rhowch y cod eto."
 
-#: rh_ui/templates/start.html:43 rh_ui/templates/start.html:65
+#: rh_ui/templates/start.html:31
+msgid "Start study - ONS Surveys"
+msgstr "Dechrau'r astudiaeth - Arolygon SYG"
+
+#: rh_ui/templates/start.html:39
+msgid "Start study"
+msgstr "Dechrau'r astudiaeth"
+
+#: rh_ui/templates/start.html:46 rh_ui/templates/start.html:68
 msgid "Where to find your access code"
 msgstr "Ble i ddod o hyd i'ch cod mynediad"
 
-#: rh_ui/templates/start.html:47
+#: rh_ui/templates/start.html:50
 msgid "Enter your 16-character access code"
 msgstr "Rhowch eich cod mynediad sy'n cynnwys 16 o nodau"
 
-#: rh_ui/templates/start.html:48
+#: rh_ui/templates/start.html:51
 msgid ""
 "Keep this code safe. You will need to enter it every time you access your"
 " study"
@@ -126,7 +134,7 @@ msgstr ""
 "Cadwch y cod hwn yn ddiogel. Bydd angen i chi roi eich cod bob tro y "
 "byddwch chi'n mynd at eich astudiaeth"
 
-#: rh_ui/templates/start.html:51
+#: rh_ui/templates/start.html:54
 msgid ""
 "Your personal information is protected by law and will be kept "
 "confidential."
@@ -134,11 +142,11 @@ msgstr ""
 "Mae eich gwybodaeth bersonol wedi'i diogelu gan y gyfraith a chaiff ei "
 "chadw'n gyfrinachol."
 
-#: rh_ui/templates/start.html:59
+#: rh_ui/templates/start.html:62
 msgid "Access study"
 msgstr "Agor yr astudiaeth"
 
-#: rh_ui/templates/start.html:66
+#: rh_ui/templates/start.html:69
 msgid ""
 "Your access code can be found in the invitation letter or email you "
 "received.\n"
@@ -149,7 +157,7 @@ msgstr ""
 " gawsoch. Bydd eich cod mynediad 16 nod yn gyfuniad o lythrennau a "
 "rhifau."
 
-#: rh_ui/templates/start.html:70
+#: rh_ui/templates/start.html:73
 msgid ""
 "Telephone: +44 800 085 7376<br>8am to 7pm Monday to Friday<br>8am to 1pm "
 "Saturday"
@@ -157,15 +165,15 @@ msgstr ""
 "Ffôn: +44 800 085 7376<br>8am i 7pm o ddydd Llun i ddydd Gwener<br>8am i "
 "1pm ar ddydd Sadwrn"
 
-#: rh_ui/templates/start.html:71
+#: rh_ui/templates/start.html:74
 msgid "Minicom (for the deaf and hearing impaired): 18001 +44 800 085 7376"
 msgstr "Minicom (ar gyfer pobl fyddar neu drwm eu clyw): 18001 +44 800 085 7376"
 
-#: rh_ui/templates/start.html:72
+#: rh_ui/templates/start.html:75
 msgid "Email:"
 msgstr "E-bost:"
 
-#: rh_ui/templates/start.html:78
+#: rh_ui/templates/start.html:81
 msgid "Who can I contact for further information?"
 msgstr "Â phwy y gallaf gysylltu i gael rhagor o wybodaeth?"
 
@@ -200,7 +208,7 @@ msgstr "Mae’n ddrwg gennym, aeth rhywbeth o’i le"
 msgid "We are experiencing some technical problems."
 msgstr "Rydym yn profi rhai problemau technegol"
 
-#: rh_ui/templates/error_pages/error.html:14
+#: rh_ui/templates/error_pages/error.html:15
 #, python-format
 msgid ""
 "Please try again later, or %(open)scontact us%(close)s if the problem "
@@ -619,6 +627,11 @@ msgstr ""
 #: rh_ui/templates/partials/messages.html:7
 msgid "There is a problem with this page"
 msgstr "Mae problem gyda'r dudalen hon"
+
+#: rh_ui/templates/uac_error_pages/uac-already-used.html:4
+#: rh_ui/templates/uac_error_pages/uac-inactive.html:4
+msgid "Error - ONS Surveys"
+msgstr "Gwall - Arolygon SYG"
 
 #: rh_ui/templates/uac_error_pages/uac-already-used.html:21
 msgid "This access code has already been used"
