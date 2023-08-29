@@ -43,7 +43,7 @@ msgid ""
 "preferences%(close_link)s at any time."
 msgstr ""
 "Gallwch chi %(open_cookies_link)s newid eich dewisiadau o ran "
-"cwcis<%(close_link)s ar unrhyw adeg."
+"cwcis %(close_link)s ar unrhyw adeg."
 
 #: rh_ui/templates/base.html:41
 msgid "The following links open in a new tab"
