@@ -1,4 +1,5 @@
 import logging
+import re
 
 from flask import Blueprint, request, flash, g, redirect, current_app, render_template, url_for
 from flask.typing import ResponseReturnValue
@@ -15,6 +16,7 @@ UAC_ERROR_PAGES = {
     'UAC_RECEIPTED': 'uac_error_pages/uac-already-used.html',
     'UAC_INACTIVE': 'uac_error_pages/uac-inactive.html'
 }
+UAC_LENGTH = 16
 
 
 @start_bp.route("/start/", methods=["GET"])
@@ -46,6 +48,12 @@ def pre_check_uac(uac: str) -> str | None:
         return error
     if len(uac) != 16:
         error = 'uac_invalid_length'
+        return error
+
+    uac_validation_pattern = re.compile(fr'^[A-Z0-9]{{{UAC_LENGTH}}}$')  # Outer 2 curly braces escape the f-string
+
+    if not uac_validation_pattern.fullmatch(uac):
+        error = 'uac_invalid'
         return error
     return None
 
