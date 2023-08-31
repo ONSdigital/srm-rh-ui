@@ -12,7 +12,7 @@ docker-build:
 	docker build -t srm-rh-ui .
 
 docker_run:
-	docker run -p 9092:9092 srm-rh-ui
+	docker run -p 9092:9092 --network=ssdcrmdockerdev_default -e APP_CONFIG=DevelopmentConfig -e RH_SVC_URL=http://rh-service:8071/ srm-rh-ui
 
 docker_stop:
 	docker stop srm-rh-ui
