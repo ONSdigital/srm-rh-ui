@@ -4,7 +4,7 @@ import sys
 from structlog import configure
 from structlog.processors import JSONRenderer, TimeStamper, format_exc_info
 from structlog.stdlib import LoggerFactory, add_log_level, filter_by_level
-from structlog.threadlocal import wrap_dict
+from structlog.contextvars import merge_contextvars
 
 
 def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_date_format="%Y-%m-%dT%H:%M%s") -> None:
@@ -38,6 +38,7 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
     renderer_processor = JSONRenderer(indent=None)
 
     processors = [
+        merge_contextvars,
         add_severity_level,
         add_log_level,
         filter_by_level,
@@ -48,7 +49,6 @@ def logger_initial_config(log_level="INFO", logger_format="%(message)s", logger_
         renderer_processor,
     ]
     configure(
-        context_class=wrap_dict(dict),
         logger_factory=LoggerFactory(),
         processors=processors,  # type: ignore
         cache_logger_on_first_use=True,
