@@ -13,8 +13,8 @@ logger = wrap_logger(logging.getLogger(__name__))
 start_bp = Blueprint("start_bp", __name__, template_folder="../templates")
 
 UAC_ERROR_PAGES = {
-    'UAC_RECEIPTED': 'uac_error_pages/uac-already-used.html',
-    'UAC_INACTIVE': 'uac_error_pages/uac-inactive.html'
+    'UAC_RECEIPTED': {'template': 'uac_error_pages/uac-already-used.html', 'log': 'attempt to use receipted UAC'},
+    'UAC_INACTIVE': {'template': 'uac_error_pages/uac-inactive.html', 'log': 'attempt to use inactive UAC'}
 }
 UAC_LENGTH = 16
 
@@ -65,10 +65,12 @@ def handle_token_error_response(response: Response):
 
         # TODO: look into implementing that as a flashed message rather than a separate page
         if ex.response.status_code == 400:
-            return render_template(UAC_ERROR_PAGES[response.text])
+            logger.warn(UAC_ERROR_PAGES[response.text]['log'])
+            return render_template(UAC_ERROR_PAGES[response.text]['template'])
         elif ex.response.status_code == 302:
             return response
         elif ex.response.status_code == 404:
             flash('uac_invalid')
+            logger.warn('attempt to use an invalid access code')
             return render_template("start.html"), 401
         raise ex
