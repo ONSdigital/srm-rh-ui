@@ -1,3 +1,7 @@
+# Tempaltes pulled from the Design System
+rh_ui/templates/components/
+rh_ui/templates/layout/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -50,10 +54,6 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
-
-# Translations
-*.mo
-*.pot
 
 # Django stuff:
 *.log

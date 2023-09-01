@@ -2,7 +2,7 @@ import pytest
 from rh_ui.app_setup import create_app
 
 
-@pytest.fixture()
+@pytest.fixture
 def app():
     app = create_app()
     return app
@@ -11,4 +11,5 @@ def app():
 @pytest.fixture
 def test_client(app):
     test_client = app.test_client()
-    return test_client
+    with app.app_context():
+        yield test_client
