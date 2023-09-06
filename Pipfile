@@ -8,6 +8,7 @@ flask = "*"
 structlog = "*"
 flask-babel = "*"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
 flake8 = "*"

@@ -1,5 +1,8 @@
-run:
+run_dev:
 	APP_CONFIG=DevelopmentConfig pipenv run python run.py
+
+run_gunicorn:
+	pipenv run gunicorn
 
 install: load_templates
 	pipenv install --dev
