@@ -8,9 +8,6 @@ logger = wrap_logger(logging.getLogger(__name__))
 
 def handle_404(_exception: Exception) -> tuple[str, int]:
     attempt_to_set_language()
-    logger.info('Handling 404 Not Found error',
-                method=request.method,
-                path=request.path)
     return render_template("error_pages/404.html"), 404
 
 
