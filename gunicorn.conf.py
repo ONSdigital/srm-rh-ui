@@ -19,7 +19,7 @@ threads = 2
 # Configure the access logs to be GCP compatible JSON structure
 # Hardcode the severity to DEBUG to make it easy to filter to the access logs from other application logs
 access_log_format = ('{"severity":"DEBUG", "logger":"gunicorn.access", "method":"%(m)s", "url":"%(U)s", '
-                     '"remote_address":"%(h)s", "forwarded_client_ip":"%({X-Forwarded-For}i[0])s", "date":"%(t)s", '
+                     '"remote_address":"%(h)s", "forwarded_client_ip":"%({X-Forwarded-For}i)s", "date":"%(t)s", '
                      '"status_line":"%(r)s", "status":"%(s)s", "referrer":"%(f)s", "user_agent":"%(a)s", '
                      '"process_id":"%(p)s", "request_time_ms":%(M)s}')
 accesslog = '-'  # Send the access logs to stdout
