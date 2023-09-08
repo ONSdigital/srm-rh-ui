@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 
 """
-This is a config file Gunicorn automatically finds and runs at startup, 
+This is a config file Gunicorn automatically finds and runs at startup,
 see https://docs.gunicorn.org/en/stable/settings.html#settings for details on the settings variables
 """
 
