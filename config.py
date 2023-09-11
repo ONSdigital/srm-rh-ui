@@ -19,7 +19,7 @@ class BaseConfig:
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = False
-    PORT = os.getenv("PORT", 9093)
+    PORT = os.getenv("PORT", 9092)
     HOST = os.getenv('HOST', '0.0.0.0')
     LOGGING_LEVEL = os.getenv("LOGGING_LEVEL", "DEBUG")
     EQ_URL = os.getenv('EQ_URL', 'http://localhost:5000')
