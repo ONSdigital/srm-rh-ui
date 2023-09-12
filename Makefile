@@ -4,9 +4,9 @@ run:
 install: load_templates
 	pipenv install --dev
 
-build: unit_tests docker-build
+build: unit_tests integration_tests docker-build
 
-test: install unit_tests
+test: install unit_tests integration_tests
 
 docker-build:
 	docker build -t srm-rh-ui .
@@ -29,7 +29,7 @@ update_vulture_whitelist:
 linting: flake8 vulture
 
 unit_tests: linting
-	APP_CONFIG=TestingConfig pipenv run pytest --cov rh_ui --cov-report term-missing --cov-report xml
+	APP_CONFIG=TestingConfig pipenv run pytest tests/unit --cov rh_ui --cov-report term-missing --cov-report xml
 
 load_templates:
 	./load_templates.sh
@@ -47,3 +47,15 @@ translate:
 	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot . 		# update the .pot files basing on templates
 	pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations	# update .po files basing on .pot
 	pipenv run pybabel compile -d rh_ui/translations
+
+up:
+	docker compose up -d
+	bash ./tests/integration/wait_for_dependencies.sh
+
+down:
+	docker compose down
+
+integration_tests: linting up
+	APP_CONFIG=TestingConfig pipenv run pytest tests/integration
+	docker compose down
+

@@ -1,0 +1,82 @@
+version: '3.8'
+services:
+  pubsub-emulator-rh-ui-it:
+    container_name: pubsub-emulator-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/gcloud-pubsub-emulator:latest
+    ports:
+      - "9538:8538"
+
+  setup-pubsub-emulator-rh-ui-it:
+    container_name: setup-pubsub-emulator-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/gcloud-pubsub-emulator:latest
+    environment:
+      - PUBSUB_SETUP_HOST=pubsub-emulator-rh-ui-it:8538
+    volumes:
+      - ./tests/integration/setup_pubsub.sh:/setup_pubsub.sh
+    depends_on:
+      - pubsub-emulator-rh-ui-it
+    entrypoint: sh -c "/setup_pubsub.sh"
+
+  firestore-emulator:
+    container_name: firestore-emulator-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/gcloud-firestore-emulator:latest
+    ports:
+      - "9542:8540"
+
+  rh-service:
+    container_name: rh-service-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/ssdc-rh-service:latest
+    ports:
+      - "9071:8071"
+    environment:
+      - spring.cloud.gcp.pubsub.emulator-host=pubsub-emulator-rh-ui-it:8538
+      - spring.cloud.gcp.pubsub.project-id=rh-ui-project
+      - QUEUECONFIG_SHARED-PUBSUB-PROJECT=rh-ui-project
+      - firestore.project-id=rh-ui-project
+      - FIRESTORE_EMULATOR_HOST=firestore-emulator-rh-ui-it:8540
+      - GOOGLE_APPLICATION_CREDENTIALS=/gcp/config/google-credentials.json
+      - GOOGLE_CLOUD_PROJECT=rh-ui-dummy-local
+      - EXCEPTIONMANAGER_CONNECTION_HOST=exceptionmanager-rh-ui-it
+      - EXCEPTIONMANAGER_CONNECTION_PORT=8666
+      - EQ_RESPONSE-ID-PEPPER=TABASCO_SAUCE
+      - JWT_KEYS=/home/rh-service/keys/eq-keys.json
+      - MESSAGELOGGING_LOGSTACKTRACES=true
+    volumes:
+      - type: bind
+        source: ./tests/resources/fake-service-account.json # The spring Firestore client requires google credentials, give it a dummy account locally
+        target: /gcp/config/google-credentials.json
+      - ./tests/resources/java_healthcheck:/opt/healthcheck
+      - ./tests/resources/dummy_keys:/home/rh-service/keys
+    restart: always
+    healthcheck:
+      test: [ "CMD", "java", "-jar", "/opt/healthcheck/HealthCheck.jar", "http://localhost:8071/actuator/health" ]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  ons-postgres:
+    container_name: postgres-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/ssdc-rm-dev-common-postgres:latest
+    command: [ "-c", "shared_buffers=256MB", "-c", "max_connections=500" ]
+    ports:
+      - "9432:5432"
+
+  exceptionmanager:
+    container_name: exceptionmanager-rh-ui-it
+    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/ssdc-rm-exception-manager
+    ports:
+      - "9666:8666"
+    restart: always
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-rh-ui-it:5432/rm?sslmode=disable
+      - SPRING_DATASOURCE_USERNAME=appuser
+      - SPRING_DATASOURCE_PASSWORD=postgres
+    volumes:
+      - ./java_healthcheck:/opt/healthcheck/
+    healthcheck:
+      test: [ "CMD", "java", "-jar", "/opt/healthcheck/HealthCheck.jar", "http://localhost:8666/actuator/health" ]
+      interval: 60s
+      timeout: 10s
+      retries: 4
+      start_period: 30s
