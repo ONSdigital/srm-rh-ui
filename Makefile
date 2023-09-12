@@ -58,4 +58,3 @@ down:
 integration_tests: linting up
 	APP_CONFIG=TestingConfig pipenv run pytest tests/integration
 	docker compose down
-
