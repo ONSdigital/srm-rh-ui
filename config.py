@@ -35,3 +35,8 @@ class DevelopmentConfig(BaseConfig):
 
 class TestingConfig(DevelopmentConfig):
     DEBUG = False
+    RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:9071/")
+
+
+# if os.getenv("ENVIRONMENT") == "TEST":
+#     Config = TestingConfig
