@@ -19,7 +19,6 @@ def test_submit_invalid_uac(test_client):
 
 
 def test_submit_active_uac(test_client, setup_data):
-    del setup_data  # Stop vulture complaining about the unused fixture function
     # When
     response = test_client.post("/en/start/", data={
         "uac": "K5LXF24K6HHNT2XX"
@@ -31,7 +30,6 @@ def test_submit_active_uac(test_client, setup_data):
 
 
 def test_submit_inactive_uac(test_client, setup_data):
-    del setup_data  # Stop vulture complaining about the unused fixture function
     # When
     response = test_client.post("/en/start/", data={
         "uac": "KJNQVGC573QLTGR8"
