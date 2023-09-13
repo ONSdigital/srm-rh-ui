@@ -36,8 +36,8 @@ services:
       - FIRESTORE_EMULATOR_HOST=firestore-emulator-rh-ui-it:8540
       - GOOGLE_APPLICATION_CREDENTIALS=/gcp/config/google-credentials.json
       - GOOGLE_CLOUD_PROJECT=rh-ui-dummy-local
-      - EXCEPTIONMANAGER_CONNECTION_HOST=exceptionmanager-rh-ui-it
-      - EXCEPTIONMANAGER_CONNECTION_PORT=8666
+#      - EXCEPTIONMANAGER_CONNECTION_HOST=exceptionmanager-rh-ui-it
+#      - EXCEPTIONMANAGER_CONNECTION_PORT=8666
       - EQ_RESPONSE-ID-PEPPER=TABASCO_SAUCE
       - JWT_KEYS=/home/rh-service/keys/eq-keys.json
       - MESSAGELOGGING_LOGSTACKTRACES=true
@@ -54,29 +54,3 @@ services:
       timeout: 3s
       retries: 20
       start_period: 5s
-
-  ons-postgres:
-    container_name: postgres-rh-ui-it
-    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/ssdc-rm-dev-common-postgres:latest
-    command: [ "-c", "shared_buffers=256MB", "-c", "max_connections=500" ]
-    ports:
-      - "9432:5432"
-
-  exceptionmanager:
-    container_name: exceptionmanager-rh-ui-it
-    image: europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/ssdc-rm-exception-manager
-    ports:
-      - "9666:8666"
-    restart: always
-    environment:
-      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres-rh-ui-it:5432/rm?sslmode=disable
-      - SPRING_DATASOURCE_USERNAME=appuser
-      - SPRING_DATASOURCE_PASSWORD=postgres
-    volumes:
-      - ./java_healthcheck:/opt/healthcheck/
-    healthcheck:
-      test: [ "CMD", "java", "-jar", "/opt/healthcheck/HealthCheck.jar", "http://localhost:8666/actuator/health" ]
-      interval: 60s
-      timeout: 10s
-      retries: 4
-      start_period: 30s

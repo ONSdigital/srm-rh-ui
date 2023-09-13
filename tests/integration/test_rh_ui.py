@@ -1,3 +1,5 @@
+from tests.integration.utilities import populate_firestore_with_active_uac, populate_firestore_with_inactive_uac
+
 
 def test_get_rh_ui_en(test_client):
     # When
@@ -18,7 +20,10 @@ def test_submit_invalid_uac(test_client):
     assert "Access code not recognised. Enter the code again." in response.text
 
 
-def test_submit_active_uac(test_client, setup_data):
+def test_submit_active_uac(test_client):
+    # Given
+    populate_firestore_with_active_uac()
+
     # When
     response = test_client.post("/en/start/", data={
         "uac": "K5LXF24K6HHNT2XX"
@@ -29,7 +34,10 @@ def test_submit_active_uac(test_client, setup_data):
     assert "session?token=" in response.location
 
 
-def test_submit_inactive_uac(test_client, setup_data):
+def test_submit_inactive_uac(test_client):
+    # Given
+    populate_firestore_with_inactive_uac()
+
     # When
     response = test_client.post("/en/start/", data={
         "uac": "KJNQVGC573QLTGR8"

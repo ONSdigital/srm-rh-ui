@@ -1,8 +1,9 @@
-import psycopg2
 import requests
 
 
-def populate_firestore():
+def populate_firestore_with_active_uac():
+    populate_firestore_collection_exercise()
+
     headers = {
         'Content-Type': 'application/json',
     }
@@ -40,6 +41,46 @@ def populate_firestore():
         json=active_uac_json_data,
     )
 
+    active_case_json_data = {
+        'fields': {
+            "collectionExerciseId": {
+                "stringValue": "7101b1ce-8034-4bce-bce1-9a1aef67d5cb"
+            },
+            "caseId": {
+                "stringValue": "26a0c774-f8ec-46ee-a8aa-170da8ccf142"
+            },
+            "invalid": {
+                "booleanValue": False
+            },
+            "refusalReceived": {
+                "stringValue": ""
+            },
+            "sample": {
+                "mapValue": {
+                    "fields": {
+                        "BLOOD_TEST_BARCODE": {
+                            "stringValue": ""
+                        }
+                    }
+                }
+            }
+        }
+    }
+    requests.post(
+        'http://localhost:9542/v1/projects/rh-ui-project/databases/(default)/ \
+        documents/case?documentId=26a0c774-f8ec-46ee-a8aa-170da8ccf142',
+        headers=headers,
+        json=active_case_json_data,
+    )
+
+
+def populate_firestore_with_inactive_uac():
+    populate_firestore_collection_exercise()
+
+    headers = {
+        'Content-Type': 'application/json',
+    }
+
     inactive_uac_json_data = {
         'fields': {
             'uacHash': {
@@ -73,38 +114,6 @@ def populate_firestore():
         json=inactive_uac_json_data,
     )
 
-    active_case_json_data = {
-        'fields': {
-            "collectionExerciseId": {
-                "stringValue": "7101b1ce-8034-4bce-bce1-9a1aef67d5cb"
-            },
-            "caseId": {
-                "stringValue": "26a0c774-f8ec-46ee-a8aa-170da8ccf142"
-            },
-            "invalid": {
-                "booleanValue": False
-            },
-            "refusalReceived": {
-                "stringValue": ""
-            },
-            "sample": {
-                "mapValue": {
-                    "fields": {
-                        "BLOOD_TEST_BARCODE": {
-                            "stringValue": ""
-                        }
-                    }
-                }
-            }
-        }
-    }
-    requests.post(
-        'http://localhost:9542/v1/projects/rh-ui-project/databases/(default)/ \
-        documents/case?documentId=26a0c774-f8ec-46ee-a8aa-170da8ccf142',
-        headers=headers,
-        json=active_case_json_data,
-    )
-
     inactive_case_json_data = {
         'fields': {
             "collectionExerciseId": {
@@ -136,6 +145,12 @@ def populate_firestore():
         headers=headers,
         json=inactive_case_json_data,
     )
+
+
+def populate_firestore_collection_exercise():
+    headers = {
+        'Content-Type': 'application/json',
+    }
 
     collection_exercise_json_data = {
         "fields": {
@@ -192,33 +207,3 @@ def populate_firestore():
         headers=headers,
         json=collection_exercise_json_data,
     )
-
-
-def populate_database():
-    connection = psycopg2.connect(user="appuser",
-                                  password="postgres",
-                                  host="127.0.0.1",
-                                  port="9432",
-                                  database="rm")
-    cursor = connection.cursor()
-    with open("tests/resources/test_data/integration_data.sql") as file:
-        while line := file.readline():
-            cursor.execute(line)
-            connection.commit()
-    cursor.close()
-    connection.close()
-
-
-def truncate_database():
-    connection = psycopg2.connect(user="appuser",
-                                  password="postgres",
-                                  host="127.0.0.1",
-                                  port="9432",
-                                  database="rm")
-    cursor = connection.cursor()
-    truncate_sql = """TRUNCATE TABLE casev3.uac_qid_link, casev3.cases, \
-     casev3.collection_exercise, casev3.survey CASCADE"""
-    cursor.execute(truncate_sql)
-    connection.commit()
-    cursor.close()
-    connection.close()
