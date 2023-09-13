@@ -41,13 +41,13 @@ jobs:
           pipenv install --dev --deploy
 
       - name: Load Templates
-        run: ./load_templates.sh
+        run: make load_templates
       
       - name: Run Tests and Checks
-        run: make unit_tests
+        run: make unit_test
 
       - name: Check Docker Build
-        run: make docker-build
+        run: make docker_build
 
       - name: Run Codecov
         uses: codecov/codecov-action@v3
