@@ -36,8 +36,6 @@ services:
       - FIRESTORE_EMULATOR_HOST=firestore-emulator-rh-ui-it:8540
       - GOOGLE_APPLICATION_CREDENTIALS=/gcp/config/google-credentials.json
       - GOOGLE_CLOUD_PROJECT=rh-ui-dummy-local
-#      - EXCEPTIONMANAGER_CONNECTION_HOST=exceptionmanager-rh-ui-it
-#      - EXCEPTIONMANAGER_CONNECTION_PORT=8666
       - EQ_RESPONSE-ID-PEPPER=TABASCO_SAUCE
       - JWT_KEYS=/home/rh-service/keys/eq-keys.json
       - MESSAGELOGGING_LOGSTACKTRACES=true
