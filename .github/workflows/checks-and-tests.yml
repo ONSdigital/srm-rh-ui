@@ -44,7 +44,7 @@ jobs:
         run: ./load_templates.sh
       
       - name: Run Tests and Checks
-        run: make unit_tests
+        run: make unit_tests integration_tests
 
       - name: Check Docker Build
         run: make docker-build
