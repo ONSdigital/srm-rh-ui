@@ -24,4 +24,4 @@ EXPOSE 9092
 USER respondenthome
 
 ENTRYPOINT ["/app/venv/bin/python"]
-CMD ["run.py"]
+CMD ["/app/venv/bin/gunicorn"]

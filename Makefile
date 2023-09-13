@@ -1,24 +1,19 @@
-run:
-	APP_CONFIG=DevelopmentConfig pipenv run python run.py
+load_templates:
+	./load_templates.sh
 
 install: load_templates
 	pipenv install --dev
 
-build: unit_tests integration_tests docker-build
+run: run_gunicorn
 
-test: install unit_tests integration_tests
+run_dev:
+	APP_CONFIG=DevelopmentConfig pipenv run python run.py
 
-docker-build:
-	docker build -t srm-rh-ui .
+run_gunicorn:
+	pipenv run gunicorn
 
-docker_run:
-	docker run -p 9092:9092 --network=ssdcrmdockerdev_default -e APP_CONFIG=DevelopmentConfig -e RH_SVC_URL=http://rh-service:8071/ srm-rh-ui
-
-docker_stop:
-	docker stop srm-rh-ui
-
-flake8:
-	pipenv run flake8 --exclude=whitelist.py 
+flake:
+	pipenv run flake8 --exclude=whitelist.py
 
 vulture:
 	pipenv run vulture .
@@ -26,13 +21,24 @@ vulture:
 update_vulture_whitelist:
 	pipenv run vulture . --make-whitelist > whitelist.py || true
 
-linting: flake8 vulture
+lint: flake vulture
 
-unit_tests: linting
+unit_test: lint
 	APP_CONFIG=TestingConfig pipenv run pytest tests/unit --cov rh_ui --cov-report term-missing --cov-report xml
 
-load_templates:
-	./load_templates.sh
+test: install unit_test integration_test
+
+build: test docker_build
+
+docker_build:
+	docker build -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .
+
+docker_run:
+	docker run -p 9093:9092 --network=ssdcrmdockerdev_default -e APP_CONFIG=DevelopmentConfig -e RH_SVC_URL=http://rh-service:8071/ --name srm-rh-ui europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui
+
+docker_stop:
+	docker stop srm-rh-ui
+	docker rm srm-rh-ui
 
 extract_translation:
 	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
@@ -55,7 +61,7 @@ up:
 down:
 	docker compose down
 
-integration_tests: linting up
+integration_test: lint up
 	APP_CONFIG=TestingConfig pipenv run pytest tests/integration
 	docker compose down
 

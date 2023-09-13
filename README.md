@@ -1,25 +1,21 @@
-# SRM-RH-UI
+# SRM Respondent Home UI
 User Interface for respondents to access ONS Survey Data Collection questionnaires and services
 
 ## Installation/build
-To install all dependencies run:
-```commandline
+To install all dependencies and download the templates run:
+```shell
 make install
 ```
 
 To build the docker image and run the tests:
-```commandline
+```shell
 make build
 ```
 
 ## Running
 
-To run the app locally, you first need to load the templates to be used.
-```commandline
-make load_templates
-```
 Once that's done, you can run the make command to run it in your terminal:
-```commandline
+```shell
 make run
 ```
 

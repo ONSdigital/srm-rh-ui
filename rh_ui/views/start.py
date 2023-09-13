@@ -21,10 +21,6 @@ UAC_LENGTH = 16
 
 @start_bp.route("/start/", methods=["GET"])
 def start_get() -> ResponseReturnValue:
-    logger.info(f"received {request.method} on endpoint '{request.endpoint}'",
-                method=request.method,
-                path=request.path)
-
     return render_template("start.html")
 
 
