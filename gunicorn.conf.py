@@ -9,12 +9,11 @@ see https://docs.gunicorn.org/en/stable/settings.html#settings for details on th
 wsgi_app = 'run:app'
 
 # Set the host and port
-bind = f"0.0.0.0:{os.getenv('PORT', 9092)}"
+bind = f"{os.getenv('HOST','0.0.0.0')}:{os.getenv('PORT', 9092)}"
 
-# Set the worker config, default the number of workers to scale with the available CPU count
-workers = os.getenv('GUNICORN_WORKERS', 2)
 worker_class = os.getenv('GUNICORN_WORKER_CLASS', 'gthread')
-threads = 2
+workers = os.getenv('GUNICORN_WORKERS', 2)
+threads = os.getenv('GUNICORN_THREADS', 2)  # Threads per worker, only used by the gthread worker class
 
 # Configure the access logs to be GCP compatible JSON structure
 # Hardcode the severity to DEBUG to make it easy to filter to the access logs from other application logs

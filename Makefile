@@ -38,6 +38,7 @@ docker_run:
 
 docker_stop:
 	docker stop srm-rh-ui
+	docker rm srm-rh-ui
 
 extract_translation:
 	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
