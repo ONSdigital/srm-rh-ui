@@ -61,7 +61,7 @@ up:
 down:
 	docker compose down
 
-integration_test: lint up
+integration_test: up
 	APP_CONFIG=TestingConfig pipenv run pytest tests/integration
 	docker compose down
 
