@@ -24,9 +24,9 @@ update_vulture_whitelist:
 lint: flake vulture
 
 unit_test: lint
-	APP_CONFIG=TestingConfig pipenv run pytest --cov rh_ui --cov-report term-missing --cov-report xml
+	APP_CONFIG=TestingConfig pipenv run pytest tests/unit --cov rh_ui --cov-report term-missing --cov-report xml
 
-test: install unit_test
+test: install unit_test integration_test
 
 build: test docker_build
 
@@ -53,3 +53,15 @@ translate:
 	pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot . 		# update the .pot files basing on templates
 	pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations	# update .po files basing on .pot
 	pipenv run pybabel compile -d rh_ui/translations
+
+up:
+	docker compose up -d
+	bash ./tests/integration/wait_for_dependencies.sh
+
+down:
+	docker compose down
+
+integration_test: up
+	APP_CONFIG=TestingConfig pipenv run pytest tests/integration
+	docker compose down
+
