@@ -31,7 +31,7 @@ test: install unit_test integration_test
 build: test docker_build
 
 docker_build:
-	docker build -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .
+	docker build --build-arg="python_pipenv_build_image=europe-west2-docker.pkg.dev/ons-ci-rm/docker/python-pipenv:3.10" -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .
 
 docker_run:
 	docker run -p 9093:9092 --network=ssdcrmdockerdev_default -e APP_CONFIG=DevelopmentConfig -e RH_SVC_URL=http://rh-service:8071/ --name srm-rh-ui europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui
