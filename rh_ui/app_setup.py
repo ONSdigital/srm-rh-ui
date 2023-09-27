@@ -4,12 +4,26 @@ import os
 from flask import Flask, g, request
 from flask_babel import Babel
 from structlog import wrap_logger
+from flask_talisman import Talisman
 
+from rh_ui.security import CSP, PERMISSION_POLICY
 from rh_ui.logger_config import logger_initial_config
 
 
 def create_app() -> Flask:
     app = Flask("RH-UI app")
+
+    Talisman(
+        app,
+        content_security_policy=CSP,
+        content_security_policy_nonce_in=['script-src'],
+        force_https=False,
+        frame_options='DENY',
+        strict_transport_security='includeSubDomains',
+        strict_transport_security_max_age=31536000,
+        x_content_type_options='nosniff',
+        permissions_policy=PERMISSION_POLICY,
+    )
 
     # Babel setup
     def get_locale() -> str:
