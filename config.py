@@ -16,6 +16,8 @@ class BaseConfig:
     GTM_CONTAINER_ID = os.getenv('GTM_CONTAINER_ID')
     GTM_TAG_ID = os.getenv('GTM_TAG_ID')
 
+    FORCE_HTTPS = True
+
 
 class DevelopmentConfig(BaseConfig):
     DEBUG = False
@@ -32,7 +34,10 @@ class DevelopmentConfig(BaseConfig):
     GTM_CONTAINER_ID = os.getenv('GTM_CONTAINER_ID', 'GTM_CONTAINER_ID_XXXXX')
     GTM_TAG_ID = os.getenv('GTM_TAG_ID', 'GTM_TAG_ID_XXXXX')
 
+    FORCE_HTTPS = False
+
 
 class TestingConfig(DevelopmentConfig):
     DEBUG = False
     RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:9071/")
+    FORCE_HTTPS = False

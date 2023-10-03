@@ -13,18 +13,6 @@ from rh_ui.logger_config import logger_initial_config
 def create_app() -> Flask:
     app = Flask("RH-UI app")
 
-    Talisman(
-        app,
-        content_security_policy=CSP,
-        content_security_policy_nonce_in=['script-src'],
-        force_https=False,
-        frame_options='DENY',
-        strict_transport_security='includeSubDomains',
-        strict_transport_security_max_age=31536000,
-        x_content_type_options='nosniff',
-        permissions_policy=PERMISSION_POLICY,
-    )
-
     # Babel setup
     def get_locale() -> str:
         if not g.get('lang_code', None):
@@ -54,5 +42,20 @@ def create_app() -> Flask:
     app.register_error_handler(404, handle_404)
     from rh_ui.views.error_handlers import handle_500
     app.register_error_handler(500, handle_500)
+    # Register security
+    from rh_ui.security import security
+    app.register_blueprint(security)
+
+    Talisman(
+        app,
+        content_security_policy=CSP,
+        content_security_policy_nonce_in=['script-src'],
+        force_https=app.config.get('FORCE_HTTPS'),
+        frame_options='DENY',
+        strict_transport_security='includeSubDomains',
+        strict_transport_security_max_age=31536000,
+        x_content_type_options='nosniff',
+        permissions_policy=PERMISSION_POLICY,
+    )
 
     return app

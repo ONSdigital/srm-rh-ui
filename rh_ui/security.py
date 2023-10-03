@@ -1,3 +1,4 @@
+from flask import Blueprint
 CSP = {
     'default-src': [
         "'self'",
@@ -34,6 +35,8 @@ PERMISSION_POLICY = ('accelerometer=(),autoplay=(),camera=(),display-capture=(),
                      'microphone=(),midi=(),payment=(),picture-in-picture=(),publickey-credentials-get=(),'
                      'screen-wake-lock=(),sync-xhr=(self),usb=(),xr-spatial-tracking=()')
 
+# These headers were in use on the old RH-UI but are currently not able to be set via Talisman
+# and so require a different method to be set
 DEFAULT_RESPONSE_HEADERS = {
     'X-Frame-Options': 'DENY',
     'X-Permitted-Cross-Domain-Policies': 'None',
@@ -43,6 +46,8 @@ DEFAULT_RESPONSE_HEADERS = {
     'Cache-Control': ['no-store', 'max-age=0'],
     'Server': 'Office For National Statistics',
 }
+
+security = Blueprint("security", __name__)
 
 
 def build_response_headers():
@@ -57,3 +62,9 @@ def build_response_headers():
             value = ' '.join(value)
         headers[header] = value
     return headers
+
+
+@security.after_app_request
+def add_security_headers(resp):
+    resp.headers.extend(build_response_headers())
+    return resp
