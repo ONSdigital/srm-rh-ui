@@ -1,5 +1,4 @@
 from rh_ui.app_setup import create_app
-# from rh_ui.security import build_response_headers
 
 app = create_app()
 
