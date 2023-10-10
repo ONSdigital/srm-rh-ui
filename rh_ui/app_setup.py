@@ -50,7 +50,7 @@ def create_app() -> Flask:
         app,
         content_security_policy=CSP,
         content_security_policy_nonce_in=['script-src'],
-        force_https=app.config.get('FORCE_HTTPS'),
+        force_https=False,
         frame_options='DENY',
         strict_transport_security='includeSubDomains',
         strict_transport_security_max_age=31536000,
