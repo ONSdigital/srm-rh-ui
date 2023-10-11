@@ -66,5 +66,6 @@ def build_response_headers():
 
 @security.after_app_request
 def add_security_headers(resp):
+    '''This is required to set extra headers that Talisman doesn't support'''
     resp.headers.extend(build_response_headers())
     return resp
