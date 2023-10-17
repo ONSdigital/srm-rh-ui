@@ -173,7 +173,7 @@ def populate_firestore_collection_exercise():
                 "stringValue": "7101b1ce-8034-4bce-bce1-9a1aef67d5cb"
             },
             "endDate": {
-                "timestampValue": "2023-09-13T12:18:42.952Z"
+                "timestampValue": "2030-09-13T12:18:42.952Z"
             },
             "collectionInstrumentRules": {
                 "arrayValue": {
