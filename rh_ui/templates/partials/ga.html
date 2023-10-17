@@ -1,8 +1,8 @@
 <!-- Google tag (gtag.js) -->
-<script nonce="{{ cspNonce }}" async
+<script nonce="{{ csp_nonce() }}" async
         src="https://www.googletagmanager.com/gtag/js?id={{ config['GTM_TAG_ID'] }}"></script>
 
-<script nonce="{{ cspNonce }}">
+<script nonce="{{ csp_nonce() }}">
     var allowTrackingCookies = /^(.*)?\s*'usage':true\s*[^;]+(.*)?$/;
 
     if (document.cookie.match(allowTrackingCookies)) {
