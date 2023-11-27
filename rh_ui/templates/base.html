@@ -95,19 +95,6 @@
 } -%}
 
 
-
-{%- block head -%}
-
-    {%- if config.GTM_CONTAINER_ID -%}
-        {%- include 'partials/gtm.html' with context -%}
-    {%- endif -%}
-
-    {%- if config.GTM_TAG_ID -%}
-        {%- include 'partials/ga.html' with context -%}
-    {%- endif -%}
-
-{%- endblock -%}
-
 {%- block bodyStart -%}
 
 
