@@ -27,6 +27,7 @@ def create_app() -> Flask:
     app.config.from_object(app_config)
     app.secret_key = app.config.get('SECRET_KEY')  # required to enable the flash function
     app.session_cookie_name = 'RH2_SESSION'  # Use a custom session cookie name to avoid ambiguity and clashes
+    app.session_cookie_secure = app.config.get('SESSION_COOKIE_SECURE')
 
     # Configure logger
     logger_initial_config(log_level=app.config.get("LOGGING_LEVEL", "INFO"))
