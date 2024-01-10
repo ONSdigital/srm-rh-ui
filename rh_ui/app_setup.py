@@ -3,11 +3,11 @@ import os
 
 from flask import Flask, g, request
 from flask_babel import Babel
-from structlog import wrap_logger
 from flask_talisman import Talisman
+from structlog import wrap_logger
 
-from rh_ui.security import CSP, PERMISSION_POLICY
 from rh_ui.logger_config import logger_initial_config
+from rh_ui.security import CSP, PERMISSION_POLICY
 
 
 def create_app() -> Flask:
@@ -26,6 +26,7 @@ def create_app() -> Flask:
     app_config = f'config.{os.environ.get("APP_CONFIG", "BaseConfig")}'
     app.config.from_object(app_config)
     app.secret_key = app.config.get('SECRET_KEY')  # required to enable the flash function
+    app.session_cookie_name = 'RH2_SESSION'  # Use a custom session cookie name to avoid ambiguity and clashes
 
     # Configure logger
     logger_initial_config(log_level=app.config.get("LOGGING_LEVEL", "INFO"))

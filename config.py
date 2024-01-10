@@ -9,6 +9,8 @@ class BaseConfig:
     DOMAIN_URL = os.getenv("DOMAIN_URL")
     DOMAIN_URL_PROTOCOL = os.getenv("DOMAIN_URL_PROTOCOL")
 
+    SECRET_KEY = os.getenv("SECRET_KEY")
+
     # Account service url is a link back to our service that we send to eq as part of the token
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
     LANGUAGES = ['en', 'cy']
