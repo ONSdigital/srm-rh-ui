@@ -12,7 +12,7 @@ def get_eq_token(uac: str, region: str) -> Response:
 
 
 def request_eq_launch_token(uac_hash: str, region_code: str) -> Response:
-    rh_svc_url_token = (f'{current_app.config.get("RH_SVC_URL")}eqLaunch/{uac_hash}?languageCode={region_code}' +
+    rh_svc_url_token = (f'{current_app.config.get("RH_SVC_URL")}/eqLaunch/{uac_hash}?languageCode={region_code}' +
                         f'&accountServiceUrl={current_app.config.get("ACCOUNT_SERVICE_URL")}')
     response = requests.get(rh_svc_url_token)
     return response

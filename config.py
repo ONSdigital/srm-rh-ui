@@ -32,9 +32,9 @@ class DevelopmentConfig(BaseConfig):
     SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'False')))
 
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
-    RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:8071/")
+    RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:8071")
 
 
 class TestingConfig(DevelopmentConfig):
     DEBUG = False
-    RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:9071/")
+    RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:9071")
