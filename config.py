@@ -1,4 +1,5 @@
 import os
+from distutils.util import strtobool
 
 
 class BaseConfig:
@@ -8,6 +9,9 @@ class BaseConfig:
     RH_SVC_URL = os.getenv("RH_SVC_URL")
     DOMAIN_URL = os.getenv("DOMAIN_URL")
     DOMAIN_URL_PROTOCOL = os.getenv("DOMAIN_URL_PROTOCOL")
+
+    SECRET_KEY = os.getenv("SECRET_KEY")
+    SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'True')))
 
     # Account service url is a link back to our service that we send to eq as part of the token
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
@@ -21,9 +25,11 @@ class DevelopmentConfig(BaseConfig):
     HOST = os.getenv('HOST', '0.0.0.0')
     LOGGING_LEVEL = os.getenv("LOGGING_LEVEL", "DEBUG")
     EQ_URL = os.getenv('EQ_URL', 'http://localhost:5000')
-    SECRET_KEY = os.getenv('SECRET_KEY', b'_5#y2L"F4Q8z\n\xec]/')
     DOMAIN_URL = os.getenv("DOMAIN_URL", "localhost:9092")
     DOMAIN_URL_PROTOCOL = os.getenv("DOMAIN_URL_PROTOCOL", 'http://')
+
+    SECRET_KEY = os.getenv('SECRET_KEY', b'_5#y2L"F4Q8z\n\xec]/')
+    SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'False')))
 
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
     RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:8071/")
