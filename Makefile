@@ -30,6 +30,8 @@ test: install unit_test integration_test
 
 build: test docker_build
 
+build-no-test: install docker_build
+
 docker_build:
 	docker build -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .
 
