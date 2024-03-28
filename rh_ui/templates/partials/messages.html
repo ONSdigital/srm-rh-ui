@@ -13,7 +13,7 @@
 {%- if itemsList.append( {
                 'text': error_uac['text'],
                 'url': '#' + error_uac['field'],
-                'classes': 'js-inpagelink'
+                'variants': 'inPageLink'
             } )
 -%} {%- endif -%}
 
@@ -23,7 +23,7 @@
 {%- call
     onsPanel({
         'title': errorTitle,
-        'type': 'error'
+        'variant': 'error'
     })
 -%}
 

@@ -4,14 +4,6 @@
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/details/_macro.njk" import onsDetails %}
 
-{% set form =  {
-    'method': 'POST',
-    'attributes': {
-        'action': url_for('i18n.start_bp.start_post')
-    }
-} %}
-
-
 {# display uac error msg if exists #}
 
 {% set flashed_messages = get_flashed_messages() %}
@@ -32,7 +24,7 @@
 {%- endif -%}
 
 {% block main %}
-
+  <form method="POST" action={{  url_for('i18n.start_bp.start_post')}}>
 {% if error_uac %}
     {% include 'partials/messages.html' with context %}
 {% endif %}
@@ -79,4 +71,5 @@
         "content": further_info_content
     }) }}
 
+  </form>
 {% endblock %}
