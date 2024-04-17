@@ -36,14 +36,14 @@ def test_en_enter_uac_success(test_client):
 def test_en_enter_uac_blank(test_client):
     response = test_client.post(EN_START_ROUTE, data={"uac": ""}, follow_redirects=True)
 
-    assert response.status_code == 422
+    assert response.status_code == 401
     assert 'Enter an access code' in response.text
 
 
 def test_en_enter_uac_invalid_length(test_client):
     response = test_client.post(EN_START_ROUTE, data={"uac": "testing"}, follow_redirects=True)
 
-    assert response.status_code == 422
+    assert response.status_code == 401
     assert 'Enter a 16-character access code' in response.text
 
 
@@ -51,7 +51,7 @@ def test_uac_pattern_match_failure(test_client):
     # When we try to hash a UAC that is an invalid format, then it raises the error
     response = test_client.post(EN_START_ROUTE, data={"uac": 'testing_uac_err-'}, follow_redirects=True)
 
-    assert response.status_code == 422
+    assert response.status_code == 401
     assert 'Access code not recognised. Enter the code again.' in response.text
 
 

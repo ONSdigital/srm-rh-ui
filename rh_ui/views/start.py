@@ -29,7 +29,7 @@ def start_post():
     uac = request.form.get('uac').upper().replace(' ', '')
     if error := pre_check_uac(uac):
         flash(error)
-        return render_template("start.html"), 422
+        return render_template("start.html"), 401
     token_response = get_eq_token(uac, g.lang_code)
 
     if error_response := handle_token_error_response(token_response):
