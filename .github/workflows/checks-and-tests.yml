@@ -18,12 +18,12 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       # Authenticate with Google Cloud to acquire an access token
       - id: auth
         name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v1
+        uses: google-github-actions/auth@v2
         with:
           token_format: 'access_token'
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
@@ -45,7 +45,7 @@ jobs:
           password: ${{ steps.auth.outputs.access_token }}
 
       - name: Set up Python "3.11"
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
@@ -64,7 +64,7 @@ jobs:
         run: make docker_build
 
       - name: Run Codecov
-        uses: codecov/codecov-action@v3
+        uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           # NB: fail_ci_if_error is enabled to make any teething issues with Codecov visible.
