@@ -58,6 +58,7 @@ def create_app() -> Flask:
         strict_transport_security_max_age=31536000,
         x_content_type_options='nosniff',
         permissions_policy=PERMISSION_POLICY,
+        session_cookie_secure=app.config["SESSION_COOKIE_SECURE"]
     )
 
     return app

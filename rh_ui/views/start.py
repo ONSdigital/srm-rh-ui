@@ -1,7 +1,7 @@
 import logging
 import re
 
-from flask import Blueprint, request, flash, g, redirect, current_app, render_template, url_for
+from flask import Blueprint, request, flash, g, redirect, current_app, render_template
 from flask.typing import ResponseReturnValue
 from requests import Response, HTTPError
 from structlog import wrap_logger
@@ -29,7 +29,7 @@ def start_post():
     uac = request.form.get('uac').upper().replace(' ', '')
     if error := pre_check_uac(uac):
         flash(error)
-        return redirect(url_for('i18n.start_bp.start_get'))
+        return render_template("start.html"), 401
     token_response = get_eq_token(uac, g.lang_code)
 
     if error_response := handle_token_error_response(token_response):
