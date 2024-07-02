@@ -126,6 +126,7 @@ testcases:
         url: '{{.target_site}}'
         skip_body: true
         info: >-
+          (Checking that Feature Policy is not in the header)
           This header has now been renamed to Permissions-Policy in the
           specification.
         timeout: '{{.request_timeout_in_seconds}}'
@@ -139,6 +140,7 @@ testcases:
         url: '{{.target_site}}'
         skip_body: true
         info: >-
+          (Checking that Public Key Pins is not in the header)
           This header has been deprecated by all major browsers and is no longer
           recommended. Avoid using it, and update existing code if possible!
         timeout: '{{.request_timeout_in_seconds}}'
@@ -152,6 +154,7 @@ testcases:
         url: '{{.target_site}}'
         skip_body: true
         info: >-
+          (Checking that Expect CT is not in the header)
           This header will likely become obsolete in June 2021. Since May 2018
           new certificates are expected to support SCTs by default. Certificates
           before March 2018 were allowed to have a lifetime of 39 months, those
@@ -167,6 +170,7 @@ testcases:
         url: '{{.target_site}}'
         skip_body: true
         info: >-
+          (Checking that X-XSS Protection is not in the header)
           The X-XSS-Protection header has been deprecated by modern browsers and
           its use can introduce additional security issues on the client side.
         timeout: '{{.request_timeout_in_seconds}}'
