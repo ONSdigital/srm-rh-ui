@@ -3,7 +3,7 @@ name: HTTP security response headers test suites
 # VENOM HOME: https://github.com/ovh/venom
 
 vars:
-  target_site: ${VENOM_TARGET_URL}
+  target_site: <VENOM_TARGET_URL>
   request_timeout_in_seconds: 20
 testcases:
   ###############################################
