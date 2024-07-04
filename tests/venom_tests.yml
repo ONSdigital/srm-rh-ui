@@ -4,7 +4,7 @@ name: HTTP security response headers test suites
 
 vars:
   # The target URL must be substituted in before running these tests
-  # e.g. using sed like such `sed -e "s|<VENOM_TARGET_URL>|https://example-rh-ui/en/start|" <path/to/venom_tests.yml> > venom-tests.yml`
+  # e.g. using sed like such `sed -e "s|<VENOM_TARGET_URL>|https://example-rh-ui/en/start|" <./tests/venom_tests.yml> > example_venom_tests.yml`
   target_site: <VENOM_TARGET_URL>
   request_timeout_in_seconds: 20
 testcases:
