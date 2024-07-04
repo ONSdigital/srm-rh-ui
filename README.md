@@ -77,8 +77,7 @@ against a local HTTP only instance. However, it may be useful for development to
 ### Running Venom locally
 
 * First, use our [docker dev](https://github.com/ONSdigital/ssdc-rm-docker-dev) to run our local development
-  environment.
-  This will run RH UI at `http://localhost:9092`.
+  environment to test against.
 
 * Now create a local copy of the venom test suite with the correct URL substituted in:
 
