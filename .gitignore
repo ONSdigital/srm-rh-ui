@@ -2,6 +2,9 @@
 rh_ui/templates/components/
 rh_ui/templates/layout/
 
+# Local venom resources
+tmp_venom*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
