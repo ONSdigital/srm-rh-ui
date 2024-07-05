@@ -85,8 +85,8 @@ against a local HTTP only instance. However, it may be useful for development to
   sed -e "s|<VENOM_TARGET_URL>|http://host.docker.internal:9092/en/start|" ./tests/venom_tests.yml > tmp_venom_local.yml
   ```
 
-  It may be helpful to now open the created `tmp_venom_local.yml` file in an editor and comment out the HSTS header test
-  which is bound to fail locally.
+  It may be helpful to now open the created `tmp_venom_local.yml` file in an editor and comment out the
+  `Strict-Transport-Security` test case which is bound to fail locally.
 
 * Now run the tests against the docker dev RH UI using the official OVH Venom docker image (
   See https://github.com/ovh/venom?tab=readme-ov-file#docker-image for more details on running venom and docs on
