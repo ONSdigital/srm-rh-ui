@@ -24,7 +24,7 @@ update_vulture_whitelist:
 lint: flake vulture
 
 unit_test: lint
-	APP_CONFIG=TestingConfig pipenv run pytest tests/unit --cov rh_ui --cov-report term-missing --cov-report xml
+	APP_CONFIG=TestingConfig pipenv run pytest tests/unit --cov rh_ui --cov-report html --cov-report term-missing --cov-fail-under 80
 
 test: install unit_test integration_test
 
