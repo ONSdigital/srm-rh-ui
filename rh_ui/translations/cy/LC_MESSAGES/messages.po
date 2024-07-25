@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2023-08-31 09:17+0100\n"
+"POT-Creation-Date: 2024-07-25 11:50+0100\n"
 "PO-Revision-Date: 2022-11-18 18:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
@@ -17,7 +17,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.12.1\n"
+"Generated-By: Babel 2.14.0\n"
 
 #: rh_ui/templates/base.html:12 rh_ui/templates/base.html:68
 msgid "Cookies"
@@ -93,40 +93,36 @@ msgstr "https://cy.ons.gov.uk/"
 msgid "ONS Surveys"
 msgstr "Arolygon SYG"
 
-#: rh_ui/templates/start.html:20
+#: rh_ui/templates/start.html:12
 msgid "Enter an access code"
 msgstr "Rhowch god mynediad"
 
-#: rh_ui/templates/start.html:21 rh_ui/templates/start.html:24
-#: rh_ui/templates/start.html:27
+#: rh_ui/templates/start.html:13 rh_ui/templates/start.html:16
+#: rh_ui/templates/start.html:19
 msgid "Error: Start study - ONS Surveys"
 msgstr "Gwall: Dechrau'r astudiaeth - Arolygon SYG"
 
-#: rh_ui/templates/start.html:23
+#: rh_ui/templates/start.html:15
 msgid "Enter a 16-character access code"
 msgstr "Rhowch god mynediad 16 nod"
 
-#: rh_ui/templates/start.html:26
+#: rh_ui/templates/start.html:18
 msgid "Access code not recognised. Enter the code again."
 msgstr "Nid yw'r cod mynediad yn cael ei gydnabod. Rhowch y cod eto."
 
-#: rh_ui/templates/start.html:31
+#: rh_ui/templates/start.html:23
 msgid "Start study - ONS Surveys"
 msgstr "Dechrau'r astudiaeth - Arolygon SYG"
 
-#: rh_ui/templates/start.html:39
+#: rh_ui/templates/start.html:31
 msgid "Start study"
 msgstr "Dechrau'r astudiaeth"
 
-#: rh_ui/templates/start.html:46 rh_ui/templates/start.html:68
-msgid "Where to find your access code"
-msgstr "Ble i ddod o hyd i'ch cod mynediad"
-
-#: rh_ui/templates/start.html:50
+#: rh_ui/templates/start.html:39
 msgid "Enter your 16-character access code"
 msgstr "Rhowch eich cod mynediad sy'n cynnwys 16 o nodau"
 
-#: rh_ui/templates/start.html:51
+#: rh_ui/templates/start.html:40
 msgid ""
 "Keep this code safe. You will need to enter it every time you access your"
 " study"
@@ -134,7 +130,7 @@ msgstr ""
 "Cadwch y cod hwn yn ddiogel. Bydd angen i chi roi eich cod bob tro y "
 "byddwch chi'n mynd at eich astudiaeth"
 
-#: rh_ui/templates/start.html:54
+#: rh_ui/templates/start.html:43
 msgid ""
 "Your personal information is protected by law and will be kept "
 "confidential."
@@ -142,11 +138,15 @@ msgstr ""
 "Mae eich gwybodaeth bersonol wedi'i diogelu gan y gyfraith a chaiff ei "
 "chadw'n gyfrinachol."
 
-#: rh_ui/templates/start.html:62
+#: rh_ui/templates/start.html:51
 msgid "Access study"
 msgstr "Agor yr astudiaeth"
 
-#: rh_ui/templates/start.html:69
+#: rh_ui/templates/start.html:57
+msgid "Where to find your access code"
+msgstr "Ble i ddod o hyd i'ch cod mynediad"
+
+#: rh_ui/templates/start.html:58
 msgid ""
 "Your access code can be found in the invitation letter or email you "
 "received.\n"
@@ -157,23 +157,23 @@ msgstr ""
 " gawsoch. Bydd eich cod mynediad 16 nod yn gyfuniad o lythrennau a "
 "rhifau."
 
-#: rh_ui/templates/start.html:73
+#: rh_ui/templates/start.html:62
 msgid ""
-"Telephone: +44 800 085 7376<br>8am to 7pm Monday to Friday<br>8am to 1pm "
-"Saturday"
+"Telephone: +44 0808 196 1270<br>9am to 4:30pm Monday to Thursday<br>9am "
+"to 3pm Friday"
 msgstr ""
-"Ffôn: +44 800 085 7376<br>8am i 7pm o ddydd Llun i ddydd Gwener<br>8am i "
-"1pm ar ddydd Sadwrn"
+"Ffôn: +44 0808 196 1270<br>9am i 4:30pm o ddydd Llun i ddydd Iau<br>9am i"
+" 3pm ar ddydd Gwener"
 
-#: rh_ui/templates/start.html:74
+#: rh_ui/templates/start.html:63
 msgid "Minicom (for the deaf and hearing impaired): 18001 +44 800 085 7376"
 msgstr "Minicom (ar gyfer pobl fyddar neu drwm eu clyw): 18001 +44 800 085 7376"
 
-#: rh_ui/templates/start.html:75
+#: rh_ui/templates/start.html:64
 msgid "Email:"
 msgstr "E-bost:"
 
-#: rh_ui/templates/start.html:81
+#: rh_ui/templates/start.html:70
 msgid "Who can I contact for further information?"
 msgstr "Â phwy y gallaf gysylltu i gael rhagor o wybodaeth?"
 
@@ -523,8 +523,8 @@ msgid ""
 msgstr ""
 "cydnabod eich bod yn rhannu gwybodaeth bersonol â ni a'i thrin yn "
 "gyfrinachol, yn unol â'r <a "
-"href=\"https://code.statisticsauthority.gov.uk/\" target=\"_blank\">Cod Ymarfer ar gyfer "
-"Ystadegau</a>"
+"href=\"https://code.statisticsauthority.gov.uk/\" target=\"_blank\">Cod "
+"Ymarfer ar gyfer Ystadegau</a>"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:32
 msgid ""
@@ -567,13 +567,14 @@ msgid ""
 "and the Code of Practice for Statistics"
 msgstr ""
 "darparu gwybodaeth arolwg i <a "
-"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/accesstounpublishedonsresearchdatabygovernmentorganisationsforstatisticalresearch\" target=\"_blank\">adrannau"
-" eraill y Llywodraeth, sefydliadau cymeradwy</a> ac <a "
-"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/approvedresearcherscheme\" target=\"_blank\">ymchwilwyr"
-" cymeradwys</a> at ddibenion ystadegol yn unig, gan gydymffurfio â'r un "
-"safonau diogelwch rydym yn eu dilyn (ac yn unol â darpariaethau "
-"Deddfwriaeth Diogelu Data, y Ddeddf Ystadegau a'r Gwasanaeth Cofrestru "
-"2007 a'r Cod Ymarfer ar gyfer Ystadegau)"
+"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/accesstounpublishedonsresearchdatabygovernmentorganisationsforstatisticalresearch\""
+" target=\"_blank\">adrannau eraill y Llywodraeth, sefydliadau "
+"cymeradwy</a> ac <a "
+"href=\"https://cy.ons.gov.uk/aboutus/whatwedo/statistics/requestingstatistics/approvedresearcherscheme\""
+" target=\"_blank\">ymchwilwyr cymeradwys</a> at ddibenion ystadegol yn "
+"unig, gan gydymffurfio â'r un safonau diogelwch rydym yn eu dilyn (ac yn "
+"unol â darpariaethau Deddfwriaeth Diogelu Data, y Ddeddf Ystadegau a'r "
+"Gwasanaeth Cofrestru 2007 a'r Cod Ymarfer ar gyfer Ystadegau)"
 
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:50
 msgid ""
@@ -621,8 +622,8 @@ msgstr ""
 "Os bydd gennych chi gwestiwn am y ffordd rydyn ni'n prosesu eich data "
 "personol, neu os byddwch chi am ddysgu mwy am eich hawliau o dan "
 "ddeddfwriaeth diogelu data, gweler ein <a "
-"href=\"https://cy.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\" target=\"_blank\">tudalen"
-" diogelu data.</a>"
+"href=\"https://cy.ons.gov.uk/aboutus/transparencyandgovernance/dataprotection\""
+" target=\"_blank\">tudalen diogelu data.</a>"
 
 #: rh_ui/templates/partials/messages.html:7
 msgid "There is a problem with this page"

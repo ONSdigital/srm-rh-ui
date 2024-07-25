@@ -36,7 +36,7 @@ collates all the text to translate into a single file.
 To build/re-build the translation messages.pot use:
 
 ```
-pipenv run pybabel extract -F babel.cfg -o app/translations/messages.pot .
+pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 ```
 
 To create a new language messages file, run the following, changing the 2 character language code at the end to the
@@ -46,22 +46,22 @@ Note that this implementation includes an English translation. This is needed du
 with aiohttp.
 
 ```
-pipenv run pybabel init -i app/translations/messages.pot -d app/translations -l cy
+pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
 ```
 
 Once created, you can update the existing language messages.po files to include changes in the messages.pot by running
 the following. This will update ALL language files.
 
 ```
-pipenv run pybabel update -i app/translations/messages.pot -d app/translations
+pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations
 ```
 
 To compile updates to the messages.po files into messages.mo (the file actually used by the site) use:
-
+(If you've only changes made one small change and there's a `#, fuzzy` entry in the translation, 
+double-check the translation then remove the comment before compiling)
 ```
-pipenv run pybabel compile -d app/translations
+pipenv run pybabel compile -d rh_ui/translations
 ```
-
 ## Venom Tests
 
 We have a suite of [Venom tests](https://github.com/ovh/venom) for testing the OWASP header recommendations. These tests
