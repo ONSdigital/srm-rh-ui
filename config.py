@@ -12,6 +12,7 @@ class BaseConfig:
 
     SECRET_KEY = os.getenv("SECRET_KEY")
     SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'True')))
+    GOOGLE_TAG_ID = os.getenv("GOOGLE_TAG_ID")
 
     # Account service url is a link back to our service that we send to eq as part of the token
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"

@@ -4,8 +4,6 @@
 {% from "components/button/_macro.njk" import onsButton %}
 {% from "components/details/_macro.njk" import onsDetails %}
 
-{# display uac error msg if exists #}
-
 {%- set error_uac = None -%}
 {%- set page_title_value = _('Start study - ONS Surveys') -%}
 
@@ -46,7 +44,7 @@
 
     <h1 class="ons-u-fs-xxl ons-u-mt-l">{{ _('Start study') }}</h1>
 
-  <form method="POST" action={{  url_for('i18n.start_bp.start_post')}}>
+    <form method="POST" action={{  url_for('i18n.start_bp.start_post')}}>
     {{ onsAccessCode({
             "id": "uac",
             "name": "uac",

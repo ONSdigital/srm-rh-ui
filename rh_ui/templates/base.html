@@ -4,8 +4,28 @@
 {%- block preHeader -%}
 {%- autoescape false -%}
 
-{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
+{% set g_tag_id = config.GOOGLE_TAG_ID %}
 
+
+{% block head %}
+    {% if g_tag_id %}
+        {% set script_src_url = "https://www.googletagmanager.com/gtag/js?id=" + g_tag_id %}
+        <!-- Google tag (gtag.js) -->
+        <script async src=sript_src_url></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', g_tag_id);
+        </script>
+    {% endif %}
+{% endblock%}
+
+
+
+
+{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
 {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
 {{ onsCookiesBanner({
         'lang': g.lang_code,
