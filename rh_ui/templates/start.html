@@ -6,22 +6,40 @@
 
 {# display uac error msg if exists #}
 
+{%- set error_uac = None -%}
+{%- set page_title_value = _('Start study - ONS Surveys') -%}
+
 {% set flashed_messages = get_flashed_messages() %}
 
-{%- if 'uac_empty' in flashed_messages -%}
-    {%- set error_uac = {'id': 'uac_empty', 'text': _('Enter an access code'), 'field': 'uac_empty','group': 'ERROR'} -%}
-    {%- set page_title_value = _('Error: Start study - ONS Surveys') -%}
-{%- elif 'uac_invalid_length' in flashed_messages -%}
-    {%- set error_uac = {'id': 'uac_invalid_length', 'text': _('Enter a 16-character access code'), 'field': 'uac_invalid_length','group': 'ERROR'} -%}
-    {%- set page_title_value = _('Error: Start study - ONS Surveys') -%}
-{%- elif 'uac_invalid' in flashed_messages -%}
-    {%- set error_uac = {'id': 'uac_invalid', 'text': _('Access code not recognised. Enter the code again.'), 'field': 'uac_invalid','group': 'ERROR'} -%}
-    {%- set page_title_value = _('Error: Start study - ONS Surveys') -%}
+{% if flashed_messages %}
+    {% set page_title_value = _('Error: Start study - ONS Surveys') %}
 
-{%- else -%}
-    {%- set error_uac = None -%}
-    {%- set page_title_value = _('Start study - ONS Surveys') -%}
-{%- endif -%}
+    {% if 'uac_empty' in flashed_messages %}
+        {% set error_uac = {
+        'id': 'uac_empty',
+        'text': _('Enter an access code'),
+        'field': 'uac_empty',
+        'group': 'ERROR'
+        } %}
+    {% elif 'uac_invalid_length' in flashed_messages %}
+        {% set error_uac = {
+        'id': 'uac_invalid_length',
+        'text': _('Enter a 16-character access code'),
+        'field': 'uac_invalid_length',
+        'group': 'ERROR'
+        } %}
+    {% elif 'uac_invalid' in flashed_messages %}
+        {% set error_uac = {
+        'id': 'uac_invalid', 
+        'text': _('Access code not recognised. Enter the code again.'),
+        'field': 'uac_invalid',
+        'group': 'ERROR'
+        } %}
+    {% endif %}
+
+{% endif %}}
+
+
 
 {% block main %}
   <form method="POST" action={{  url_for('i18n.start_bp.start_post')}}>
