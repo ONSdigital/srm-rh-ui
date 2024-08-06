@@ -1,44 +1,40 @@
 {%- extends 'layout/_template.njk' -%}
 
 
-{%- block preHeader -%}
-{%- autoescape false -%}
-
-{% set g_tag_id = config.GOOGLE_TAG_ID %}
-
-
 {% block head %}
+    {% set g_tag_id = config.GOOGLE_TAG_ID %}
     {% if g_tag_id %}
         {% set script_src_url = "https://www.googletagmanager.com/gtag/js?id=" + g_tag_id %}
+
         <!-- Google tag (gtag.js) -->
-        <script async src=sript_src_url></script>
+        <script async src={{ script_src_url }}></script>
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
-        gtag('config', g_tag_id);
+        gtag('config', "{{ g_tag_id }}");
         </script>
     {% endif %}
 {% endblock%}
 
 
-
-
-{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
-{%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
-{{ onsCookiesBanner({
-        'lang': g.lang_code,
-        'statementTitle': _('Cookies'),
-        'serviceName': '',
-        'settingsLinkTextURL': cookiesPageURL,
-        'statementText': _("To collect information about how you use this website, we use%(open_cookies_link)s cookies.%(close_link)s</br>
-                        This information helps us improve our services and make sure that the website works as well as possible.",
-                        open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>'),
-        'preferencesText':  _("You can %(open_cookies_link)s change your cookie preferences%(close_link)s at any time.",open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>')
-        }) }}
-{% endautoescape %}
+{%- block preHeader -%}
+    {%- autoescape false -%}
+        {% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
+        {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
+        {{ onsCookiesBanner({
+                'lang': g.lang_code,
+                'statementTitle': _('Cookies'),
+                'serviceName': '',
+                'settingsLinkTextURL': cookiesPageURL,
+                'statementText': _("To collect information about how you use this website, we use%(open_cookies_link)s cookies.%(close_link)s</br>
+                                This information helps us improve our services and make sure that the website works as well as possible.",
+                                open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>'),
+                'preferencesText':  _("You can %(open_cookies_link)s change your cookie preferences%(close_link)s at any time.",open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>')
+                }) }}
+    {% endautoescape %}
 {%- endblock -%}
+
 
 {%- set language = { 'languages':
     [
@@ -56,6 +52,7 @@
             }
     ]
 }-%}
+
 
 {%- set footer_content = {
     'newTabWarning': _('The following links open in a new tab'),
@@ -100,6 +97,7 @@
     }
 }-%}
 
+
 {%- set pageConfig = {
     'title': page_title_value,
     'header': {
@@ -113,9 +111,3 @@
     'cspNonce': csp_nonce(),
     'meta' : {}
 } -%}
-
-
-{%- block bodyStart -%}
-
-
-{%- endblock -%}
