@@ -9,10 +9,19 @@
         <!-- Google tag (gtag.js) -->
         <script async src={{ script_src_url }}></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', "{{ g_tag_id }}");
+        // NOTE!!!
+        // We currently don't have an option to turn this cookie on/off on the cookies page in rh
+        // It is set to false by default and can only be set to true
+        // When the participant accepts all cookies on the cookies banner 
+        // (and can't be swithced back to false unless the user clear their cookies)
+        var allowTrackingCookies = /^(.*)?\s*'usage':true\s*[^;]+(.*)?$/;
+
+        if (document.cookie.match(allowTrackingCookies)) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', "{{ g_tag_id }}");
+        }
         </script>
     {% endif %}
 {% endblock%}
