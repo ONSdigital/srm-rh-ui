@@ -12,7 +12,7 @@ class BaseConfig:
 
     SECRET_KEY = os.getenv("SECRET_KEY")
     SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'True')))
-    GOOGLE_TAG_ID = os.getenv("GOOGLE_TAG_ID", "G-XXXXXXXXXX")
+    GOOGLE_TAG_ID = os.getenv("GOOGLE_TAG_ID")
 
     # Account service url is a link back to our service that we send to eq as part of the token
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
@@ -31,6 +31,7 @@ class DevelopmentConfig(BaseConfig):
 
     SECRET_KEY = os.getenv('SECRET_KEY', b'_5#y2L"F4Q8z\n\xec]/')
     SESSION_COOKIE_SECURE = bool(strtobool(os.getenv('SESSION_COOKIE_SECURE', 'False')))
+    GOOGLE_TAG_ID = os.getenv("GOOGLE_TAG_ID", "G-XXXXXXXXXX")
 
     ACCOUNT_SERVICE_URL = f"{DOMAIN_URL_PROTOCOL}{DOMAIN_URL}"
     RH_SVC_URL = os.getenv("RH_SVC_URL", "http://localhost:8071")
