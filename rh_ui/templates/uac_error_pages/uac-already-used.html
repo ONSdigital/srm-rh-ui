@@ -18,7 +18,13 @@
 
 {%- block main -%}
 
-    <h1>{{ _('This access code has already been used') }}</h1>
+    <h1
+        data-ga= "error", 
+        data-ga-category= "UAC-error", 
+        data-ga-label= "uac_already_used_error" 
+    >
+    {{ _('This access code has already been used') }}
+    </h1>
 
     <p>{{ _('Someone has already submitted a response using this access code.') }}</p>
 

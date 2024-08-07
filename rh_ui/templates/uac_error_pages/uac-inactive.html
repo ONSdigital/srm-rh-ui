@@ -17,7 +17,12 @@
 {%- endblock -%}
 
 {%- block main -%}
-    <h1>
+    <h1
+        data-ga= "error", 
+        data-ga-category= "UAC-error", 
+        data-ga-label= "uac_questionnaire_closed_error" 
+    >
         {{ _('This questionnaire has now closed') }}
     </h1>
+
 {%- endblock main -%}

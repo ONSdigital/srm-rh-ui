@@ -1,24 +1,49 @@
 {%- extends 'layout/_template.njk' -%}
 
 
+{% block head %}
+    {% set g_tag_id = config.GOOGLE_TAG_ID %}
+    {% if g_tag_id %}
+        {% set script_src_url = "https://www.googletagmanager.com/gtag/js?id=" + g_tag_id %}
+
+        <!-- Google tag (gtag.js) -->
+        <script nonce="{{ csp_nonce() }}" async src={{ script_src_url }}></script>
+        <script nonce="{{ csp_nonce() }}">
+        // NOTE!!!
+        // We currently don't have an option to turn this cookie on/off on the cookies page in rh
+        // It is set to false by default and can only be set to true
+        // When the participant accepts all cookies on the cookies banner 
+        // (and can't be swithced back to false unless the user clear their cookies)
+        var allowTrackingCookies = /^(.*)?\s*'usage':true\s*[^;]+(.*)?$/;
+
+        if (document.cookie.match(allowTrackingCookies)) {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', "{{ g_tag_id }}");
+        }
+        </script>
+    {% endif %}
+{% endblock%}
+
+
 {%- block preHeader -%}
-{%- autoescape false -%}
-
-{% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
-
-{%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
-{{ onsCookiesBanner({
-        'lang': g.lang_code,
-        'statementTitle': _('Cookies'),
-        'serviceName': '',
-        'settingsLinkTextURL': cookiesPageURL,
-        'statementText': _("To collect information about how you use this website, we use%(open_cookies_link)s cookies.%(close_link)s</br>
-                        This information helps us improve our services and make sure that the website works as well as possible.",
-                        open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>'),
-        'preferencesText':  _("You can %(open_cookies_link)s change your cookie preferences%(close_link)s at any time.",open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>')
-        }) }}
-{% endautoescape %}
+    {%- autoescape false -%}
+        {% set cookiesPageURL = url_for('i18n.info_pages_bp.cookies') %}
+        {%- from 'components/cookies-banner/_macro.njk' import onsCookiesBanner -%}
+        {{ onsCookiesBanner({
+                'lang': g.lang_code,
+                'statementTitle': _('Cookies'),
+                'serviceName': '',
+                'settingsLinkTextURL': cookiesPageURL,
+                'statementText': _("To collect information about how you use this website, we use%(open_cookies_link)s cookies.%(close_link)s</br>
+                                This information helps us improve our services and make sure that the website works as well as possible.",
+                                open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>'),
+                'preferencesText':  _("You can %(open_cookies_link)s change your cookie preferences%(close_link)s at any time.",open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>')
+                }) }}
+    {% endautoescape %}
 {%- endblock -%}
+
 
 {%- set language = { 'languages':
     [
@@ -36,6 +61,7 @@
             }
     ]
 }-%}
+
 
 {%- set footer_content = {
     'newTabWarning': _('The following links open in a new tab'),
@@ -80,6 +106,7 @@
     }
 }-%}
 
+
 {%- set pageConfig = {
     'title': page_title_value,
     'header': {
@@ -93,9 +120,3 @@
     'cspNonce': csp_nonce(),
     'meta' : {}
 } -%}
-
-
-{%- block bodyStart -%}
-
-
-{%- endblock -%}
