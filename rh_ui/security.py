@@ -17,6 +17,7 @@ CSP = {
     'connect-src': [
         "'self'",
         'https://cdn.ons.gov.uk',
+        'https://*.google-analytics.com/'
     ],
     'img-src': [
         "'self'",

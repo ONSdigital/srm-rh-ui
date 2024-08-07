@@ -7,8 +7,8 @@
         {% set script_src_url = "https://www.googletagmanager.com/gtag/js?id=" + g_tag_id %}
 
         <!-- Google tag (gtag.js) -->
-        <script async src={{ script_src_url }}></script>
-        <script>
+        <script nonce="{{ csp_nonce() }}" async src={{ script_src_url }}></script>
+        <script nonce="{{ csp_nonce() }}"w>
         // NOTE!!!
         // We currently don't have an option to turn this cookie on/off on the cookies page in rh
         // It is set to false by default and can only be set to true
