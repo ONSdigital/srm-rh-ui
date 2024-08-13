@@ -24,7 +24,7 @@ msgid "Cookies"
 msgstr "Cwcis"
 
 #: rh_ui/templates/base.html:39
-#, fuzzy, python-format
+#, python-format
 msgid ""
 "To collect information about how you use this website, we "
 "use%(open_cookies_link)s cookies.%(close_link)s</br>\n"
@@ -146,7 +146,6 @@ msgid "Where to find your access code"
 msgstr "Ble i ddod o hyd i'ch cod mynediad"
 
 #: rh_ui/templates/start.html:83
-#, fuzzy
 msgid ""
 "Your access code can be found in the invitation letter or email you "
 "received.\n"
@@ -291,18 +290,14 @@ msgid "reloading the page in case there was a temporary fault with JavaScript"
 msgstr "ail-lwytho’r dudalen rhag ofn bod nam dros dro gyda JavaScript"
 
 #: rh_ui/templates/info_pages/cookies.html:56
-#, fuzzy
 msgid ""
 "We use three types of cookie. You can choose which cookies you're happy "
 "for us to use."
 msgstr ""
-"Gallwch ddewis pa gwcis rydych chi'n fodlon i ni eu defnyddio. Rydyn ni'n"
-" defnyddio dau fath o gwci:"
 
 #: rh_ui/templates/info_pages/cookies.html:58
-#, fuzzy
 msgid "Cookies that measure website use"
-msgstr "Cwcis sy'n cofio eich gosodiadau"
+msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:60
 msgid ""
@@ -324,9 +319,8 @@ msgid "what you click on while you're visiting the site"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:72
-#, fuzzy
 msgid "Learn more about these Google Analytics cookies"
-msgstr "Rhagor o wybodaeth am y cwcis hanfodol hyn"
+msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:75
 msgid "Hide this"
@@ -358,9 +352,8 @@ msgid ""
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:102
-#, fuzzy
 msgid "2 years"
-msgstr "Blwyddyn"
+msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:115
 msgid "24 hours"
