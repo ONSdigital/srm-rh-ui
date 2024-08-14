@@ -12,10 +12,12 @@ CSP = {
     'script-src': [
         "'self'",
         'https://cdn.ons.gov.uk',
+        'https://www.googletagmanager.com',
     ],
     'connect-src': [
         "'self'",
         'https://cdn.ons.gov.uk',
+        'https://*.google-analytics.com/'
     ],
     'img-src': [
         "'self'",
