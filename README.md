@@ -28,10 +28,9 @@ or to run it in Pycharm, use the run template that's specified and it should wor
 
 ## Translations
 
-The site uses babel for translations.
+The site uses PyBabel for translations.
 
-Text to translate is marked up in html and py templates and files, then a messages.pot is build via pybabel, which
-collates all the text to translate into a single file.
+Text to translate is marked up in `.html` and `.py` templates and files with the [gettext](https://en.wikipedia.org/wiki/Gettext) mechanism. Then a `messages.pot` file is build via Pybabel, which collates all the text to translate. Based on the content of the `.pot` file translation files `messages.po` are created for all specified language codes. Finally, the `.po` files are compiled into `.mo` files, which are then used on the page.
 
 1. Extract text to translation
 
@@ -43,13 +42,10 @@ pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 
 2. Create new language file
 > [!CAUTION]
-> Negative potential consequences of an action.
+> Follow this step only when you want to add translation for a new language. Running it for an existing language code will overwrite the existing translations.
 
 To create a new language messages file, run the following, changing the 2 character language code at the end to the
 required language code. Only generate a individual language file once.
-
-Note that this implementation includes an English translation. This is needed due to an issue with implementing pybabel
-with aiohttp.
 
 ```
 pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
@@ -66,9 +62,10 @@ pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translatio
 
 4. Complile the translations
 
+> [!NOTE]
+> Double check your translation files (messages.po) for the `#, fuzzy` comment. This indicates that the tranlsation isn't an exact match and won't be rendered on the page. Double check the translations and remove any incorrectly matched lines, then remove the `fuzzy` comment.
+
 To compile updates to the messages.po files into messages.mo (the file actually used by the site) use:
-(If you've only changes made one small change and there's a `#, fuzzy` entry in the translation, 
-double-check the translation then remove the comment before compiling)
 ```
 pipenv run pybabel compile -d rh_ui/translations
 ```
