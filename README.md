@@ -33,11 +33,17 @@ The site uses babel for translations.
 Text to translate is marked up in html and py templates and files, then a messages.pot is build via pybabel, which
 collates all the text to translate into a single file.
 
+1. Extract text to translation
+
 To build/re-build the translation messages.pot use:
 
 ```
 pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 ```
+
+2. Create new language file
+> [!CAUTION]
+> Negative potential consequences of an action.
 
 To create a new language messages file, run the following, changing the 2 character language code at the end to the
 required language code. Only generate a individual language file once.
@@ -49,12 +55,16 @@ with aiohttp.
 pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
 ```
 
+3. Update tranlsation files
+
 Once created, you can update the existing language messages.po files to include changes in the messages.pot by running
 the following. This will update ALL language files.
 
 ```
 pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations
 ```
+
+4. Complile the translations
 
 To compile updates to the messages.po files into messages.mo (the file actually used by the site) use:
 (If you've only changes made one small change and there's a `#, fuzzy` entry in the translation, 
