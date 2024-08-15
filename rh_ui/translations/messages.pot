@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-13 09:56+0100\n"
+"POT-Creation-Date: 2024-08-15 10:14+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: rh_ui/templates/base.html:36 rh_ui/templates/base.html:94
+#: rh_ui/templates/base.html:31 rh_ui/templates/base.html:89
 msgid "Cookies"
 msgstr ""
 
-#: rh_ui/templates/base.html:39
+#: rh_ui/templates/base.html:34
 #, python-format
 msgid ""
 "To collect information about how you use this website, we "
@@ -30,57 +30,57 @@ msgid ""
 "services and make sure that the website works as well as possible."
 msgstr ""
 
-#: rh_ui/templates/base.html:42
+#: rh_ui/templates/base.html:37
 #, python-format
 msgid ""
 "You can %(open_cookies_link)s change your cookie "
 "preferences%(close_link)s at any time."
 msgstr ""
 
-#: rh_ui/templates/base.html:67
+#: rh_ui/templates/base.html:62
 msgid "The following links open in a new tab"
 msgstr ""
 
-#: rh_ui/templates/base.html:73
+#: rh_ui/templates/base.html:68
 msgid "About ONS studies"
 msgstr ""
 
-#: rh_ui/templates/base.html:74
+#: rh_ui/templates/base.html:69
 msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 msgstr ""
 
-#: rh_ui/templates/base.html:78
+#: rh_ui/templates/base.html:73
 msgid "Accessibility statement"
 msgstr ""
 
-#: rh_ui/templates/base.html:79
+#: rh_ui/templates/base.html:74
 msgid "https://www.ons.gov.uk/help/accessibility"
 msgstr ""
 
-#: rh_ui/templates/base.html:83
+#: rh_ui/templates/base.html:78
 msgid "Contact us"
 msgstr ""
 
-#: rh_ui/templates/base.html:84 rh_ui/templates/error_pages/404.html:19
+#: rh_ui/templates/base.html:79 rh_ui/templates/error_pages/404.html:19
 #: rh_ui/templates/error_pages/error.html:18
 msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
 msgstr ""
 
-#: rh_ui/templates/base.html:98
+#: rh_ui/templates/base.html:93
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:5
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:21
 msgid "Privacy and data protection"
 msgstr ""
 
-#: rh_ui/templates/base.html:105
+#: rh_ui/templates/base.html:100
 msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr ""
 
-#: rh_ui/templates/base.html:113
+#: rh_ui/templates/base.html:108
 msgid "https://www.ons.gov.uk/"
 msgstr ""
 
-#: rh_ui/templates/base.html:114 rh_ui/templates/error_pages/404.html:3
+#: rh_ui/templates/base.html:109 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
 msgstr ""
@@ -294,78 +294,68 @@ msgid "Hide this"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:83
-#: rh_ui/templates/info_pages/cookies.html:239
-#: rh_ui/templates/info_pages/cookies.html:348
+#: rh_ui/templates/info_pages/cookies.html:226
+#: rh_ui/templates/info_pages/cookies.html:335
 msgid "Name"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:86
-#: rh_ui/templates/info_pages/cookies.html:242
-#: rh_ui/templates/info_pages/cookies.html:351
+#: rh_ui/templates/info_pages/cookies.html:229
+#: rh_ui/templates/info_pages/cookies.html:338
 msgid "Purpose"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:89
-#: rh_ui/templates/info_pages/cookies.html:245
-#: rh_ui/templates/info_pages/cookies.html:354
+#: rh_ui/templates/info_pages/cookies.html:232
+#: rh_ui/templates/info_pages/cookies.html:341
 msgid "Expires"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:99
-#: rh_ui/templates/info_pages/cookies.html:112
-msgid ""
-"This helps us count how many people visit ons.gov.uk by tracking if "
-"you’ve visited before"
+msgid "Used to distinguish users."
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:102
+#: rh_ui/templates/info_pages/cookies.html:115
 msgid "2 years"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:115
-msgid "24 hours"
+#: rh_ui/templates/info_pages/cookies.html:112
+msgid "Used to persist session state."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:125
-msgid "Used to manage the rate at which page view requests are made"
-msgstr ""
-
-#: rh_ui/templates/info_pages/cookies.html:128
-msgid "10 minutes"
-msgstr ""
-
-#: rh_ui/templates/info_pages/cookies.html:136
+#: rh_ui/templates/info_pages/cookies.html:123
 msgid ""
 "We do not allow Google to use or share the data about how you use this "
 "site."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:142
+#: rh_ui/templates/info_pages/cookies.html:129
 msgid "Do you want to allow usage tracking?"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:148
-#: rh_ui/templates/info_pages/cookies.html:180
-#: rh_ui/templates/info_pages/cookies.html:205
+#: rh_ui/templates/info_pages/cookies.html:135
+#: rh_ui/templates/info_pages/cookies.html:167
+#: rh_ui/templates/info_pages/cookies.html:192
 msgid "On"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:155
-#: rh_ui/templates/info_pages/cookies.html:187
-#: rh_ui/templates/info_pages/cookies.html:212
+#: rh_ui/templates/info_pages/cookies.html:142
+#: rh_ui/templates/info_pages/cookies.html:174
+#: rh_ui/templates/info_pages/cookies.html:199
 msgid "Off"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:163
+#: rh_ui/templates/info_pages/cookies.html:150
 msgid "This selection will expire after two years."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:165
-#: rh_ui/templates/info_pages/cookies.html:174
+#: rh_ui/templates/info_pages/cookies.html:152
+#: rh_ui/templates/info_pages/cookies.html:161
 msgid "Cookies that help with our communications"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:166
+#: rh_ui/templates/info_pages/cookies.html:153
 msgid ""
 "Some of our pages may contain content from other sites which may set "
 "their own cookies. These sites are\n"
@@ -374,7 +364,7 @@ msgid ""
 "                whether it’s useful."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:169
+#: rh_ui/templates/info_pages/cookies.html:156
 msgid ""
 "In addition, if you share a link to a page, the service you share it on "
 "may set a cookie. We have no\n"
@@ -382,107 +372,107 @@ msgid ""
 " them off, but not through us."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:193
-#: rh_ui/templates/info_pages/cookies.html:199
+#: rh_ui/templates/info_pages/cookies.html:180
+#: rh_ui/templates/info_pages/cookies.html:186
 msgid "Cookies that remember your settings"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:194
+#: rh_ui/templates/info_pages/cookies.html:181
 msgid ""
 "These cookies personalise your experience of using the site,\n"
 "                by doing things like remembering your preferences and the"
 " choices you make."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:218
+#: rh_ui/templates/info_pages/cookies.html:205
 msgid "Strictly necessary cookies"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:219
+#: rh_ui/templates/info_pages/cookies.html:206
 msgid "These essential cookies do things like:"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:223
+#: rh_ui/templates/info_pages/cookies.html:210
 msgid "remember the notifications you've seen so we do not show you them again"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:226
+#: rh_ui/templates/info_pages/cookies.html:213
 msgid ""
 "remember your progress through a form (for example, online business "
 "surveys)"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:230
+#: rh_ui/templates/info_pages/cookies.html:217
 msgid "They always need to be on."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:233
+#: rh_ui/templates/info_pages/cookies.html:220
 msgid "Your progress"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:234
+#: rh_ui/templates/info_pages/cookies.html:221
 msgid ""
 "We’ll set a cookie to remember your progress while logged in. These "
 "cookies do not store your\n"
 "                    personal data."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:255
+#: rh_ui/templates/info_pages/cookies.html:242
 msgid "To check that your browser can support cookies"
 msgstr ""
 
+#: rh_ui/templates/info_pages/cookies.html:245
 #: rh_ui/templates/info_pages/cookies.html:258
 #: rh_ui/templates/info_pages/cookies.html:271
 #: rh_ui/templates/info_pages/cookies.html:284
 #: rh_ui/templates/info_pages/cookies.html:297
-#: rh_ui/templates/info_pages/cookies.html:310
-#: rh_ui/templates/info_pages/cookies.html:336
+#: rh_ui/templates/info_pages/cookies.html:323
 msgid "When a user closes the browser or when their cookie cache is cleared"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:268
+#: rh_ui/templates/info_pages/cookies.html:255
 msgid ""
 "To store your preferred language so that certain content can be displayed"
 " in your own language"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:281
+#: rh_ui/templates/info_pages/cookies.html:268
 msgid ""
 "To keep your session active when using your account to access portfolio "
 "and messages"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:294
+#: rh_ui/templates/info_pages/cookies.html:281
 msgid "To store the universally unique identifier created for your account"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:307
+#: rh_ui/templates/info_pages/cookies.html:294
 msgid ""
 "To store the timestamp of the last request so that the session expiry "
 "warning message can be displayed"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:320
+#: rh_ui/templates/info_pages/cookies.html:307
 msgid "To keep you signed in when completing a survey"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:323
+#: rh_ui/templates/info_pages/cookies.html:310
 msgid ""
 "When a user logs out or closes the browser. Or when their cookie cache is"
 " cleared"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:333
+#: rh_ui/templates/info_pages/cookies.html:320
 msgid ""
 "To store the flash object identifier for the most recent action you have "
 "performed"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:342
+#: rh_ui/templates/info_pages/cookies.html:329
 msgid "Cookie message"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:343
+#: rh_ui/templates/info_pages/cookies.html:330
 msgid ""
 "You may see a banner when you visit start.surveys.ons.gov.uk inviting you"
 " to accept cookies or review your settings.\n"
@@ -490,24 +480,24 @@ msgid ""
 "seen it and not to show it again and store your settings."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:364
+#: rh_ui/templates/info_pages/cookies.html:351
 msgid "Lets us know that you’ve seen our cookie message"
 msgstr ""
 
+#: rh_ui/templates/info_pages/cookies.html:354
 #: rh_ui/templates/info_pages/cookies.html:367
-#: rh_ui/templates/info_pages/cookies.html:380
 msgid "1 year"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:377
+#: rh_ui/templates/info_pages/cookies.html:364
 msgid "Saves your cookie consent settings"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:391
+#: rh_ui/templates/info_pages/cookies.html:378
 msgid "Learn more about these essential cookies"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:397
+#: rh_ui/templates/info_pages/cookies.html:384
 msgid "Save changes"
 msgstr ""
 

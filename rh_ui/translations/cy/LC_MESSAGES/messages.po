@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-08-13 09:56+0100\n"
+"POT-Creation-Date: 2024-08-15 10:14+0100\n"
 "PO-Revision-Date: 2022-11-18 18:31+0000\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: cy\n"
@@ -19,11 +19,11 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.14.0\n"
 
-#: rh_ui/templates/base.html:36 rh_ui/templates/base.html:94
+#: rh_ui/templates/base.html:31 rh_ui/templates/base.html:89
 msgid "Cookies"
 msgstr "Cwcis"
 
-#: rh_ui/templates/base.html:39
+#: rh_ui/templates/base.html:34
 #, python-format
 msgid ""
 "To collect information about how you use this website, we "
@@ -36,7 +36,7 @@ msgstr ""
 "wybodaeth hon yn ein helpu i wella ein gwasanaethau a gwneud yn siŵr bod "
 "y wefan yn gweithio gystal â phosibl."
 
-#: rh_ui/templates/base.html:42
+#: rh_ui/templates/base.html:37
 #, python-format
 msgid ""
 "You can %(open_cookies_link)s change your cookie "
@@ -45,50 +45,50 @@ msgstr ""
 "Gallwch chi %(open_cookies_link)s newid eich dewisiadau o ran cwcis "
 "%(close_link)s ar unrhyw adeg."
 
-#: rh_ui/templates/base.html:67
+#: rh_ui/templates/base.html:62
 msgid "The following links open in a new tab"
 msgstr "Mae’r dolenni canlynol yn agor mewn tab newydd"
 
-#: rh_ui/templates/base.html:73
+#: rh_ui/templates/base.html:68
 msgid "About ONS studies"
 msgstr "Ynglŷn ag astudiaethau SYG"
 
-#: rh_ui/templates/base.html:74
+#: rh_ui/templates/base.html:69
 msgid "https://www.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 msgstr "https://cy.ons.gov.uk/surveys/informationforhouseholdsandindividuals"
 
-#: rh_ui/templates/base.html:78
+#: rh_ui/templates/base.html:73
 msgid "Accessibility statement"
 msgstr "Datganiad hygyrchedd"
 
-#: rh_ui/templates/base.html:79
+#: rh_ui/templates/base.html:74
 msgid "https://www.ons.gov.uk/help/accessibility"
 msgstr "https://cy.ons.gov.uk/help/accessibility"
 
-#: rh_ui/templates/base.html:83
+#: rh_ui/templates/base.html:78
 msgid "Contact us"
 msgstr "Cysylltu â ni"
 
-#: rh_ui/templates/base.html:84 rh_ui/templates/error_pages/404.html:19
+#: rh_ui/templates/base.html:79 rh_ui/templates/error_pages/404.html:19
 #: rh_ui/templates/error_pages/error.html:18
 msgid "https://www.ons.gov.uk/aboutus/contactus/surveyenquiries"
 msgstr "https://cy.ons.gov.uk/aboutus/contactus/surveyenquiries"
 
-#: rh_ui/templates/base.html:98
+#: rh_ui/templates/base.html:93
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:5
 #: rh_ui/templates/info_pages/privacy-and-data-protection.html:21
 msgid "Privacy and data protection"
 msgstr "Preifatrwydd a diogelu data"
 
-#: rh_ui/templates/base.html:105
+#: rh_ui/templates/base.html:100
 msgid "Crown copyright and database rights 2020 OS 100019153."
 msgstr "Hawlfraint y Goron a hawliau cronfa ddata 2020 OS 100019153."
 
-#: rh_ui/templates/base.html:113
+#: rh_ui/templates/base.html:108
 msgid "https://www.ons.gov.uk/"
 msgstr "https://cy.ons.gov.uk/"
 
-#: rh_ui/templates/base.html:114 rh_ui/templates/error_pages/404.html:3
+#: rh_ui/templates/base.html:109 rh_ui/templates/error_pages/404.html:3
 #: rh_ui/templates/error_pages/error.html:3
 msgid "ONS Surveys"
 msgstr "Arolygon SYG"
@@ -327,78 +327,68 @@ msgid "Hide this"
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:83
-#: rh_ui/templates/info_pages/cookies.html:239
-#: rh_ui/templates/info_pages/cookies.html:348
+#: rh_ui/templates/info_pages/cookies.html:226
+#: rh_ui/templates/info_pages/cookies.html:335
 msgid "Name"
 msgstr "Enw"
 
 #: rh_ui/templates/info_pages/cookies.html:86
-#: rh_ui/templates/info_pages/cookies.html:242
-#: rh_ui/templates/info_pages/cookies.html:351
+#: rh_ui/templates/info_pages/cookies.html:229
+#: rh_ui/templates/info_pages/cookies.html:338
 msgid "Purpose"
 msgstr "Diben"
 
 #: rh_ui/templates/info_pages/cookies.html:89
-#: rh_ui/templates/info_pages/cookies.html:245
-#: rh_ui/templates/info_pages/cookies.html:354
+#: rh_ui/templates/info_pages/cookies.html:232
+#: rh_ui/templates/info_pages/cookies.html:341
 msgid "Expires"
 msgstr "Daw i ben"
 
 #: rh_ui/templates/info_pages/cookies.html:99
-#: rh_ui/templates/info_pages/cookies.html:112
-msgid ""
-"This helps us count how many people visit ons.gov.uk by tracking if "
-"you’ve visited before"
+msgid "Used to distinguish users."
 msgstr ""
 
 #: rh_ui/templates/info_pages/cookies.html:102
+#: rh_ui/templates/info_pages/cookies.html:115
 msgid "2 years"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:115
-msgid "24 hours"
+#: rh_ui/templates/info_pages/cookies.html:112
+msgid "Used to persist session state."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:125
-msgid "Used to manage the rate at which page view requests are made"
-msgstr ""
-
-#: rh_ui/templates/info_pages/cookies.html:128
-msgid "10 minutes"
-msgstr ""
-
-#: rh_ui/templates/info_pages/cookies.html:136
+#: rh_ui/templates/info_pages/cookies.html:123
 msgid ""
 "We do not allow Google to use or share the data about how you use this "
 "site."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:142
+#: rh_ui/templates/info_pages/cookies.html:129
 msgid "Do you want to allow usage tracking?"
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:148
-#: rh_ui/templates/info_pages/cookies.html:180
-#: rh_ui/templates/info_pages/cookies.html:205
+#: rh_ui/templates/info_pages/cookies.html:135
+#: rh_ui/templates/info_pages/cookies.html:167
+#: rh_ui/templates/info_pages/cookies.html:192
 msgid "On"
 msgstr "Ymlaen"
 
-#: rh_ui/templates/info_pages/cookies.html:155
-#: rh_ui/templates/info_pages/cookies.html:187
-#: rh_ui/templates/info_pages/cookies.html:212
+#: rh_ui/templates/info_pages/cookies.html:142
+#: rh_ui/templates/info_pages/cookies.html:174
+#: rh_ui/templates/info_pages/cookies.html:199
 msgid "Off"
 msgstr "I ffwrdd"
 
-#: rh_ui/templates/info_pages/cookies.html:163
+#: rh_ui/templates/info_pages/cookies.html:150
 msgid "This selection will expire after two years."
 msgstr ""
 
-#: rh_ui/templates/info_pages/cookies.html:165
-#: rh_ui/templates/info_pages/cookies.html:174
+#: rh_ui/templates/info_pages/cookies.html:152
+#: rh_ui/templates/info_pages/cookies.html:161
 msgid "Cookies that help with our communications"
 msgstr "Cwcis sy'n ein helpu i gyfathrebu"
 
-#: rh_ui/templates/info_pages/cookies.html:166
+#: rh_ui/templates/info_pages/cookies.html:153
 msgid ""
 "Some of our pages may contain content from other sites which may set "
 "their own cookies. These sites are\n"
@@ -411,7 +401,7 @@ msgstr ""
 "parti” weithiau. Mae hyn yn dweud wrthym faint o bobl sy'n gweld y "
 "cynnwys a ph'un a yw'n ddefnyddiol."
 
-#: rh_ui/templates/info_pages/cookies.html:169
+#: rh_ui/templates/info_pages/cookies.html:156
 msgid ""
 "In addition, if you share a link to a page, the service you share it on "
 "may set a cookie. We have no\n"
@@ -423,12 +413,12 @@ msgstr ""
 "unrhyw reolaeth dros gwcis a gaiff eu gosod ar wefannau eraill – gallwch "
 "eu diffodd, ond nid drwyddom ni."
 
-#: rh_ui/templates/info_pages/cookies.html:193
-#: rh_ui/templates/info_pages/cookies.html:199
+#: rh_ui/templates/info_pages/cookies.html:180
+#: rh_ui/templates/info_pages/cookies.html:186
 msgid "Cookies that remember your settings"
 msgstr "Cwcis sy'n cofio eich gosodiadau"
 
-#: rh_ui/templates/info_pages/cookies.html:194
+#: rh_ui/templates/info_pages/cookies.html:181
 msgid ""
 "These cookies personalise your experience of using the site,\n"
 "                by doing things like remembering your preferences and the"
@@ -437,21 +427,21 @@ msgstr ""
 "Mae'r cwcis hyn yn personoli eich profiad wrth ddefnyddio'r wefan, drwy "
 "wneud pethau fel cofio eich eich gosodiadau a'ch dewisiadau."
 
-#: rh_ui/templates/info_pages/cookies.html:218
+#: rh_ui/templates/info_pages/cookies.html:205
 msgid "Strictly necessary cookies"
 msgstr "Cwcis cwbl angenrheidiol"
 
-#: rh_ui/templates/info_pages/cookies.html:219
+#: rh_ui/templates/info_pages/cookies.html:206
 msgid "These essential cookies do things like:"
 msgstr "Mae'r cwcis hanfodol hyn yn gwneud pethau fel:"
 
-#: rh_ui/templates/info_pages/cookies.html:223
+#: rh_ui/templates/info_pages/cookies.html:210
 msgid "remember the notifications you've seen so we do not show you them again"
 msgstr ""
 "cofio'r hysbysiadau rydych chi wedi'u gweld fel nad ydym yn eu dangos i "
 "chi eto"
 
-#: rh_ui/templates/info_pages/cookies.html:226
+#: rh_ui/templates/info_pages/cookies.html:213
 msgid ""
 "remember your progress through a form (for example, online business "
 "surveys)"
@@ -459,15 +449,15 @@ msgstr ""
 "cofio ble rydych chi arni ar ffurflen (er enghraifft, arolygon busnes ar-"
 "lein)"
 
-#: rh_ui/templates/info_pages/cookies.html:230
+#: rh_ui/templates/info_pages/cookies.html:217
 msgid "They always need to be on."
 msgstr "Mae angen i'r rhain fod ymlaen bob amser."
 
-#: rh_ui/templates/info_pages/cookies.html:233
+#: rh_ui/templates/info_pages/cookies.html:220
 msgid "Your progress"
 msgstr "Ble rydych chi arni"
 
-#: rh_ui/templates/info_pages/cookies.html:234
+#: rh_ui/templates/info_pages/cookies.html:221
 msgid ""
 "We’ll set a cookie to remember your progress while logged in. These "
 "cookies do not store your\n"
@@ -476,20 +466,20 @@ msgstr ""
 "Byddwn yn gosod cwci er mwyn cofio ble rydych chi arni tra byddwch chi "
 "wedi mewngofnodi. Nid yw'r cwcis hyn yn storio eich data personol."
 
-#: rh_ui/templates/info_pages/cookies.html:255
+#: rh_ui/templates/info_pages/cookies.html:242
 msgid "To check that your browser can support cookies"
 msgstr "Cadarnhau y gall eich porwr gynnal cwcis"
 
+#: rh_ui/templates/info_pages/cookies.html:245
 #: rh_ui/templates/info_pages/cookies.html:258
 #: rh_ui/templates/info_pages/cookies.html:271
 #: rh_ui/templates/info_pages/cookies.html:284
 #: rh_ui/templates/info_pages/cookies.html:297
-#: rh_ui/templates/info_pages/cookies.html:310
-#: rh_ui/templates/info_pages/cookies.html:336
+#: rh_ui/templates/info_pages/cookies.html:323
 msgid "When a user closes the browser or when their cookie cache is cleared"
 msgstr "Pan fydd defnyddiwr yn cau'r porwr neu pan gaiff y storfa cwcis ei chlirio"
 
-#: rh_ui/templates/info_pages/cookies.html:268
+#: rh_ui/templates/info_pages/cookies.html:255
 msgid ""
 "To store your preferred language so that certain content can be displayed"
 " in your own language"
@@ -497,7 +487,7 @@ msgstr ""
 "Storio eich dewis iaith fel bod modd dangos cynnwys penodol yn yr iaith "
 "honno"
 
-#: rh_ui/templates/info_pages/cookies.html:281
+#: rh_ui/templates/info_pages/cookies.html:268
 msgid ""
 "To keep your session active when using your account to access portfolio "
 "and messages"
@@ -505,11 +495,11 @@ msgstr ""
 "Cadw eich sesiwn yn weithredol pan fyddwch chi'n defnyddio eich cyfrif i "
 "agor portffolio a negeseuon"
 
-#: rh_ui/templates/info_pages/cookies.html:294
+#: rh_ui/templates/info_pages/cookies.html:281
 msgid "To store the universally unique identifier created for your account"
 msgstr "Storio'r dynodydd unigryw cyffredinol a grëwyd ar gyfer eich cyfrif"
 
-#: rh_ui/templates/info_pages/cookies.html:307
+#: rh_ui/templates/info_pages/cookies.html:294
 msgid ""
 "To store the timestamp of the last request so that the session expiry "
 "warning message can be displayed"
@@ -517,11 +507,11 @@ msgstr ""
 "Storio stamp amser y cais diwethaf fel bod modd dangos neges yn rhybuddio"
 " bod y sesiwn ar fin dod i ben"
 
-#: rh_ui/templates/info_pages/cookies.html:320
+#: rh_ui/templates/info_pages/cookies.html:307
 msgid "To keep you signed in when completing a survey"
 msgstr "Sicrhau eich bod yn parhau i fod wedi'ch mewngofnodi wrth gwblhau arolwg"
 
-#: rh_ui/templates/info_pages/cookies.html:323
+#: rh_ui/templates/info_pages/cookies.html:310
 msgid ""
 "When a user logs out or closes the browser. Or when their cookie cache is"
 " cleared"
@@ -529,7 +519,7 @@ msgstr ""
 "Pan fydd defnyddiwr yn allgofnodi neu'n cau'r porwr. Neu pan gaiff y "
 "storfa cwcis ei chlirio"
 
-#: rh_ui/templates/info_pages/cookies.html:333
+#: rh_ui/templates/info_pages/cookies.html:320
 msgid ""
 "To store the flash object identifier for the most recent action you have "
 "performed"
@@ -537,11 +527,11 @@ msgstr ""
 "Storio'r dynodydd gwrthrych fflach ar gyfer y weithred ddiweddaraf a "
 "gwblhawyd gennych"
 
-#: rh_ui/templates/info_pages/cookies.html:342
+#: rh_ui/templates/info_pages/cookies.html:329
 msgid "Cookie message"
 msgstr "Neges am gwcis"
 
-#: rh_ui/templates/info_pages/cookies.html:343
+#: rh_ui/templates/info_pages/cookies.html:330
 msgid ""
 "You may see a banner when you visit start.surveys.ons.gov.uk inviting you"
 " to accept cookies or review your settings.\n"
@@ -554,24 +544,24 @@ msgstr ""
 "eich bod wedi'i gweld ac yn peidio â'i dangos eto, ac i storio eich "
 "gosodiadau."
 
-#: rh_ui/templates/info_pages/cookies.html:364
+#: rh_ui/templates/info_pages/cookies.html:351
 msgid "Lets us know that you’ve seen our cookie message"
 msgstr "Mae'n rhoi gwybod i ni eich bod wedi gweld ein neges am gwcis"
 
+#: rh_ui/templates/info_pages/cookies.html:354
 #: rh_ui/templates/info_pages/cookies.html:367
-#: rh_ui/templates/info_pages/cookies.html:380
 msgid "1 year"
 msgstr "Blwyddyn"
 
-#: rh_ui/templates/info_pages/cookies.html:377
+#: rh_ui/templates/info_pages/cookies.html:364
 msgid "Saves your cookie consent settings"
 msgstr "Mae'n cadw eich gosodiadau caniatâd cwcis"
 
-#: rh_ui/templates/info_pages/cookies.html:391
+#: rh_ui/templates/info_pages/cookies.html:378
 msgid "Learn more about these essential cookies"
 msgstr "Rhagor o wybodaeth am y cwcis hanfodol hyn"
 
-#: rh_ui/templates/info_pages/cookies.html:397
+#: rh_ui/templates/info_pages/cookies.html:384
 msgid "Save changes"
 msgstr "Cadw newidiadau"
 
@@ -715,4 +705,19 @@ msgstr "Mae rhywun eisoes wedi cyflwyno ymateb gan ddefnyddio’r cod mynediad h
 #: rh_ui/templates/uac_error_pages/uac-inactive.html:25
 msgid "This questionnaire has now closed"
 msgstr "Mae'r holiadur hwn wedi cau erbyn hyn"
+
+#~ msgid ""
+#~ "This helps us count how many "
+#~ "people visit ons.gov.uk by tracking if"
+#~ " you’ve visited before"
+#~ msgstr ""
+
+#~ msgid "24 hours"
+#~ msgstr ""
+
+#~ msgid "Used to manage the rate at which page view requests are made"
+#~ msgstr ""
+
+#~ msgid "10 minutes"
+#~ msgstr ""
 
