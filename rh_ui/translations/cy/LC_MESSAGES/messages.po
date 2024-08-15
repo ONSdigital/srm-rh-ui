@@ -706,18 +706,4 @@ msgstr "Mae rhywun eisoes wedi cyflwyno ymateb gan ddefnyddio’r cod mynediad h
 msgid "This questionnaire has now closed"
 msgstr "Mae'r holiadur hwn wedi cau erbyn hyn"
 
-#~ msgid ""
-#~ "This helps us count how many "
-#~ "people visit ons.gov.uk by tracking if"
-#~ " you’ve visited before"
-#~ msgstr ""
-
-#~ msgid "24 hours"
-#~ msgstr ""
-
-#~ msgid "Used to manage the rate at which page view requests are made"
-#~ msgstr ""
-
-#~ msgid "10 minutes"
-#~ msgstr ""
 
