@@ -51,7 +51,7 @@ required language code. Only generate a individual language file once.
 pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
 ```
 
-3. Update tranlsation files
+3. Update translation files
 
 Once created, you can update the existing language messages.po files to include changes in the messages.pot by running
 the following. This will update ALL language files.
