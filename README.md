@@ -60,7 +60,7 @@ the following. This will update ALL language files.
 pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations
 ```
 
-4. Complile the translations
+4. Compile the translations
 
 > [!NOTE]
 > Double check your translation files (messages.po) for the `#, fuzzy` comment. This indicates that the tranlsation isn't an exact match and won't be rendered on the page. Double check the translations and remove any incorrectly matched lines, then remove the `fuzzy` comment.
