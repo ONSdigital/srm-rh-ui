@@ -30,13 +30,15 @@ or to run it in Pycharm, use the run template that's specified and it should wor
 
 The site uses PyBabel for translations.
 
-Text to translate is marked up in `.html` and `.py` templates and files with the [gettext](https://en.wikipedia.org/wiki/Gettext) mechanism. Then a `messages.pot` file is build via Pybabel, which collates all the text to translate. Based on the content of the `.pot` file translation files `messages.po` are created for all specified language codes. Finally, the `.po` files are compiled into `.mo` files, which are then used on the page.
+Text to translate is marked up in `.html` and `.py` templates and files with the [gettext](https://en.wikipedia.org/wiki/Gettext) mechanism. Then a `messages.pot` file is build via Pybabel, which collates all the text to translate.
+
+Based on the content of the `.pot` file translation files `messages.po` are created for all specified language codes. Finally, the `.po` files are compiled into `.mo` files, which are then used on the page.
 
 1. Extract text to translation
 
 To build/re-build the translation messages.pot use:
 
-```
+```shell
 pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 ```
 
@@ -47,7 +49,7 @@ pipenv run pybabel extract -F babel.cfg -o rh_ui/translations/messages.pot .
 To create a new language messages file, run the following, changing the 2 character language code at the end to the
 required language code. Only generate a individual language file once.
 
-```
+```shell
 pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations -l cy
 ```
 
@@ -56,7 +58,7 @@ pipenv run pybabel init -i rh_ui/translations/messages.pot -d rh_ui/translations
 Once created, you can update the existing language messages.po files to include changes in the messages.pot by running
 the following. This will update ALL language files.
 
-```
+```shell
 pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translations
 ```
 
@@ -66,7 +68,7 @@ pipenv run pybabel update -i rh_ui/translations/messages.pot -d rh_ui/translatio
 > Double check your translation files (messages.po) for the `#, fuzzy` comment. This indicates that the tranlsation isn't an exact match and won't be rendered on the page. Double check the translations and remove any incorrectly matched lines, then remove the `fuzzy` comment.
 
 To compile updates to the messages.po files into messages.mo (the file actually used by the site) use:
-```
+```shell
 pipenv run pybabel compile -d rh_ui/translations
 ```
 ## Venom Tests
@@ -96,7 +98,7 @@ against a local HTTP only instance. However, it may be useful for development to
   `Strict-Transport-Security` test case which is bound to fail locally.
 
 * Now run the tests against the docker dev RH UI using the official OVH Venom docker image (
-  See https://github.com/ovh/venom?tab=readme-ov-file#docker-image for more details on running venom and docs on
+  See <https://github.com/ovh/venom?tab=readme-ov-file#docker-image> for more details on running venom and docs on
   configuration).
 
   ```shell

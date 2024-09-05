@@ -138,3 +138,6 @@ dmypy.json
 # App working directories
 tmp*/
 .DS_Store
+
+# Megalinter reports
+megalinter-reports/
