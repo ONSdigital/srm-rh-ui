@@ -16,4 +16,4 @@
 <!--- Links to any documentation -->
 <!--- Links to any related PRs -->
 
-# Screenshots (if appropriate):
+# Screenshots (if appropriate)
