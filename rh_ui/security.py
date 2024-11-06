@@ -1,4 +1,5 @@
 from flask import Blueprint
+
 CSP = {
     'default-src': [
         "'self'",
@@ -17,12 +18,16 @@ CSP = {
     'connect-src': [
         "'self'",
         'https://cdn.ons.gov.uk',
-        'https://*.google-analytics.com/'
+        'https://*.google-analytics.com/',
+        "https://*.analytics.google.com",
+        "https://*.googletagmanager.com"
     ],
     'img-src': [
         "'self'",
         'data:',
-        'https://cdn.ons.gov.uk'
+        'https://cdn.ons.gov.uk',
+        "https://*.google-analytics.com",
+        "https://*.googletagmanager.com"
     ],
 }
 
