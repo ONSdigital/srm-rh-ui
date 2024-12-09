@@ -30,7 +30,7 @@
                 'lang': g.lang_code,
                 'statementTitle': _('Cookies'),
                 'serviceName': '',
-                'settingsLinkTextURL': cookiesPageURL,
+                'settingsLinkUrl': cookiesPageURL,
                 'statementText': _("To collect information about how you use this website, we use%(open_cookies_link)s cookies.%(close_link)s</br>
                                 This information helps us improve our services and make sure that the website works as well as possible.",
                                 open_cookies_link='<a href="%s">' % cookiesPageURL, close_link='</a>'),
@@ -44,13 +44,13 @@
     [
         {
             "url": '/en/' + '/'.join(request.path.split('/')[2:]),
-            "ISOCode": "en",
+            "isoCode": "en",
             "text": "English",
             "current":  g.lang_code == 'en'
         },
         {
             "url": '/cy/' + '/'.join(request.path.split('/')[2:]),
-            "ISOCode": "cy",
+            "isoCode": "cy",
             "text": "Cymraeg",
             "current": g.lang_code == 'cy'
             }
@@ -61,6 +61,12 @@
 {%- set footer_content = {
     'newTabWarning': _('The following links open in a new tab'),
     'crest': true,
+    'footerLogo': {
+        'logos': {
+            'logo1': {},
+            'logo2': {}
+        }
+    },
     'rows': [
         {
             'itemsList': [
@@ -97,7 +103,8 @@
         }
     ],
     'copyrightDeclaration': {
-        'copyright': _('Crown copyright and database rights 2020 OS 100019153.')
+        'copyright': _('Crown copyright and database rights 2020 OS 100019153.'),
+        'text': ""
     }
 }-%}
 

@@ -12,7 +12,7 @@ def test_en_start_endpoint_success(test_client):
     response = test_client.get(EN_START_ROUTE, follow_redirects=True)
 
     assert response.status_code == 200
-    assert '<div class="ons-header__title">ONS Surveys</div>' in response.text
+    assert 'ONS Surveys' in response.text
     assert 'Enter your 16-character access code' in response.text
 
 
