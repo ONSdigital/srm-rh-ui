@@ -294,10 +294,12 @@ msgid ""
 "We use three types of cookie. You can choose which cookies you're happy "
 "for us to use."
 msgstr ""
+"Rydym yn defnyddio tri math o gwci. Gallwch ddewis pa gwcis rydych yn "
+"fodlon i ni eu defnyddio."
 
 #: rh_ui/templates/info_pages/cookies.html:58
 msgid "Cookies that measure website use"
-msgstr ""
+msgstr "Cwcis sy'n mesur defnydd o'r wefan"
 
 #: rh_ui/templates/info_pages/cookies.html:60
 msgid ""
@@ -305,22 +307,28 @@ msgid ""
 "improve it based on user needs. Google Analytics\n"
 "            sets cookies that store anonymised information about:"
 msgstr ""
+"Rydym yn defnyddio Google Analytics i fesur y ffordd rydych yn "
+"defnyddio'r wefan er mwyn i ni allu ei gwella ar sail anghenion "
+"defnyddwyr. Mae Google Analytics yn gosod cwcis sy'n storio gwybodaeth "
+"wedi'i hanonymeiddio mewn perthynas â'r canlynol:"
 
 #: rh_ui/templates/info_pages/cookies.html:64
 msgid "how you got to the site"
-msgstr ""
+msgstr "sut y gwnaethoch gyrraedd y wefan"
 
 #: rh_ui/templates/info_pages/cookies.html:65
 msgid "the pages you visit on ons.gov.uk and how long you spend on each page"
 msgstr ""
+"y tudalennau y byddwch yn mynd iddynt ar cy.ons.gov.uk a faint o amser y "
+"byddwch yn ei dreulio ar bob tudalen"
 
 #: rh_ui/templates/info_pages/cookies.html:66
 msgid "what you click on while you're visiting the site"
-msgstr ""
+msgstr "yr hyn y byddwch yn clicio arno tra byddwch ar y wefan"
 
 #: rh_ui/templates/info_pages/cookies.html:72
 msgid "Learn more about these Google Analytics cookies"
-msgstr ""
+msgstr "Dysgwch fwy am y cwcis Google Analytics hyn"
 
 #: rh_ui/templates/info_pages/cookies.html:75
 msgid "Hide this"
@@ -346,26 +354,28 @@ msgstr "Daw i ben"
 
 #: rh_ui/templates/info_pages/cookies.html:99
 msgid "Used to distinguish users."
-msgstr ""
+msgstr "Defnyddir i wahaniaethu rhwng defnyddwyr."
 
 #: rh_ui/templates/info_pages/cookies.html:102
 #: rh_ui/templates/info_pages/cookies.html:115
 msgid "2 years"
-msgstr ""
+msgstr "2 flynedd"
 
 #: rh_ui/templates/info_pages/cookies.html:112
 msgid "Used to persist session state."
-msgstr ""
+msgstr "Defnyddir i gadw cyflwr y sesiwn."
 
 #: rh_ui/templates/info_pages/cookies.html:123
 msgid ""
 "We do not allow Google to use or share the data about how you use this "
 "site."
 msgstr ""
+"Nid ydym yn caniatáu i Google ddefnyddio na rhannu'r data am y ffordd "
+"rydych yn defnyddio'r wefan hon."
 
 #: rh_ui/templates/info_pages/cookies.html:129
 msgid "Do you want to allow usage tracking?"
-msgstr ""
+msgstr "A hoffech ganiatáu tracio defnydd?"
 
 #: rh_ui/templates/info_pages/cookies.html:135
 #: rh_ui/templates/info_pages/cookies.html:167
@@ -381,7 +391,7 @@ msgstr "I ffwrdd"
 
 #: rh_ui/templates/info_pages/cookies.html:150
 msgid "This selection will expire after two years."
-msgstr ""
+msgstr "Bydd y dewis hwn yn dod i ben ar ôl dwy flynedd."
 
 #: rh_ui/templates/info_pages/cookies.html:152
 #: rh_ui/templates/info_pages/cookies.html:161
@@ -705,5 +715,4 @@ msgstr "Mae rhywun eisoes wedi cyflwyno ymateb gan ddefnyddio’r cod mynediad h
 #: rh_ui/templates/uac_error_pages/uac-inactive.html:25
 msgid "This questionnaire has now closed"
 msgstr "Mae'r holiadur hwn wedi cau erbyn hyn"
-
 
