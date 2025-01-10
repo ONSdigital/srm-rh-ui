@@ -4,8 +4,8 @@ import os
 from flask import Flask, g, request
 from flask_babel import Babel
 from flask_talisman import Talisman
-from structlog import wrap_logger
 from jinja2 import ChainableUndefined
+from structlog import wrap_logger
 
 from rh_ui.logger_config import logger_initial_config
 from rh_ui.security import CSP, PERMISSION_POLICY
