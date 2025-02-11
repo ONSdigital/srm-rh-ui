@@ -29,7 +29,7 @@ def create_app() -> Flask:
     app.secret_key = app.config.get('SECRET_KEY')  # required to enable the flash function
     app.session_cookie_name = 'RH2_SESSION'  # Use a custom session cookie name to avoid ambiguity and clashes
     app.session_cookie_secure = app.config.get('SESSION_COOKIE_SECURE')
-    app.jinja_env.undefined = ChainableUndefined  # This is needed to prevent jinja from throwing an error when chained parameters are undefined
+    app.jinja_env.undefined = ChainableUndefined  # This is needed to prevent jinja from throwing an error when chained parameters are undefined # noqa: E501
 
     # Configure logger
     logger_initial_config(log_level=app.config.get("LOGGING_LEVEL", "INFO"))
