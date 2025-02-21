@@ -2,7 +2,7 @@ def test_cookies_endpoint_success(test_client):
     response = test_client.get('/en/cookies', follow_redirects=True)
 
     assert response.status_code == 200
-    assert '<h1 class="ons-u-fs-xxl">Cookies on start.surveys.ons.gov.uk</h1>' in response.text
+    assert 'Cookies on start.surveys.ons.gov.uk' in response.text
 
 
 def test_cy_cookies_endpoint_success(test_client):
