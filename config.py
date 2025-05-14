@@ -1,5 +1,5 @@
 import os
-from distutils.util import strtobool
+from rh_ui.common.strtobool import strtobool
 
 
 class BaseConfig:

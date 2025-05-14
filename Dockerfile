@@ -1,4 +1,4 @@
-ARG  python_pipenv_build_image=europe-west2-docker.pkg.dev/ons-ci-rm/docker/python-pipenv:3.11
+ARG  python_pipenv_build_image=europe-west2-docker.pkg.dev/ons-ci-rm/docker/python-pipenv:3.12
 FROM ${python_pipenv_build_image} as build
 
 ENV PIPENV_VENV_IN_PROJECT=1
@@ -8,7 +8,7 @@ COPY Pipfile* /app/
 
 RUN /root/.local/bin/pipenv sync
 
-FROM python:3.11.7-slim@sha256:89c610d12fe12b3e06f35d070f79e57cf14e2bd89c071435ee3678419b691603
+FROM python:3.12.10-slim@sha256:bae1a061b657f403aaacb1069a7f67d91f7ef5725ab17ca36abc5f1b2797ff92
 
 RUN groupadd -g 984 respondenthome && useradd -r -u 984 -g respondenthome respondenthome
 

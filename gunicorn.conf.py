@@ -9,7 +9,7 @@ see https://docs.gunicorn.org/en/stable/settings.html#settings for details on th
 wsgi_app = 'run:app'
 
 # Set the host and port
-bind = f"{os.getenv('HOST','0.0.0.0')}:{os.getenv('PORT', 9092)}"
+bind = f"{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 9092)}"
 
 worker_class = os.getenv('GUNICORN_WORKER_CLASS', 'gthread')
 workers = os.getenv('GUNICORN_WORKERS', 2)
