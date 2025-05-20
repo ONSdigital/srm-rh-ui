@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 """
 This is a config file Gunicorn automatically finds and runs at startup,
@@ -28,6 +28,6 @@ logconfig = 'gunicorn_log.conf'
 
 # Add a log line to the gunicorn startup stating how many workers it intends to use
 print(
-    f'{{"timestamp":"{datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")}", "severity":"NOTICE", "level":"INFO", '
+    f'{{"timestamp":"{datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")}", "severity":"NOTICE", "level":"INFO", '
     f'"service":"rh_ui", "event":"Booting gunicorn with {workers}"}}'
 )
