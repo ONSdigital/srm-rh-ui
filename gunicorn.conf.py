@@ -1,5 +1,5 @@
 import os
-from datetime import datetime
+from datetime import datetime, timezone
 
 """
 This is a config file Gunicorn automatically finds and runs at startup,
@@ -9,7 +9,7 @@ see https://docs.gunicorn.org/en/stable/settings.html#settings for details on th
 wsgi_app = 'run:app'
 
 # Set the host and port
-bind = f"{os.getenv('HOST','0.0.0.0')}:{os.getenv('PORT', 9092)}"
+bind = f"{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 9092)}"
 
 worker_class = os.getenv('GUNICORN_WORKER_CLASS', 'gthread')
 workers = os.getenv('GUNICORN_WORKERS', 2)
@@ -28,6 +28,6 @@ logconfig = 'gunicorn_log.conf'
 
 # Add a log line to the gunicorn startup stating how many workers it intends to use
 print(
-    f'{{"timestamp":"{datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S")}", "severity":"NOTICE", "level":"INFO", '
+    f'{{"timestamp":"{datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S")}", "severity":"NOTICE", "level":"INFO", '
     f'"service":"rh_ui", "event":"Booting gunicorn with {workers}"}}'
 )
