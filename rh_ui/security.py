@@ -1,6 +1,9 @@
 from flask import Blueprint
 
 CSP = {
+    'base-uri': [
+        "'none'"
+    ],
     'default-src': [
         "'self'",
         'https://cdn.ons.gov.uk',
@@ -11,6 +14,7 @@ CSP = {
         'https://cdn.ons.gov.uk',
     ],
     'script-src': [
+        "'strict-dynamic'",
         "'self'",
         'https://cdn.ons.gov.uk',
         'https://www.googletagmanager.com',
