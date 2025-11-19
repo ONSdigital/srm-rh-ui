@@ -22,10 +22,7 @@ WORKDIR /app
 RUN mkdir -v /app/venv && chown respondenthome:respondenthome /app/venv
 
 COPY --chown=respondenthome:respondenthome --from=build /app/.venv/ /app/venv/
-COPY --chown=respondenthome:respondenthome . /app/
-
-# Needed to remove podman build sercrets that are copied over from above
-RUN rm -rf Users
+COPY --chown=respondenthome:respondenthome --exclude=Users . /app/
 
 EXPOSE 9092
 
