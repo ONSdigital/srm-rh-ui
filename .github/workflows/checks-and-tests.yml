@@ -58,8 +58,8 @@ jobs:
         run: make load_templates
       
       - name: Run Tests and Checks
-        run: make unit_test integration_test
+        run: make unit_test integration_test DOCKER=docker
 
       - name: Check Docker Build
-        run: make docker_build
+        run: make docker_build DOCKER=docker
         
