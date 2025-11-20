@@ -1,4 +1,4 @@
-DOCKER ?= $(shell if command -v podman > /dev/null; then echo podman; else echo docker; fi)
+DOCKER ?= ifeq ($(shell uname -m), arm64); then echo podman; else echo docker; fi
 
 load_templates:
 	./load_templates.sh
