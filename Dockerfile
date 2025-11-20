@@ -22,7 +22,11 @@ WORKDIR /app
 RUN mkdir -v /app/venv && chown respondenthome:respondenthome /app/venv
 
 COPY --chown=respondenthome:respondenthome --from=build /app/.venv/ /app/venv/
-COPY --chown=respondenthome:respondenthome --exclude=Users . /app/
+COPY --chown=respondenthome:respondenthome . /app/
+
+# Needed to remove podman build sercrets that are copied over from above
+# See https://github.com/ONSdigital/ssdc-rm-documentation/blob/SDCSRM-SDCSRM-1193-corp-mac-changes/spikes/python-corp-mac-changes.md#cleaning-up-secret-files for more
+RUN rm -rf Users
 
 EXPOSE 9092
 
