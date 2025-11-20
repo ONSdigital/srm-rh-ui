@@ -1,4 +1,4 @@
-DOCKER ?= ifeq ($(shell uname -m), arm64); then echo podman; else echo docker; fi
+DOCKER ?= $(shell if [ "$$(uname -m)" = "arm64" ]; then echo podman; else echo docker; fi)
 
 load_templates:
 	./load_templates.sh
