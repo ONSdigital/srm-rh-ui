@@ -17,6 +17,7 @@ WORKDIR /app
 RUN mkdir -v /app/venv && chown respondenthome:respondenthome /app/venv
 
 COPY --chown=respondenthome:respondenthome --from=build /app/.venv/ /app/venv/
+COPY --chown=respondenthome:respondenthome . /app/
 
 EXPOSE 9092
 
