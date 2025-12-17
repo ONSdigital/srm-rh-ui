@@ -35,11 +35,7 @@ build: test docker_build
 build-no-test: install docker_build
 
 docker_build:
-	@if [ "$(DOCKER)" = "docker" ]; then \
-		docker build -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .; \
-	else \
-		podman build --platform linux/amd64 --secret id=cert,src=$(SSL_CERT_FILE) -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .; \
-	fi
+	$(DOCKER) build --platform linux/amd64 -t europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui .
 
 docker_run:
 	$(DOCKER) run -p 9093:9092 --network=ssdcrmdockerdev_default -e APP_CONFIG=DevelopmentConfig -e RH_SVC_URL=http://rh-service:8071/ --name srm-rh-ui europe-west2-docker.pkg.dev/ssdc-rm-ci/docker/srm-rh-ui
