@@ -60,7 +60,7 @@ translate:
 
 up:
 	$(DOCKER) compose up -d
-	bash ./tests/integration/wait_for_dependencies.sh
+	CONTAINER_CLI=$(DOCKER) bash ./tests/integration/wait_for_dependencies.sh
 
 down:
 	$(DOCKER) compose down
