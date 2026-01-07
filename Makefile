@@ -1,3 +1,4 @@
+# Set the container runtime based on architecture, default to docker for amd64 and podman for arm64
 DOCKER ?= $(shell if [ "$$(uname -m)" = "arm64" ]; then echo podman; else echo docker; fi)
 
 load_templates:
