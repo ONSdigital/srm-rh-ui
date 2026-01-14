@@ -26,6 +26,14 @@ make run
 
 or to run it in Pycharm, use the run template that's specified and it should work as expected.
 
+Podman and Docker are both supported for building and running the application.
+By default the Makefile will use `docker` unless you are on an `arm64` architecture (e.g. M1/M2 Mac) in which case it will use `podman`.
+You can override this by setting the `DOCKER` environment variable to either `docker` or `podman`.
+For example, to force using `docker` on an M1/M2 Mac:
+```shell
+DOCKER=docker make <command>
+```
+
 ## Translations
 
 The site uses PyBabel for translations.
