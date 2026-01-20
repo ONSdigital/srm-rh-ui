@@ -141,3 +141,6 @@ tmp*/
 
 # Megalinter reports
 megalinter-reports/
+
+# Podman secrets
+podman-build-secret*
