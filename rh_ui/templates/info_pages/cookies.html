@@ -31,7 +31,7 @@
     <h2>{{ _('Your cookie settings have been saved') }}</h2>
     <p>{{ _('Some parts of start.surveys.ons.gov.uk may use additional cookies and will have their own cookie policy and
             banner.') }}</p>
-    <a class="ons-js-return-link ons-u-mt-s ons-u-dib" href="#0">{{ _('Return to previous page') }}</a>
+    <a class="ons-js-return-link ons-u-mt-s ons-u-dib" href="{{ url_for('i18n.start_bp.start_get') }}">{{ _('Return to previous page') }}</a>
 {% endcall %}
 <h1 class="ons-u-fs-2xl">{{ _('Cookies on start.surveys.ons.gov.uk') }}</h1>
 <p>{{ _('Cookies are small files saved on your device when you visit a website.') }}</p>
