@@ -8,7 +8,7 @@ COPY Pipfile* /app/
 
 RUN /root/.local/bin/pipenv sync
 
-FROM python:3.12.12-slim@sha256:dc9e92fcdc085ad86dda976f4cfc58856dba33a438a16db37ff00151b285c8ca
+FROM python:3.12.13-slim@sha256:a9e4190f02729f01e5b3719bd8b3ea0f8d9350dc17d01a1ce1ca6e3fbfcf7a99
 
 RUN groupadd -g 984 respondenthome && useradd -r -u 984 -g respondenthome respondenthome
 
